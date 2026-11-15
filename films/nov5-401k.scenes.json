@@ -2108,10 +2108,10 @@
        "side": "a"
       }
      ],
-     "x": 820,
+     "x": 760,
      "y": 380,
      "at": 1.6,
-     "width": 520,
+     "width": 380,
      "scale": 1
     },
     {
@@ -4668,74 +4668,74 @@
     {
      "type": "prop",
      "kind": "building",
-     "x": 200,
+     "x": 240,
      "y": 860,
      "at": 0.2,
-     "scale": 0.75,
+     "scale": 0.65,
      "side": "b"
     },
     {
      "type": "prop",
      "kind": "building",
-     "x": 365,
+     "x": 380,
      "y": 860,
      "at": 0.4,
-     "scale": 0.75,
+     "scale": 0.65,
      "side": "b"
     },
     {
      "type": "prop",
      "kind": "building",
-     "x": 530,
+     "x": 520,
      "y": 860,
      "at": 0.6000000000000001,
-     "scale": 0.75,
+     "scale": 0.65,
      "side": "b"
     },
     {
      "type": "prop",
      "kind": "building",
-     "x": 695,
+     "x": 660,
      "y": 860,
      "at": 0.8,
-     "scale": 0.75,
+     "scale": 0.65,
      "side": "b"
     },
     {
      "type": "prop",
      "kind": "building",
-     "x": 860,
+     "x": 800,
      "y": 860,
      "at": 1.0,
-     "scale": 0.75,
+     "scale": 0.65,
      "side": "b"
     },
     {
      "type": "prop",
      "kind": "building",
-     "x": 1025,
+     "x": 940,
      "y": 860,
      "at": 1.2,
-     "scale": 0.75,
+     "scale": 0.65,
      "side": "b"
     },
     {
      "type": "prop",
      "kind": "building",
-     "x": 1190,
+     "x": 1080,
      "y": 860,
      "at": 1.4000000000000001,
-     "scale": 0.75,
+     "scale": 0.65,
      "side": "b"
     },
     {
      "type": "character",
      "who": "dee",
-     "x": 1330,
-     "y": 470,
+     "x": 1220,
+     "y": 520,
      "label": "Dee",
      "mood": "neutral",
-     "scale": 1.2,
+     "scale": 1.3,
      "at": 1.8,
      "enter": "draw"
     }
