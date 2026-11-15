@@ -16,6 +16,7 @@ export type CharacterEl = ElementBase & {
   holding?: 'phone' | 'coin' | null;
   label?: string;
   enter?: 'draw' | 'left' | 'right';
+  talk?: boolean; // mouth moves while the scene plays
 };
 export type StampEl = ElementBase & {type: 'stamp'; text: string; rotate?: number};
 export type TallyEl = ElementBase & {type: 'tally'; count: number};
@@ -26,9 +27,32 @@ export type BarsEl = ElementBase & {
   width?: number;
 };
 export type CheckGridEl = ElementBase & {type: 'checkgrid'; total: number; filled: number; cols?: number};
-export type PropEl = ElementBase & {type: 'prop'; kind: 'building' | 'desk' | 'coin' | 'phone' | 'calendar' | 'sheet' | 'ground'; text?: string; w?: number; h?: number; rotate?: number};
+export type PropEl = ElementBase & {type: 'prop'; kind: 'building' | 'desk' | 'coin' | 'phone' | 'calendar' | 'sheet' | 'ground' | 'bus' | 'server'; text?: string; w?: number; h?: number; rotate?: number};
 
-export type El = CharacterEl | StampEl | TallyEl | NoteEl | BarsEl | CheckGridEl | PropEl;
+export type ClippingEl = ElementBase & {
+  type: 'clipping';
+  source: string; // outlet name, printed small at the top
+  date?: string;
+  lines: string[]; // headline, pre-broken into lines
+  hl?: number[]; // line indexes the highlighter sweeps over
+  w?: number;
+  size?: number;
+  rotate?: number;
+};
+export type LineChartEl = ElementBase & {
+  type: 'linechart';
+  points: {v: number; t?: number; label?: string; tag?: string; tagDx?: number; tagDy?: number}[];
+  title?: string;
+  w?: number;
+  h?: number;
+  min?: number;
+  max?: number;
+  ref?: number; // dashed reference line, e.g. the old peak
+  refLabel?: string;
+  draw?: number; // frames the line takes to draw
+};
+
+export type El = CharacterEl | StampEl | TallyEl | NoteEl | BarsEl | CheckGridEl | PropEl | ClippingEl | LineChartEl;
 
 export type Scene = {
   id: string;
@@ -40,6 +64,8 @@ export type Scene = {
   camera?: {zoom?: number; focus?: [number, number]};
   transition_in?: 'travel' | 'ink_flood' | 'fold' | 'cut' | 'none';
   spine?: {text: string; value?: string};
+  speaker?: string; // voice to use for this line (narrator by default)
+  hold?: boolean;
 };
 
 export type Film = {

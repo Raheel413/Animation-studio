@@ -5,13 +5,14 @@ import '@fontsource/caveat/700.css';
 import {clamp, InkDefs, prog} from './ink';
 import {Character} from './elements/Character';
 import {Bars, CheckGrid, Note, Prop, Stamp, Tally} from './elements/Parts';
+import {Clipping, LineChart} from './elements/News';
 import type {El, Film, Scene} from './types';
 
 const PANEL = 1920;
 const TRAVEL = 20; // frames a strip travel takes
 
 const sfxFor = (el: El): string | null =>
-  el.type === 'stamp' ? 'stamp.wav' : el.type === 'tally' || el.type === 'checkgrid' ? 'ticks.wav' : el.type === 'note' ? 'pen_short.wav' : 'pen.wav';
+  el.type === 'stamp' ? 'stamp.wav' : el.type === 'clipping' ? 'slide.wav' : el.type === 'tally' || el.type === 'checkgrid' ? 'ticks.wav' : el.type === 'note' ? 'pen_short.wav' : 'pen.wav';
 
 /** Camera: travels along the strip between scenes, drifts and zooms inside a scene. */
 const useCamera = (film: Film, frame: number, fps: number) => {
@@ -70,6 +71,10 @@ const Element: React.FC<{el: El; f: number; film: Film; id: string; seed: number
       return <CheckGrid el={el} f={f} pal={pal} />;
     case 'prop':
       return <Prop el={el} f={f} pal={pal} />;
+    case 'clipping':
+      return <Clipping el={el} f={f} pal={pal} id={id} />;
+    case 'linechart':
+      return <LineChart el={el} f={f} pal={pal} />;
     default:
       return null;
   }

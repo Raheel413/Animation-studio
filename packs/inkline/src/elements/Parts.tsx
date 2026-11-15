@@ -174,6 +174,30 @@ export const Prop: React.FC<P<PropEl>> = ({el, f, pal}) => {
         <InkPath d="M-22,-108 h44" p={prog(f, 10, 5)} ink={pal.ink} w={5} />
       </>
     );
+  } else if (el.kind === 'bus') {
+    shapes = (
+      <>
+        <InkPath d={roundedRect(-260, -150, 520, 150, 22)} p={p} ink={pal.ink} fill="#E3B341" fillP={fill} />
+        {[0, 1, 2, 3, 4].map((c) => (
+          <InkPath key={c} d={roundedRect(-226 + c * 84, -126, 60, 52, 6)} p={prog(f, 8 + c * 1.5, 6)} ink={pal.ink} fill={CARD} fillP={fill} w={3} />
+        ))}
+        <InkPath d="M-260,-44 H260" p={prog(f, 12, 8)} ink={pal.ink} w={3} />
+        <InkPath d={circle(-160, 4, 34)} p={prog(f, 10, 8)} ink={pal.ink} fill={pal.ink} fillP={fill} />
+        <InkPath d={circle(160, 4, 34)} p={prog(f, 12, 8)} ink={pal.ink} fill={pal.ink} fillP={fill} />
+      </>
+    );
+  } else if (el.kind === 'server') {
+    shapes = (
+      <>
+        <InkPath d={roundedRect(-110, -340, 220, 340, 10)} p={p} ink={pal.ink} fill={el.side ? accent : '#5B6770'} fillP={fill} />
+        {[0, 1, 2, 3, 4, 5].map((r) => (
+          <g key={r}>
+            <InkPath d={roundedRect(-86, -316 + r * 52, 172, 38, 5)} p={prog(f, 8 + r * 1.4, 6)} ink={pal.ink} fill={CARD} fillP={fill} w={3} />
+            <circle cx={64} cy={-297 + r * 52} r={6} fill={(f + r * 7) % 24 < 12 ? '#7CC36E' : '#2E6B3F'} opacity={fill} />
+          </g>
+        ))}
+      </>
+    );
   } else if (el.kind === 'calendar') {
     shapes = (
       <>
