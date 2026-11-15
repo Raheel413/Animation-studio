@@ -9,9 +9,12 @@ GitHub renders it in the cloud and attaches the MP4 to the run.
 
 Push several files at once and they render in parallel, one machine each.
 
-To render a file that lives somewhere else, or to make the ElevenLabs voiceover first, use
-**Actions → Render video → Run workflow** and fill in the form. The voiceover option needs a
-repository secret named `ELEVENLABS_API_KEY` (Settings → Secrets and variables → Actions).
+Every render makes the voiceover first with Deepgram (American male voice `aura-2-zeus-en`), as long as
+the repository secret `DEEPGRAM_API_KEY` exists (Settings → Secrets and variables → Actions).
+The voice MP3 is included in the download.
+
+To pick another voice, use ElevenLabs, or render a file that lives somewhere else, use
+**Actions → Render video → Run workflow** and fill in the form.
 
 This repo is public, so anything you push here, and the rendered videos, can be seen by anyone.
 Keep unreleased client scripts in a private repo.
