@@ -186,6 +186,14 @@ export const Prop: React.FC<P<PropEl>> = ({el, f, pal}) => {
         <InkPath d={circle(160, 4, 34)} p={prog(f, 12, 8)} ink={pal.ink} fill={pal.ink} fillP={fill} />
       </>
     );
+  } else if (el.kind === 'chair') {
+    shapes = (
+      <>
+        <InkPath d={roundedRect(-70, -150, 26, 150, 8)} p={p} ink={pal.ink} fill="#8A6A4A" fillP={fill} />
+        <InkPath d={roundedRect(-70, -80, 150, 22, 8)} p={p} ink={pal.ink} fill="#A07C55" fillP={fill} />
+        <InkPath d="M60,-58 V0 M-56,-58 V0" p={prog(f, 8, 8)} ink={pal.ink} w={6} />
+      </>
+    );
   } else if (el.kind === 'server') {
     shapes = (
       <>

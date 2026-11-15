@@ -28,7 +28,7 @@ film.scenes.forEach((s, i) => {
     if (film.spine === 'ledger' && e.type !== 'prop' && e.x > 1400 && e.y < 420) W(s.id, `${e.type} at x=${e.x},y=${e.y} sits under the ledger`);
   }
   // pacing: a visual event (element, transition) at least every N seconds
-  const events = [0, ...s.elements.map((e) => e.at ?? 0)].sort((a, b) => a - b);
+  const events = [0, ...s.elements.map((e) => e.at ?? 0), ...(s.cues ?? []).map((c) => c.at ?? 0)].sort((a, b) => a - b);
   events.push(dur);
   const maxGap = Math.max(...events.slice(1).map((v, k) => v - events[k]));
   const limit = s.t_start < 15 ? 2.2 : s.t_start < 35 ? 3.2 : 5.5;
@@ -36,7 +36,6 @@ film.scenes.forEach((s, i) => {
   const tr = s.transition_in ?? 'travel';
   if (i && tr !== 'travel' && tr === prevT) W(s.id, `same special transition (${tr}) twice in a row`);
   prevT = tr;
-  if (s.strip_x !== i && i && s.strip_x === film.scenes[i - 1].strip_x && tr !== 'none') W(s.id, 'same strip panel as previous scene: elements will pile up');
 });
 stamps.forEach((t, i) => i && t - stamps[i - 1] < 12 && W('film', `stamps ${(t - stamps[i - 1]).toFixed(0)} s apart at ${t.toFixed(0)} s (keep them rare)`));
 if (film.scenes.filter((s) => s.transition_in === 'cut').length > 3) W('film', 'more than 3 hard cuts');
