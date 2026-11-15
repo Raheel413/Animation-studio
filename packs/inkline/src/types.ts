@@ -37,6 +37,7 @@ export type ClippingEl = ElementBase & {
   date?: string;
   lines: string[]; // headline, pre-broken into lines
   hl?: number[]; // line indexes the highlighter sweeps over
+  ring?: {line: number; text: string}; // crimson pen circle around this text
   w?: number;
   size?: number;
   rotate?: number;
@@ -65,8 +66,12 @@ export type ActorEl = ElementBase & {
   face?: 1 | -1; // 1 faces right
   holding?: 'phone' | 'coin' | null;
   label?: string;
+  silhouette?: boolean; // muted slate background archetype
 };
-export type El = ActorEl | CharacterEl | StampEl | TallyEl | NoteEl | BarsEl | CheckGridEl | PropEl | ClippingEl | LineChartEl;
+export type SpriteEl = ElementBase & {type: 'sprite'; who: string; pose: string; h?: number; flip?: boolean; slump?: boolean};
+export type DeskEl = ElementBase & {type: 'desk'; w: number; h: number};
+export type TagEl = ElementBase & {type: 'tag'; text: string; dark?: boolean};
+export type El = SpriteEl | DeskEl | TagEl | ActorEl | CharacterEl | StampEl | TallyEl | NoteEl | BarsEl | CheckGridEl | PropEl | ClippingEl | LineChartEl;
 
 export type Scene = {
   id: string;
@@ -79,11 +84,12 @@ export type Scene = {
   transition_in?: 'travel' | 'ink_flood' | 'fold' | 'cut' | 'none';
   spine?: {text: string; value?: string};
   speaker?: string; // voice to use for this line (narrator by default)
+  shake?: number; // seconds into the scene: 0.2 s camera shake + sub thud
   cues?: Cue[]; // direct actors already on screen
   hold?: boolean;
 };
 
-export type Cue = {who: string; at?: number; pose?: string; mood?: string; look?: number; face?: 1 | -1; walkTo?: number; walkDur?: number};
+export type Cue = {who: string; at?: number; pose?: string; flip?: boolean; slump?: boolean; mood?: string; look?: number; face?: 1 | -1; walkTo?: number; walkDur?: number};
 
 export type Film = {
   format: 'inkline';

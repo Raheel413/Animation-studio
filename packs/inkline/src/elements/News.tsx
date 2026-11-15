@@ -2,16 +2,21 @@ import React from 'react';
 import {Easing, interpolate} from 'remotion';
 import {clamp, InkPath, paperShadow, prog} from '../ink';
 import type {ClippingEl, Film, LineChartEl} from '../types';
+import PF from './playfair900.json';
+
+const PFW = PF as Record<string, number>;
+/** Width of a headline string in Playfair Display Black at this size. */
+const tw = (t: string, size: number) => [...t].reduce((a, c) => a + (PFW[c] ?? 0.55), 0) * size;
 
 type P<T> = {el: T; f: number; pal: Film['palette']};
 const NEWSPRINT = '#F2EDE1';
-const MARKER = '#F4D03F';
+const MARKER = '#F4C430';
+const CRIMSON = '#D93829';
 
 /** A newspaper clipping that slides onto the desk; a highlighter then sweeps across the chosen lines. */
 export const Clipping: React.FC<P<ClippingEl> & {id: string}> = ({el, f, pal, id}) => {
   const size = el.size ?? 66;
-  const longest = Math.max(...el.lines.map((l) => l.length));
-  const W = Math.max(el.w ?? 1040, longest * size * 0.6 + 130);
+  const W = Math.max(el.w ?? 1040, ...el.lines.map((l) => tw(l, size) + 140));
   const lineH = size * 1.12;
   const head = el.lines.length * lineH;
   const H = 150 + head + 190;
@@ -31,10 +36,10 @@ export const Clipping: React.FC<P<ClippingEl> & {id: string}> = ({el, f, pal, id
     <g transform={`translate(0,${(1 - inP) * 160}) rotate(${rot})`} opacity={Math.min(1, inP * 2)} style={{filter: 'drop-shadow(6px 10px 0 rgba(70,50,25,.18))'}}>
       <path d={outline} fill={NEWSPRINT} stroke="#CFC6B2" strokeWidth={2} />
       {/* masthead line: outlet and date */}
-      <text x={x0} y={-H / 2 + 70} fontFamily="Fraunces" fontWeight={900} fontSize={30} letterSpacing={4} fill="#4A443B">
+      <text x={x0} y={-H / 2 + 70} fontFamily="JetBrains Mono" fontSize={26} letterSpacing={3} fill="#4A443B">
         {el.source.toUpperCase()}
       </text>
-      <text x={W / 2 - 56} y={-H / 2 + 70} textAnchor="end" fontFamily="Fraunces" fontSize={26} fill="#6E665A">
+      <text x={W / 2 - 56} y={-H / 2 + 70} textAnchor="end" fontFamily="JetBrains Mono" fontSize={24} fill="#6E665A">
         {el.date ?? ''}
       </text>
       <line x1={x0} y1={-H / 2 + 92} x2={W / 2 - 56} y2={-H / 2 + 92} stroke="#4A443B" strokeWidth={3} />
@@ -43,17 +48,29 @@ export const Clipping: React.FC<P<ClippingEl> & {id: string}> = ({el, f, pal, id
       {el.lines.map((ln, i) => {
         if (!(el.hl ?? []).includes(i)) return null;
         const order = (el.hl ?? []).indexOf(i);
-        const p = prog(f, 22 + order * 10, 12, Easing.inOut(Easing.quad));
-        const w = Math.min(W - 90, ln.length * size * 0.58 + 24);
+        const p = prog(f, 22 + order * 11, 11, Easing.inOut(Easing.quad));
+        const w = Math.min(W - 90, tw(ln, size) + 24);
         return <rect key={`h${i}`} x={x0 - 12} y={hy + i * lineH - size * 0.82} width={w * p} height={size * 0.98} fill={MARKER} opacity={0.75} rx={6} style={{mixBlendMode: 'multiply'}} />;
       })}
-      <g fontFamily="Fraunces" fontWeight={900} fontSize={size} fill="#1E1B18">
+      <g fontFamily="Playfair Display" fontWeight={900} fontSize={size} fill="#1A1A1A">
         {el.lines.map((ln, i) => (
           <text key={i} x={x0} y={hy + i * lineH}>
             {ln}
           </text>
         ))}
       </g>
+      {el.ring &&
+        (() => {
+          const ln = el.lines[el.ring.line] ?? '';
+          const i0 = Math.max(0, ln.indexOf(el.ring.text));
+          const cx = x0 + tw(ln.slice(0, i0), size) + tw(el.ring.text, size) / 2;
+          const rx = tw(el.ring.text, size) / 2 + 20;
+          const cy = hy + el.ring.line * lineH - size * 0.32;
+          const ry = size * 0.72;
+          const p = prog(f, 39, 9, Easing.out(Easing.quad));
+          const d = `M${cx + rx},${cy} a${rx},${ry} 0 1,1 -4,-${ry * 0.9} `;
+          return <path d={`M${cx - rx * 0.2},${cy - ry} C${cx + rx * 1.1},${cy - ry * 1.15} ${cx + rx * 1.15},${cy + ry} ${cx},${cy + ry} C${cx - rx * 1.2},${cy + ry} ${cx - rx * 1.15},${cy - ry * 0.9} ${cx + rx * 0.15},${cy - ry * 1.08}`} fill="none" stroke={CRIMSON} strokeWidth={6} strokeLinecap="round" pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - p}/>;
+        })()}
       {/* body copy as grey type lines in two columns */}
       {Array.from({length: 8}, (_, i) => {
         const col = i % 2;
@@ -90,7 +107,7 @@ export const LineChart: React.FC<P<LineChartEl>> = ({el, f, pal}) => {
   return (
     <g style={{filter: paperShadow}}>
       {el.title && (
-        <text x={0} y={-48} fontFamily="Caveat" fontWeight={700} fontSize={58} fill={pal.ink} opacity={prog(f, 0, 8)}>
+        <text x={0} y={-48} fontFamily="Playfair Display" fontWeight={900} fontSize={48} fill={pal.ink} opacity={prog(f, 0, 8)}>
           {el.title}
         </text>
       )}
@@ -107,8 +124,22 @@ export const LineChart: React.FC<P<LineChartEl>> = ({el, f, pal}) => {
           <path d={d} fill="none" stroke={color} strokeWidth={9} strokeLinejoin="round" strokeLinecap="round" />
         </g>
       </g>
+      {line > 0 && line < 1 && (() => {
+        // glowing leading dot at the tip of the line while it draws
+        const tipX = W * line;
+        let k = 0;
+        while (k < n - 2 && X(k + 1) < tipX) k++;
+        const t = (tipX - X(k)) / Math.max(1, X(k + 1) - X(k));
+        const tipY = Y(el.points[k].v) + (Y(el.points[k + 1].v) - Y(el.points[k].v)) * Math.min(1, Math.max(0, t));
+        return (
+          <g>
+            <circle cx={tipX} cy={tipY} r={26} fill={color} opacity={0.22} />
+            <circle cx={tipX} cy={tipY} r={11} fill={color} stroke="#F5F2EB" strokeWidth={3} />
+          </g>
+        );
+      })()}
       {el.ref !== undefined && el.refLabel && (
-        <text x={W - 6} y={Y(el.ref) - 14} textAnchor="end" fontFamily="Caveat" fontWeight={700} fontSize={40} fill={pal.ink} opacity={0.75 * axes}>
+        <text x={W - 6} y={Y(el.ref) - 14} textAnchor="end" fontFamily="Inter" fontWeight={500} fontSize={28} fill={pal.ink} opacity={0.75 * axes}>
           {el.refLabel}
         </text>
       )}
@@ -118,7 +149,7 @@ export const LineChart: React.FC<P<LineChartEl>> = ({el, f, pal}) => {
         return (
           <g key={i} opacity={show}>
             {p.label && (
-              <text x={X(i)} y={H + 52} textAnchor={i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle'} fontFamily="Caveat" fontWeight={700} fontSize={40} fill={pal.ink}>
+              <text x={X(i)} y={H + 46} textAnchor={i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle'} fontFamily="Inter" fontWeight={500} fontSize={28} fill={pal.ink}>
                 {p.label}
               </text>
             )}
@@ -129,9 +160,9 @@ export const LineChart: React.FC<P<LineChartEl>> = ({el, f, pal}) => {
                   x={X(i) + (p.tagDx ?? 0)}
                   y={Y(p.v) + (p.tagDy ?? -34)}
                   textAnchor={i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle'}
-                  fontFamily="Fraunces"
-                  fontWeight={900}
-                  fontSize={46}
+                  fontFamily="Inter"
+                  fontWeight={700}
+                  fontSize={40}
                   fill={pal.ink}
                 >
                   {p.tag}

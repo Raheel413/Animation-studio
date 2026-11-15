@@ -2,6 +2,12 @@ import React from 'react';
 import {AbsoluteFill, Audio, Easing, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {useAudioData, visualizeAudio} from '@remotion/media-utils';
 import {Actor} from './elements/Actor';
+import {Sprite} from './elements/Sprite';
+import {shotEnd, shotStart} from './shots';
+import '@fontsource/playfair-display/900.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/700.css';
+import '@fontsource/jetbrains-mono/400.css';
 import '@fontsource/fraunces/900.css';
 import '@fontsource/caveat/700.css';
 import {clamp, InkDefs, prog} from './ink';
@@ -13,19 +19,23 @@ import type {ActorEl, El, Film, Scene} from './types';
 const PANEL = 1920;
 const TRAVEL = 20; // frames a strip travel takes
 
-const sfxFor = (el: El): string | null => (el.type === 'stamp' ? 'stamp.wav' : el.type === 'clipping' ? 'slide.wav' : null);
+/** Foley cues for an element: [file, seconds after it appears, volume]. */
+const sfxFor = (el: El): [string, number, number][] => {
+  switch (el.type) {
+    case 'stamp':
+      return [['stamp.wav', 0, 0.45]];
+    case 'clipping':
+      return [['slide.wav', 0, 0.22], ['marker.wav', 0.75, 0.3], ...(el.ring ? ([['penring.wav', 1.3, 0.3]] as [string, number, number][]) : [])];
+    case 'bars':
+      return [['ticker.wav', 0.35, 0.18]];
+    case 'prop':
+      return el.kind === 'calendar' ? [['shutter.wav', 0.1, 0.3]] : [];
+    default:
+      return [];
+  }
+};
 
-/** Shots: runs of consecutive scenes on the same strip panel. The camera only travels between shots. */
-export const shotStart = (scenes: Scene[], i: number) => {
-  let j = i;
-  while (j > 0 && scenes[j - 1].strip_x === scenes[i].strip_x) j--;
-  return j;
-};
-export const shotEnd = (scenes: Scene[], i: number) => {
-  let j = i;
-  while (j < scenes.length - 1 && scenes[j + 1].strip_x === scenes[i].strip_x) j++;
-  return j;
-};
+export {shotStart, shotEnd};
 
 /** Camera: travels along the strip between shots; inside a shot it eases between framings and drifts slowly. */
 const useCamera = (film: Film, frame: number, fps: number) => {
@@ -48,7 +58,7 @@ const useCamera = (film: Film, frame: number, fps: number) => {
   const prev = i > j0 ? at(i - 1) : now;
   const t = interpolate(local, [0, 1.4 * fps], [0, 1], {...clamp, easing: Easing.inOut(Easing.cubic)});
   const shotT = (frame - scenes[j0].t_start * fps) / fps;
-  const drift = {x: shotT * 5, z: shotT * 0.0016};
+  const drift = {x: shotT * 3, z: 0.06 * (1 - Math.exp(-shotT / 9))};
   let cx = prev.cx + (now.cx - prev.cx) * t + drift.x;
   let cy = prev.cy + (now.cy - prev.cy) * t;
   let z = prev.z + (now.z - prev.z) * t + drift.z;
@@ -56,11 +66,20 @@ const useCamera = (film: Film, frame: number, fps: number) => {
     const pe = shotStart(scenes, i - 1);
     const pc = at(i - 1);
     const pT = (s.t_start - scenes[pe].t_start);
-    const from = {cx: pc.cx + pT * 5, cy: pc.cy, z: pc.z + pT * 0.0016};
+    const from = {cx: pc.cx + pT * 3, cy: pc.cy, z: pc.z + 0.06 * (1 - Math.exp(-pT / 9))};
     const tt = interpolate(local, [0, TRAVEL], [0, 1], {...clamp, easing: Easing.inOut(Easing.cubic)});
     cx = from.cx + (cx - from.cx) * tt;
     cy = from.cy + (cy - from.cy) * tt;
     z = from.z + (z - from.z) * tt - Math.sin(tt * Math.PI) * 0.05;
+  }
+  // camera shake: 3 px for 0.2 s when a scene marks a crash
+  for (const sc of scenes) {
+    if (sc.shake === undefined) continue;
+    const d = frame - (sc.t_start + sc.shake) * fps;
+    if (d >= 0 && d < 0.2 * fps) {
+      cx += Math.sin(d * 2.7) * 3;
+      cy += Math.cos(d * 3.3) * 3;
+    }
   }
   return {cx, cy, z, scene: s, index: i, local};
 };
@@ -129,6 +148,14 @@ const Element: React.FC<{el: El; f: number; film: Film; id: string; seed: number
       return <Prop el={el} f={f} pal={pal} />;
     case 'clipping':
       return <Clipping el={el} f={f} pal={pal} id={id} />;
+    case 'desk':
+      return <rect x={-el.w / 2} y={-el.h / 2} width={el.w} height={el.h} rx={18} fill="#181A1F" opacity={Math.min(1, f / 8)} style={{filter: 'drop-shadow(0 6px 18px rgba(0,0,0,.22))'}} />;
+    case 'tag':
+      return (
+        <text x={0} y={0} fontFamily="JetBrains Mono" fontSize={26} letterSpacing={1} fill={el.dark ? '#E9E4D8' : '#3A3A3A'} opacity={Math.min(1, f / 10)}>
+          {el.text.toUpperCase()}
+        </text>
+      );
     case 'linechart':
       return <LineChart el={el} f={f} pal={pal} />;
     default:
@@ -303,6 +330,14 @@ const InklineFilm: React.FC<{film: Film; amp: number}> = ({film, amp: voiceAmp})
               const endF = last(el).t_end * fps;
               if (frame > endF + 1 && last(el) !== film.scenes[shotEnd(film.scenes, si)]) return null;
               const fade = el.life ? interpolate(frame, [endF - 8, endF], [1, 0], clamp) : 1;
+              if (el.type === 'sprite') {
+                const speaker = film.scenes[cam.index].speaker ?? 'narrator';
+                return (
+                  <div key={`${s.id}-${ei}`} style={{opacity: fade}}>
+                    <Sprite el={el} film={film} si={si} frame={frame} fps={fps} amp={amp} speaking={speaker === el.who} left={s.strip_x * PANEL + el.x} />
+                  </div>
+                );
+              }
               return (
                 <svg
                   key={`${s.id}-${ei}`}
@@ -342,14 +377,20 @@ const InklineFilm: React.FC<{film: Film; amp: number}> = ({film, amp: voiceAmp})
             );
           }
           s.elements.forEach((el, ei) => {
-            const file = sfxFor(el);
-            if (!file) return;
-            out.push(
-              <Sequence key={`${s.id}-${ei}-sfx`} from={start + Math.round((el.at ?? 0) * fps)} durationInFrames={45}>
-                <Audio src={staticFile(`sfx/${file}`)} volume={el.type === 'stamp' ? 0.45 : 0.2} />
-              </Sequence>,
+            sfxFor(el).forEach(([file, dt, vol], k) =>
+              out.push(
+                <Sequence key={`${s.id}-${ei}-sfx${k}`} from={start + Math.round(((el.at ?? 0) + dt) * fps)} durationInFrames={45}>
+                  <Audio src={staticFile(`sfx/${file}`)} volume={vol} />
+                </Sequence>,
+              ),
             );
           });
+          if (s.shake !== undefined)
+            out.push(
+              <Sequence key={`${s.id}-thud`} from={start + Math.round(s.shake * fps)} durationInFrames={40}>
+                <Audio src={staticFile('sfx/thud.wav')} volume={0.55} />
+              </Sequence>,
+            );
           return out;
         })}
     </AbsoluteFill>

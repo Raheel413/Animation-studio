@@ -77,7 +77,10 @@ export type ActorProps = {
 const MOODS = ['neutral', 'happy', 'sad', 'worried', 'angry', 'surprised'] as const;
 
 export const Actor: React.FC<ActorProps> = ({el, f, pal, seed, cues, amp, walking, walkPhase, face}) => {
-  const look = {...DEFAULT_LOOK, ...(el.look ?? {})};
+  const sil = !!el.silhouette;
+  const look = sil
+    ? {skin: '#7D8B92', hair: '#5C6B73', hairStyle: 'bald' as const, shirt: '#5C6B73', pants: '#4B5961', shoes: '#3D474D'}
+    : {...DEFAULT_LOOK, ...(el.look ?? {})};
   const ink = pal.ink;
 
   // --- pose timeline with eased blends between cues
@@ -247,10 +250,10 @@ export const Actor: React.FC<ActorProps> = ({el, f, pal, seed, cues, amp, walkin
           <g transform={`translate(4,${shY - 66}) rotate(${pose.tilt})`}>
             <circle cx={0} cy={0} r={50} fill={look.skin} stroke={ink} strokeWidth={4} />
             {/* ear */}
-            <ellipse cx={-38} cy={6} rx={8} ry={12} fill={look.skin} stroke={ink} strokeWidth={3.5} />
+            {!sil && <ellipse cx={-38} cy={6} rx={8} ry={12} fill={look.skin} stroke={ink} strokeWidth={3.5} />}
             {hair()}
             {/* eyes look toward gaze */}
-            <g transform={`translate(${8 + gaze * 6},${2})`}>
+            <g opacity={sil ? 0 : 1} transform={`translate(${8 + gaze * 6},${2})`}>
               <ellipse cx={-14} cy={-4} rx={9} ry={11 * blink} fill="#FFFDF8" stroke={ink} strokeWidth={2.5} />
               <ellipse cx={18} cy={-4} rx={9} ry={11 * blink} fill="#FFFDF8" stroke={ink} strokeWidth={2.5} />
               {blink > 0.5 && (
