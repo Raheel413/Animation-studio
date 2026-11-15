@@ -1,61 +1,118 @@
 import React from 'react';
 import {AbsoluteFill, Audio, Easing, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {useAudioData, visualizeAudio} from '@remotion/media-utils';
+import {Actor} from './elements/Actor';
 import '@fontsource/fraunces/900.css';
 import '@fontsource/caveat/700.css';
 import {clamp, InkDefs, prog} from './ink';
 import {Character} from './elements/Character';
 import {Bars, CheckGrid, Note, Prop, Stamp, Tally} from './elements/Parts';
-import type {El, Film, Scene} from './types';
+import {Clipping, LineChart} from './elements/News';
+import type {ActorEl, El, Film, Scene} from './types';
 
 const PANEL = 1920;
 const TRAVEL = 20; // frames a strip travel takes
 
-const sfxFor = (el: El): string | null =>
-  el.type === 'stamp' ? 'stamp.wav' : el.type === 'tally' || el.type === 'checkgrid' ? 'ticks.wav' : el.type === 'note' ? 'pen_short.wav' : 'pen.wav';
+const sfxFor = (el: El): string | null => (el.type === 'stamp' ? 'stamp.wav' : el.type === 'clipping' ? 'slide.wav' : null);
 
-/** Camera: travels along the strip between scenes, drifts and zooms inside a scene. */
+/** Shots: runs of consecutive scenes on the same strip panel. The camera only travels between shots. */
+export const shotStart = (scenes: Scene[], i: number) => {
+  let j = i;
+  while (j > 0 && scenes[j - 1].strip_x === scenes[i].strip_x) j--;
+  return j;
+};
+export const shotEnd = (scenes: Scene[], i: number) => {
+  let j = i;
+  while (j < scenes.length - 1 && scenes[j + 1].strip_x === scenes[i].strip_x) j++;
+  return j;
+};
+
+/** Camera: travels along the strip between shots; inside a shot it eases between framings and drifts slowly. */
 const useCamera = (film: Film, frame: number, fps: number) => {
   const scenes = film.scenes;
   let i = scenes.findIndex((s) => frame < s.t_end * fps);
   if (i < 0) i = scenes.length - 1;
   const s = scenes[i];
-  const prev = scenes[Math.max(0, i - 1)];
-  const start = s.t_start * fps;
-  const len = Math.max(1, (s.t_end - s.t_start) * fps);
-  const local = frame - start;
-
-  const target = (sc: Scene, t: number) => {
-    const z = interpolate(t, [0, 1], [1, sc.camera?.zoom ?? 1.04], clamp);
-    const fx = sc.camera?.focus?.[0] ?? PANEL / 2;
-    const fy = sc.camera?.focus?.[1] ?? 540;
-    const pull = sc.camera?.zoom ? interpolate(t, [0, 1], [0, 1], {...clamp, easing: Easing.inOut(Easing.cubic)}) : 0;
-    return {
-      cx: sc.strip_x * PANEL + interpolate(pull, [0, 1], [PANEL / 2, fx]) + t * 26, // slow dolly
-      cy: interpolate(pull, [0, 1], [540, fy]),
-      z,
-    };
+  const local = frame - s.t_start * fps;
+  const j0 = shotStart(scenes, i);
+  const framing = (k: number) => {
+    // a scene keeps the framing of the scene before it in the same shot unless it sets its own
+    for (let q = k; q >= j0; q--) if (scenes[q].camera) return scenes[q].camera!;
+    return {zoom: 1.0, focus: [960, 540] as [number, number]};
   };
-
-  const now = target(s, local / len);
-  const kind = s.transition_in ?? 'travel';
-  if (i === 0 || kind !== 'travel') return {...now, scene: s, index: i, local};
-  const from = target(prev, 1);
-  const t = interpolate(local, [0, TRAVEL], [0, 1], {...clamp, easing: Easing.inOut(Easing.cubic)});
-  return {
-    cx: interpolate(t, [0, 1], [from.cx, now.cx]),
-    cy: interpolate(t, [0, 1], [from.cy, now.cy]),
-    // slight pull-back mid-travel so the move reads as a physical camera
-    z: interpolate(t, [0, 1], [from.z, now.z]) - Math.sin(t * Math.PI) * 0.06,
-    scene: s,
-    index: i,
-    local,
+  const at = (k: number) => {
+    const c = framing(k);
+    return {cx: scenes[k].strip_x * PANEL + (c.focus?.[0] ?? 960), cy: c.focus?.[1] ?? 540, z: c.zoom ?? 1};
   };
+  const now = at(i);
+  const prev = i > j0 ? at(i - 1) : now;
+  const t = interpolate(local, [0, 1.4 * fps], [0, 1], {...clamp, easing: Easing.inOut(Easing.cubic)});
+  const shotT = (frame - scenes[j0].t_start * fps) / fps;
+  const drift = {x: shotT * 5, z: shotT * 0.0016};
+  let cx = prev.cx + (now.cx - prev.cx) * t + drift.x;
+  let cy = prev.cy + (now.cy - prev.cy) * t;
+  let z = prev.z + (now.z - prev.z) * t + drift.z;
+  if (i === j0 && i > 0 && (s.transition_in ?? 'travel') === 'travel') {
+    const pe = shotStart(scenes, i - 1);
+    const pc = at(i - 1);
+    const pT = (s.t_start - scenes[pe].t_start);
+    const from = {cx: pc.cx + pT * 5, cy: pc.cy, z: pc.z + pT * 0.0016};
+    const tt = interpolate(local, [0, TRAVEL], [0, 1], {...clamp, easing: Easing.inOut(Easing.cubic)});
+    cx = from.cx + (cx - from.cx) * tt;
+    cy = from.cy + (cy - from.cy) * tt;
+    z = from.z + (z - from.z) * tt - Math.sin(tt * Math.PI) * 0.05;
+  }
+  return {cx, cy, z, scene: s, index: i, local};
 };
 
-const Element: React.FC<{el: El; f: number; film: Film; id: string; seed: number}> = ({el, f, film, id, seed}) => {
+/** Actor state from the cues of its shot: pose cues, and walking (x offset, phase, blend, facing). */
+const actorState = (film: Film, si: number, el: ActorEl, frame: number, fps: number) => {
+  const scenes = film.scenes;
+  const startF = (scenes[si].t_start + (el.at ?? 0)) * fps;
+  const e = shotEnd(scenes, si);
+  const cues: {f: number; pose?: string; mood?: string; look?: number; face?: 1 | -1}[] = [];
+  const walks: {f0: number; f1: number; to: number}[] = [];
+  for (let k = si; k <= e; k++) {
+    for (const c of scenes[k].cues ?? []) {
+      if (c.who !== el.who) continue;
+      const f = (scenes[k].t_start + (c.at ?? 0)) * fps - startF;
+      cues.push({f, pose: c.pose, mood: c.mood, look: c.look, face: c.face});
+      if (c.walkTo !== undefined) walks.push({f0: f, f1: f + (c.walkDur ?? 1.6) * fps, to: c.walkTo});
+    }
+  }
+  const lf = frame - startF;
+  let x = el.x;
+  let walking = 0;
+  let dist = 0;
+  let face: 1 | -1 = el.face ?? 1;
+  for (const c of cues) if (c.face && lf >= c.f) face = c.face;
+  for (const w of walks) {
+    const from = x;
+    if (lf <= w.f0) break;
+    const t = interpolate(lf, [w.f0, w.f1], [0, 1], {...clamp, easing: Easing.inOut(Easing.sin)});
+    x = from + (w.to - from) * t;
+    dist += Math.abs(w.to - from) * t;
+    if (lf < w.f1) {
+      walking = Math.min(1, Math.min(lf - w.f0, w.f1 - lf) / 6);
+      face = w.to >= from ? 1 : -1;
+    }
+  }
+  return {cues, dx: x - el.x, walking, phase: dist / 26, face};
+};
+
+const Element: React.FC<{el: El; f: number; film: Film; id: string; seed: number; si: number; frame: number; fps: number; amp: number}> = ({el, f, film, id, seed, si, frame, fps, amp}) => {
   if (f < 0) return null;
   const pal = film.palette;
   switch (el.type) {
+    case 'actor': {
+      const st = actorState(film, si, el, frame, fps);
+      const speaking = film.scenes.find((s) => frame >= s.t_start * fps && frame < s.t_end * fps)?.speaker === el.who;
+      return (
+        <g transform={`translate(${st.dx / (el.scale ?? 1)},0)`}>
+          <Actor el={el} f={f} pal={pal} seed={seed} fps={fps} cues={st.cues} amp={speaking ? amp : 0} walkX={st.dx} walking={st.walking} walkPhase={st.phase} face={st.face} />
+        </g>
+      );
+    }
     case 'character':
       return <Character el={el} f={f} pal={pal} seed={seed} />;
     case 'stamp':
@@ -70,6 +127,10 @@ const Element: React.FC<{el: El; f: number; film: Film; id: string; seed: number
       return <CheckGrid el={el} f={f} pal={pal} />;
     case 'prop':
       return <Prop el={el} f={f} pal={pal} />;
+    case 'clipping':
+      return <Clipping el={el} f={f} pal={pal} id={id} />;
+    case 'linechart':
+      return <LineChart el={el} f={f} pal={pal} />;
     default:
       return null;
   }
@@ -199,9 +260,26 @@ const Transition: React.FC<{film: Film; frame: number; fps: number}> = ({film, f
   );
 };
 
-export const Inkline: React.FC<{film: Film}> = ({film}) => {
+/** Voice loudness (0..1) at the current frame, for lip-sync. */
+const WithVoice: React.FC<{film: Film}> = ({film}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const audioData = useAudioData(staticFile(film.vo_file!));
+  let amp = 0;
+  if (audioData) {
+    const bins = visualizeAudio({fps, frame, audioData, numberOfSamples: 32});
+    amp = Math.min(1, (bins.slice(1, 12).reduce((a, b) => a + b, 0) / 11) * 7);
+  }
+  return <InklineFilm film={film} amp={amp} />;
+};
+
+export const Inkline: React.FC<{film: Film}> = ({film}) => (film.vo_file ? <WithVoice film={film} /> : <InklineFilm film={film} amp={-1} />);
+
+const InklineFilm: React.FC<{film: Film; amp: number}> = ({film, amp: voiceAmp}) => {
   const frame = useCurrentFrame();
   const {fps, width, height} = useVideoConfig();
+  // without a voice file, speakers flap their mouths so drafts still read
+  const amp = voiceAmp >= 0 ? voiceAmp : Math.max(0, Math.sin(frame * 0.8)) * 0.7;
   const cam = useCamera(film, frame, fps);
   const k = width / PANEL; // lets the same film render at other sizes
 
@@ -220,18 +298,24 @@ export const Inkline: React.FC<{film: Film}> = ({film}) => {
           {film.scenes.map((s, si) => {
             if (Math.abs(s.strip_x * PANEL + PANEL / 2 - cam.cx) > PANEL * 1.6) return null; // cull far panels
             const start = s.t_start * fps;
-            return s.elements.map((el, ei) => (
-              <svg
-                key={`${s.id}-${ei}`}
-                style={{position: 'absolute', left: s.strip_x * PANEL + el.x, top: el.y, overflow: 'visible'}}
-                width={1}
-                height={1}
-              >
-                <g transform={`scale(${el.scale ?? 1})`}>
-                  <Element el={el} f={frame - start - (el.at ?? 0) * fps} film={film} id={`${s.id}-${ei}`} seed={si * 7 + ei} />
-                </g>
-              </svg>
-            ));
+            const last = (el: El) => film.scenes[Math.min(el.life ? si + el.life - 1 : shotEnd(film.scenes, si), shotEnd(film.scenes, si))];
+            return s.elements.map((el, ei) => {
+              const endF = last(el).t_end * fps;
+              if (frame > endF + 1 && last(el) !== film.scenes[shotEnd(film.scenes, si)]) return null;
+              const fade = el.life ? interpolate(frame, [endF - 8, endF], [1, 0], clamp) : 1;
+              return (
+                <svg
+                  key={`${s.id}-${ei}`}
+                  style={{position: 'absolute', left: s.strip_x * PANEL + el.x, top: el.y, overflow: 'visible', opacity: fade}}
+                  width={1}
+                  height={1}
+                >
+                  <g transform={`scale(${el.scale ?? 1})`}>
+                    <Element el={el} f={frame - start - (el.at ?? 0) * fps} film={film} id={`${s.id}-${ei}`} seed={si * 7 + ei} si={si} frame={frame} fps={fps} amp={amp} />
+                  </g>
+                </svg>
+              );
+            });
           })}
         </div>
 
@@ -250,10 +334,10 @@ export const Inkline: React.FC<{film: Film}> = ({film}) => {
         film.scenes.flatMap((s, si) => {
           const start = Math.round(s.t_start * fps);
           const out: React.ReactNode[] = [];
-          if (si > 0 && (s.transition_in ?? 'travel') !== 'cut') {
+          if (si > 0 && s.strip_x !== film.scenes[si - 1].strip_x && (s.transition_in ?? 'travel') !== 'cut') {
             out.push(
               <Sequence key={`${s.id}-tr`} from={Math.max(0, start - (s.transition_in === 'travel' || !s.transition_in ? 0 : 12))} durationInFrames={40}>
-                <Audio src={staticFile(s.transition_in === 'fold' ? 'sfx/fold.wav' : 'sfx/slide.wav')} volume={0.35} />
+                <Audio src={staticFile(s.transition_in === 'fold' ? 'sfx/fold.wav' : 'sfx/slide.wav')} volume={0.16} />
               </Sequence>,
             );
           }
@@ -262,7 +346,7 @@ export const Inkline: React.FC<{film: Film}> = ({film}) => {
             if (!file) return;
             out.push(
               <Sequence key={`${s.id}-${ei}-sfx`} from={start + Math.round((el.at ?? 0) * fps)} durationInFrames={45}>
-                <Audio src={staticFile(`sfx/${file}`)} volume={el.type === 'stamp' ? 0.7 : 0.3} />
+                <Audio src={staticFile(`sfx/${file}`)} volume={el.type === 'stamp' ? 0.45 : 0.2} />
               </Sequence>,
             );
           });

@@ -1,0 +1,4178 @@
+{
+ "format": "inkline",
+ "title": "Who Took My Money? The November 5th Sell-Off and Your 401(k)",
+ "fps": 30,
+ "palette": {
+  "paper": "#F3EEE3",
+  "ink": "#1E1B18",
+  "a": "#2E6B3F",
+  "b": "#9C3D2E"
+ },
+ "spine": "none",
+ "voices": {
+  "narrator": "aura-2-zeus-en",
+  "dee": "aura-2-thalia-en"
+ },
+ "vo_file": null,
+ "music_file": null,
+ "sfx": true,
+ "sources": [
+  {
+   "outlet": "Associated Press",
+   "date": "2026-11-05",
+   "finding": "S&P 500 fell 4.4%, worst day since April 2025; Dow -1,833; Nasdaq -5.5%; Nvidia -9.3%"
+  },
+  {
+   "outlet": "Reuters (via Express Tribune) / CNN",
+   "date": "2026-11-06",
+   "finding": "About $2.5 trillion wiped off the Nasdaq"
+  },
+  {
+   "outlet": "ABC News",
+   "date": "2026-11-05",
+   "finding": "Dow plunges 1,800+ points, erasing midterm rally"
+  },
+  {
+   "outlet": "The Motley Fool (Stock Analysis data)",
+   "date": "2026-11",
+   "finding": "Magnificent Seven = 33.7% of the S&P 500; per-company weights"
+  },
+  {
+   "outlet": "Fidelity Q2 2026 Retirement Analysis (via Kiplinger)",
+   "date": "2026-09",
+   "finding": "Average 401(k) balance $155,800"
+  },
+  {
+   "outlet": "FRED / Trading Economics",
+   "date": "2026",
+   "finding": "10-year Treasury yield crossed 5% in Sept 2026, ~5.24% early Oct, ~4.86% Nov 6"
+  }
+ ],
+ "scenes": [
+  {
+   "id": "s001",
+   "strip_x": 0,
+   "vo": "Thursday, November fifth.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0
+    },
+    {
+     "type": "prop",
+     "kind": "ground",
+     "x": 960,
+     "y": 900,
+     "w": 1640,
+     "at": 0.1
+    },
+    {
+     "type": "prop",
+     "kind": "bus",
+     "x": 1340,
+     "y": 894,
+     "at": 0.0,
+     "scale": 1.5
+    },
+    {
+     "type": "prop",
+     "kind": "calendar",
+     "x": 980,
+     "y": 300,
+     "at": 0.2,
+     "scale": 1.3,
+     "text": "5",
+     "life": 2
+    },
+    {
+     "type": "actor",
+     "who": "dee",
+     "x": 160,
+     "y": 900,
+     "look": {
+      "skin": "#B9805A",
+      "hair": "#2B1D16",
+      "hairStyle": "bun",
+      "shirt": "#3E7C7B",
+      "pants": "#2F3B52"
+     },
+     "pose": "relaxed",
+     "mood": "neutral",
+     "at": 0.0,
+     "scale": 1.65,
+     "face": 1,
+     "holding": "phone"
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.3,
+     "walkTo": 620,
+     "walkDur": 2.2
+    }
+   ]
+  },
+  {
+   "id": "s002",
+   "strip_x": 0,
+   "vo": "Dee drives a school bus.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "route 14",
+     "x": 1280,
+     "y": 380,
+     "at": 0.3,
+     "size": 68,
+     "life": 1
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.2,
+     "pose": "relaxed",
+     "look": 1,
+     "face": -1
+    }
+   ]
+  },
+  {
+   "id": "s003",
+   "strip_x": 0,
+   "vo": "At lunch she opens her retirement app.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "12:30",
+     "x": 980,
+     "y": 330,
+     "at": 0.6,
+     "size": 68,
+     "life": 2
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "face": 1,
+     "pose": "phone"
+    }
+   ],
+   "camera": {
+    "zoom": 1.15,
+    "focus": [
+     760,
+     540
+    ]
+   }
+  },
+  {
+   "id": "s004",
+   "strip_x": 0,
+   "vo": "It's down almost seven thousand dollars since breakfast.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "phone",
+     "x": 1000,
+     "y": 470,
+     "at": 0.3,
+     "scale": 1.7,
+     "text": "−$6,940",
+     "life": 1
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.2,
+     "pose": "phone_shock",
+     "mood": "surprised"
+    }
+   ],
+   "camera": {
+    "zoom": 1.35,
+    "focus": [
+     560,
+     520
+    ]
+   }
+  },
+  {
+   "id": "s005",
+   "strip_x": 0,
+   "vo": "I didn't touch anything.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "open_hands",
+     "mood": "worried",
+     "look": 1
+    }
+   ],
+   "speaker": "dee"
+  },
+  {
+   "id": "s006",
+   "strip_x": 0,
+   "vo": "I didn't sell anything.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "0 trades",
+     "x": 900,
+     "y": 380,
+     "at": 0.3,
+     "size": 68,
+     "life": 1
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "shrug"
+    }
+   ],
+   "speaker": "dee"
+  },
+  {
+   "id": "s007",
+   "strip_x": 0,
+   "vo": "Who took my money?",
+   "elements": [],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "head_hands",
+     "mood": "worried"
+    }
+   ],
+   "speaker": "dee",
+   "camera": {
+    "zoom": 1.5,
+    "focus": [
+     620,
+     470
+    ]
+   }
+  },
+  {
+   "id": "s008",
+   "strip_x": 1,
+   "vo": "She had company.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0
+    },
+    {
+     "type": "prop",
+     "kind": "ground",
+     "x": 960,
+     "y": 900,
+     "w": 1640,
+     "at": 0.1
+    },
+    {
+     "type": "actor",
+     "who": "c0",
+     "x": 360,
+     "y": 900,
+     "look": {
+      "skin": "#F0C8A0",
+      "hair": "#9C3D2E",
+      "hairStyle": "cap",
+      "shirt": "#E3B341",
+      "pants": "#34495E"
+     },
+     "pose": "phone",
+     "mood": "worried",
+     "at": 0.1,
+     "scale": 1.1,
+     "face": 1,
+     "holding": "phone"
+    },
+    {
+     "type": "actor",
+     "who": "c1",
+     "x": 740,
+     "y": 900,
+     "look": {
+      "skin": "#8D5A3B",
+      "hair": "#1B1410",
+      "hairStyle": "short",
+      "shirt": "#A44A3F",
+      "pants": "#2B2B2B"
+     },
+     "pose": "phone",
+     "mood": "worried",
+     "at": 0.35,
+     "scale": 1.1,
+     "face": -1,
+     "holding": "phone"
+    },
+    {
+     "type": "actor",
+     "who": "c2",
+     "x": 1120,
+     "y": 900,
+     "look": {
+      "skin": "#E8B98F",
+      "hair": "#C9A24B",
+      "hairStyle": "long",
+      "shirt": "#7A6FAE",
+      "pants": "#3B4A5A"
+     },
+     "pose": "phone",
+     "mood": "worried",
+     "at": 0.6,
+     "scale": 1.1,
+     "face": 1,
+     "holding": "phone"
+    },
+    {
+     "type": "actor",
+     "who": "c3",
+     "x": 1500,
+     "y": 900,
+     "look": {
+      "skin": "#D4A27A",
+      "hair": "#6B6B6B",
+      "hairStyle": "short",
+      "shirt": "#5E8C61",
+      "pants": "#4A3B2F"
+     },
+     "pose": "phone",
+     "mood": "worried",
+     "at": 0.85,
+     "scale": 1.1,
+     "face": -1,
+     "holding": "phone"
+    }
+   ],
+   "transition_in": "travel",
+   "cues": [
+    {
+     "who": "c1",
+     "at": 0.9,
+     "pose": "head_hands"
+    },
+    {
+     "who": "c3",
+     "at": 1.3,
+     "pose": "phone_shock",
+     "mood": "surprised"
+    }
+   ]
+  },
+  {
+   "id": "s009",
+   "strip_x": 1,
+   "vo": "That day the S and P 500 fell four point four percent, its worst day since April of last year.",
+   "elements": [
+    {
+     "type": "clipping",
+     "source": "Associated Press",
+     "date": "Nov. 5, 2026",
+     "lines": [
+      "A brutal sell-off for AI stocks",
+      "sends Wall Street reeling"
+     ],
+     "hl": [
+      0,
+      1
+     ],
+     "x": 960,
+     "y": 270,
+     "at": 0.1,
+     "size": 54,
+     "w": 900,
+     "rotate": -2,
+     "life": 1
+    },
+    {
+     "type": "note",
+     "text": "S&P 500: −4.4%",
+     "x": 1620,
+     "y": 470,
+     "at": 2.6,
+     "size": 50,
+     "side": "b",
+     "life": 1
+    }
+   ],
+   "cues": [
+    {
+     "who": "c0",
+     "at": 1.0,
+     "pose": "slump",
+     "mood": "sad"
+    },
+    {
+     "who": "c2",
+     "at": 3.0,
+     "pose": "shrug"
+    }
+   ],
+   "camera": {
+    "zoom": 1.08,
+    "focus": [
+     960,
+     500
+    ]
+   }
+  },
+  {
+   "id": "s010",
+   "strip_x": 1,
+   "vo": "By one estimate, about two and a half trillion dollars left the Nasdaq in a single session.",
+   "elements": [
+    {
+     "type": "clipping",
+     "source": "Reuters",
+     "date": "Nov. 6, 2026",
+     "lines": [
+      "Investors wipe $2.5t off Nasdaq",
+      "as blue tsunami prompts AI fears"
+     ],
+     "hl": [
+      0
+     ],
+     "x": 960,
+     "y": 270,
+     "at": 0.1,
+     "size": 52,
+     "w": 920,
+     "rotate": 2,
+     "life": 1
+    }
+   ],
+   "cues": [
+    {
+     "who": "c1",
+     "at": 1.5,
+     "pose": "slump",
+     "mood": "sad"
+    },
+    {
+     "who": "c3",
+     "at": 3.2,
+     "pose": "arms_crossed",
+     "mood": "angry"
+    }
+   ]
+  },
+  {
+   "id": "s011",
+   "strip_x": 2,
+   "vo": "Then something odd happened.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0,
+     "side": "a"
+    },
+    {
+     "type": "prop",
+     "kind": "ground",
+     "x": 960,
+     "y": 900,
+     "w": 1640,
+     "at": 0.1
+    },
+    {
+     "type": "actor",
+     "who": "dee",
+     "x": 320,
+     "y": 900,
+     "look": {
+      "skin": "#B9805A",
+      "hair": "#2B1D16",
+      "hairStyle": "bun",
+      "shirt": "#3E7C7B",
+      "pants": "#2F3B52"
+     },
+     "pose": "stand",
+     "mood": "neutral",
+     "at": 0.0,
+     "scale": 1.65,
+     "face": 1,
+     "holding": "phone"
+    }
+   ],
+   "transition_in": "fold",
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.6,
+     "pose": "phone",
+     "mood": "surprised"
+    }
+   ]
+  },
+  {
+   "id": "s012",
+   "strip_x": 2,
+   "vo": "A week later, most of it was back.",
+   "elements": [
+    {
+     "type": "linechart",
+     "points": [
+      {
+       "v": 7689,
+       "label": "Nov 4"
+      },
+      {
+       "v": 7354,
+       "label": "Nov 5",
+       "tag": "7,354",
+       "tagDy": 62
+      },
+      {
+       "v": 7460
+      },
+      {
+       "v": 7530
+      },
+      {
+       "v": 7616,
+       "label": "Nov 11",
+       "tag": "−2.6%"
+      }
+     ],
+     "x": 700,
+     "y": 250,
+     "w": 1000,
+     "h": 440,
+     "at": 0.1,
+     "side": "a",
+     "draw": 55,
+     "title": "S&P 500 closing level",
+     "min": 7250,
+     "max": 7900,
+     "ref": 7819,
+     "refLabel": "record 7,819"
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.8,
+     "pose": "point",
+     "mood": "happy",
+     "look": 1
+    }
+   ]
+  },
+  {
+   "id": "s013",
+   "strip_x": 2,
+   "vo": "So I panicked for nothing?",
+   "elements": [],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "shrug",
+     "mood": "worried"
+    }
+   ],
+   "speaker": "dee",
+   "camera": {
+    "zoom": 1.25,
+    "focus": [
+     620,
+     520
+    ]
+   }
+  },
+  {
+   "id": "s014",
+   "strip_x": 2,
+   "vo": "Maybe. Maybe not.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.2,
+     "pose": "think",
+     "mood": "neutral"
+    }
+   ],
+   "camera": {
+    "zoom": 1.0,
+    "focus": [
+     960,
+     540
+    ]
+   }
+  },
+  {
+   "id": "s015",
+   "strip_x": 2,
+   "vo": "That one bad day showed something about your 401k that most people never check.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "phone",
+     "x": 330,
+     "y": 320,
+     "at": 1.6,
+     "scale": 0.9,
+     "text": "401(k)",
+     "life": 1
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "phone",
+     "mood": "neutral"
+    },
+    {
+     "who": "dee",
+     "at": 2.6,
+     "pose": "explain",
+     "look": 1
+    }
+   ]
+  },
+  {
+   "id": "s016",
+   "strip_x": 3,
+   "vo": "So, three questions.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0
+    },
+    {
+     "type": "prop",
+     "kind": "ground",
+     "x": 960,
+     "y": 900,
+     "w": 1640,
+     "at": 0.1
+    },
+    {
+     "type": "actor",
+     "who": "dee",
+     "x": 330,
+     "y": 900,
+     "look": {
+      "skin": "#B9805A",
+      "hair": "#2B1D16",
+      "hairStyle": "bun",
+      "shirt": "#3E7C7B",
+      "pants": "#2F3B52"
+     },
+     "pose": "explain",
+     "mood": "neutral",
+     "at": 0.0,
+     "scale": 1.65,
+     "face": 1
+    },
+    {
+     "type": "prop",
+     "kind": "calendar",
+     "x": 800,
+     "y": 430,
+     "at": 0.3,
+     "scale": 1.4,
+     "text": "1"
+    },
+    {
+     "type": "prop",
+     "kind": "calendar",
+     "x": 1130,
+     "y": 430,
+     "at": 0.55,
+     "scale": 1.4,
+     "text": "2"
+    },
+    {
+     "type": "prop",
+     "kind": "calendar",
+     "x": 1460,
+     "y": 430,
+     "at": 0.8,
+     "scale": 1.4,
+     "text": "3"
+    }
+   ],
+   "transition_in": "travel"
+  },
+  {
+   "id": "s017",
+   "strip_x": 3,
+   "vo": "What happened on November fifth?",
+   "elements": [
+    {
+     "type": "note",
+     "text": "Nov 5",
+     "x": 730,
+     "y": 650,
+     "at": 0.2,
+     "size": 68
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "point",
+     "look": 1
+    }
+   ]
+  },
+  {
+   "id": "s018",
+   "strip_x": 3,
+   "vo": "How much of it landed on you?",
+   "elements": [
+    {
+     "type": "note",
+     "text": "$ ?",
+     "x": 1080,
+     "y": 650,
+     "at": 0.2,
+     "size": 68
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "open_hands"
+    }
+   ]
+  },
+  {
+   "id": "s019",
+   "strip_x": 3,
+   "vo": "And is it over?",
+   "elements": [
+    {
+     "type": "note",
+     "text": "→ ?",
+     "x": 1400,
+     "y": 650,
+     "at": 0.2,
+     "size": 68
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "think"
+    }
+   ]
+  },
+  {
+   "id": "s020",
+   "strip_x": 3,
+   "vo": "Give me five minutes and you'll be able to answer all three yourself.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "deal",
+     "x": 1120,
+     "y": 230,
+     "at": 1.2,
+     "size": 68,
+     "side": "a"
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.3,
+     "pose": "celebrate",
+     "mood": "happy"
+    },
+    {
+     "who": "dee",
+     "at": 2.0,
+     "pose": "hands_hips"
+    }
+   ]
+  },
+  {
+   "id": "s021",
+   "strip_x": 4,
+   "vo": "Start on Maple Street, which has five hundred shops.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0
+    },
+    {
+     "type": "prop",
+     "kind": "ground",
+     "x": 960,
+     "y": 900,
+     "w": 1640,
+     "at": 0.1
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 260,
+     "y": 900,
+     "at": 0.2,
+     "scale": 0.55
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 460,
+     "y": 900,
+     "at": 0.35,
+     "scale": 0.55
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 660,
+     "y": 900,
+     "at": 0.5,
+     "scale": 0.55
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 860,
+     "y": 900,
+     "at": 0.6499999999999999,
+     "scale": 0.55
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 1060,
+     "y": 900,
+     "at": 0.8,
+     "scale": 0.55
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 1260,
+     "y": 900,
+     "at": 0.95,
+     "scale": 0.55
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 1460,
+     "y": 900,
+     "at": 1.0999999999999999,
+     "scale": 0.55
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 1660,
+     "y": 900,
+     "at": 1.25,
+     "scale": 0.55
+    },
+    {
+     "type": "note",
+     "text": "your town",
+     "x": 860,
+     "y": 230,
+     "at": 1.4,
+     "size": 68
+    },
+    {
+     "type": "actor",
+     "who": "dee",
+     "x": -60,
+     "y": 900,
+     "look": {
+      "skin": "#B9805A",
+      "hair": "#2B1D16",
+      "hairStyle": "bun",
+      "shirt": "#3E7C7B",
+      "pants": "#2F3B52"
+     },
+     "pose": "stand",
+     "mood": "neutral",
+     "at": 0.0,
+     "scale": 1.5,
+     "face": 1
+    }
+   ],
+   "transition_in": "ink_flood",
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.4,
+     "walkTo": 480,
+     "walkDur": 2.4
+    }
+   ]
+  },
+  {
+   "id": "s022",
+   "strip_x": 4,
+   "vo": "Dee can't afford to buy a shop.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "$900,000",
+     "x": 760,
+     "y": 330,
+     "at": 0.4,
+     "size": 68,
+     "side": "b",
+     "life": 1
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "slump",
+     "mood": "sad"
+    }
+   ]
+  },
+  {
+   "id": "s023",
+   "strip_x": 4,
+   "vo": "So every payday she puts a hundred dollars into the street fund.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "coin",
+     "x": 640,
+     "y": 470,
+     "at": 0.8,
+     "scale": 1.0,
+     "life": 1
+    },
+    {
+     "type": "note",
+     "text": "every 2 weeks",
+     "x": 760,
+     "y": 330,
+     "at": 1.6,
+     "size": 68,
+     "life": 1
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "explain",
+     "mood": "neutral"
+    }
+   ]
+  },
+  {
+   "id": "s024",
+   "strip_x": 4,
+   "vo": "The fund buys her a tiny slice of all five hundred.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "coin",
+     "x": 260,
+     "y": 610,
+     "at": 0.2,
+     "scale": 0.55
+    },
+    {
+     "type": "prop",
+     "kind": "coin",
+     "x": 460,
+     "y": 610,
+     "at": 0.32,
+     "scale": 0.55
+    },
+    {
+     "type": "prop",
+     "kind": "coin",
+     "x": 660,
+     "y": 610,
+     "at": 0.44,
+     "scale": 0.55
+    },
+    {
+     "type": "prop",
+     "kind": "coin",
+     "x": 860,
+     "y": 610,
+     "at": 0.56,
+     "scale": 0.55
+    },
+    {
+     "type": "prop",
+     "kind": "coin",
+     "x": 1060,
+     "y": 610,
+     "at": 0.6799999999999999,
+     "scale": 0.55
+    },
+    {
+     "type": "prop",
+     "kind": "coin",
+     "x": 1260,
+     "y": 610,
+     "at": 0.8,
+     "scale": 0.55
+    },
+    {
+     "type": "prop",
+     "kind": "coin",
+     "x": 1460,
+     "y": 610,
+     "at": 0.9199999999999999,
+     "scale": 0.55
+    },
+    {
+     "type": "prop",
+     "kind": "coin",
+     "x": 1660,
+     "y": 610,
+     "at": 1.04,
+     "scale": 0.55
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "stand",
+     "look": 1
+    }
+   ]
+  },
+  {
+   "id": "s025",
+   "strip_x": 4,
+   "vo": "Five hundred shops.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "open_hands",
+     "mood": "happy"
+    }
+   ],
+   "speaker": "dee"
+  },
+  {
+   "id": "s026",
+   "strip_x": 4,
+   "vo": "That's safe.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "hands_hips",
+     "mood": "happy"
+    }
+   ],
+   "speaker": "dee"
+  },
+  {
+   "id": "s027",
+   "strip_x": 4,
+   "vo": "If the bakery has a bad year, I've still got the rest.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 860,
+     "y": 900,
+     "at": 0.4,
+     "scale": 0.55,
+     "side": "b"
+    },
+    {
+     "type": "note",
+     "text": "bread shop",
+     "x": 800,
+     "y": 520,
+     "at": 0.8,
+     "size": 54,
+     "side": "b"
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "point",
+     "look": 1,
+     "mood": "happy"
+    }
+   ],
+   "speaker": "dee"
+  },
+  {
+   "id": "s028",
+   "strip_x": 4,
+   "vo": "That's the idea.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "relaxed",
+     "mood": "happy"
+    }
+   ]
+  },
+  {
+   "id": "s029",
+   "strip_x": 5,
+   "vo": "But the fund doesn't split her money evenly.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0
+    },
+    {
+     "type": "prop",
+     "kind": "ground",
+     "x": 960,
+     "y": 900,
+     "w": 1640,
+     "at": 0.1
+    },
+    {
+     "type": "actor",
+     "who": "dee",
+     "x": 300,
+     "y": 900,
+     "look": {
+      "skin": "#B9805A",
+      "hair": "#2B1D16",
+      "hairStyle": "bun",
+      "shirt": "#3E7C7B",
+      "pants": "#2F3B52"
+     },
+     "pose": "think",
+     "mood": "neutral",
+     "at": 0.0,
+     "scale": 1.65,
+     "face": 1
+    },
+    {
+     "type": "bars",
+     "rows": [
+      {
+       "label": "biggest",
+       "value": 40,
+       "display": "$$$$",
+       "side": "b"
+      },
+      {
+       "label": "middle",
+       "value": 14,
+       "display": "$$",
+       "side": null
+      },
+      {
+       "label": "smallest",
+       "value": 3,
+       "display": "¢",
+       "side": "a"
+      }
+     ],
+     "x": 900,
+     "y": 280,
+     "at": 0.3,
+     "width": 560,
+     "scale": 1,
+     "life": 1
+    }
+   ],
+   "transition_in": "travel"
+  },
+  {
+   "id": "s030",
+   "strip_x": 5,
+   "vo": "Bigger shops get a bigger share, and seven shops on Maple Street have grown enormous.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 640,
+     "y": 900,
+     "at": 0.4,
+     "scale": 0.95,
+     "side": "b"
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 805,
+     "y": 900,
+     "at": 0.65,
+     "scale": 0.95,
+     "side": "b"
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 970,
+     "y": 900,
+     "at": 0.9,
+     "scale": 0.95,
+     "side": "b"
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 1135,
+     "y": 900,
+     "at": 1.15,
+     "scale": 0.95,
+     "side": "b"
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 1300,
+     "y": 900,
+     "at": 1.4,
+     "scale": 0.95,
+     "side": "b"
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 1465,
+     "y": 900,
+     "at": 1.65,
+     "scale": 0.95,
+     "side": "b"
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 1630,
+     "y": 900,
+     "at": 1.9,
+     "scale": 0.95,
+     "side": "b"
+    },
+    {
+     "type": "note",
+     "text": "7 giants",
+     "x": 1060,
+     "y": 200,
+     "at": 3.0,
+     "size": 68,
+     "side": "b"
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 1.0,
+     "pose": "phone_shock",
+     "mood": "surprised",
+     "look": 1
+    }
+   ]
+  },
+  {
+   "id": "s031",
+   "strip_x": 6,
+   "vo": "So out of Dee's hundred dollars, about thirty-four go to those seven.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0,
+     "side": "b"
+    },
+    {
+     "type": "prop",
+     "kind": "ground",
+     "x": 960,
+     "y": 900,
+     "w": 1640,
+     "at": 0.1
+    },
+    {
+     "type": "actor",
+     "who": "dee",
+     "x": 300,
+     "y": 900,
+     "look": {
+      "skin": "#B9805A",
+      "hair": "#2B1D16",
+      "hairStyle": "bun",
+      "shirt": "#3E7C7B",
+      "pants": "#2F3B52"
+     },
+     "pose": "stand",
+     "mood": "neutral",
+     "at": 0.0,
+     "scale": 1.65,
+     "face": 1
+    },
+    {
+     "type": "checkgrid",
+     "total": 100,
+     "filled": 34,
+     "cols": 20,
+     "x": 640,
+     "y": 260,
+     "at": 0.3,
+     "side": "b",
+     "scale": 0.7
+    },
+    {
+     "type": "note",
+     "text": "$34",
+     "x": 680,
+     "y": 660,
+     "at": 3.0,
+     "size": 92,
+     "side": "b"
+    },
+    {
+     "type": "note",
+     "text": "of every $100",
+     "x": 880,
+     "y": 660,
+     "at": 3.6,
+     "size": 68
+    }
+   ],
+   "transition_in": "travel"
+  },
+  {
+   "id": "s032",
+   "strip_x": 6,
+   "vo": "The other four hundred ninety-three shops share what's left.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "$66 for 493",
+     "x": 900,
+     "y": 780,
+     "at": 0.5,
+     "size": 72,
+     "side": "a"
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "think"
+    }
+   ]
+  },
+  {
+   "id": "s033",
+   "strip_x": 6,
+   "vo": "Wait.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "point_up",
+     "mood": "surprised"
+    }
+   ],
+   "speaker": "dee",
+   "camera": {
+    "zoom": 1.3,
+    "focus": [
+     520,
+     520
+    ]
+   }
+  },
+  {
+   "id": "s034",
+   "strip_x": 6,
+   "vo": "A third of my money is in seven shops?",
+   "elements": [],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "head_hands",
+     "mood": "worried"
+    }
+   ],
+   "speaker": "dee"
+  },
+  {
+   "id": "s035",
+   "strip_x": 6,
+   "vo": "Yes.",
+   "elements": [
+    {
+     "type": "stamp",
+     "text": "TRUE",
+     "x": 1180,
+     "y": 460,
+     "at": 0.1,
+     "side": "b",
+     "rotate": -6
+    }
+   ],
+   "camera": {
+    "zoom": 1.0,
+    "focus": [
+     960,
+     540
+    ]
+   }
+  },
+  {
+   "id": "s036",
+   "strip_x": 7,
+   "vo": "The street fund is real.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0
+    },
+    {
+     "type": "prop",
+     "kind": "ground",
+     "x": 960,
+     "y": 900,
+     "w": 1640,
+     "at": 0.1
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 520,
+     "y": 900,
+     "at": 0.1,
+     "scale": 1.3,
+     "text": "S&P 500"
+    }
+   ],
+   "transition_in": "ink_flood"
+  },
+  {
+   "id": "s037",
+   "strip_x": 7,
+   "vo": "It's an S and P 500 index fund, and it sits inside millions of 401k plans.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "phone",
+     "x": 960,
+     "y": 520,
+     "at": 0.4,
+     "scale": 1.0,
+     "text": "401(k)",
+     "life": 1
+    },
+    {
+     "type": "prop",
+     "kind": "phone",
+     "x": 1170,
+     "y": 480,
+     "at": 0.75,
+     "scale": 1.0,
+     "text": "401(k)",
+     "life": 1
+    },
+    {
+     "type": "prop",
+     "kind": "phone",
+     "x": 1380,
+     "y": 520,
+     "at": 1.1,
+     "scale": 1.0,
+     "text": "401(k)",
+     "life": 1
+    },
+    {
+     "type": "prop",
+     "kind": "phone",
+     "x": 1590,
+     "y": 480,
+     "at": 1.4499999999999997,
+     "scale": 1.0,
+     "text": "401(k)",
+     "life": 1
+    }
+   ]
+  },
+  {
+   "id": "s038",
+   "strip_x": 7,
+   "vo": "The seven shops are Apple, Microsoft, Nvidia, Amazon, Alphabet, Meta and Tesla.",
+   "elements": [
+    {
+     "type": "bars",
+     "rows": [
+      {
+       "label": "Apple",
+       "value": 7.2,
+       "display": "7.2%",
+       "side": "b"
+      },
+      {
+       "label": "Nvidia",
+       "value": 6.9,
+       "display": "6.9%",
+       "side": "b"
+      },
+      {
+       "label": "Microsoft",
+       "value": 5.9,
+       "display": "5.9%",
+       "side": "b"
+      },
+      {
+       "label": "Alphabet",
+       "value": 5.1,
+       "display": "5.1%",
+       "side": "b"
+      },
+      {
+       "label": "Amazon",
+       "value": 4.1,
+       "display": "4.1%",
+       "side": "b"
+      },
+      {
+       "label": "Meta",
+       "value": 2.3,
+       "display": "2.3%",
+       "side": "b"
+      },
+      {
+       "label": "Tesla",
+       "value": 2.2,
+       "display": "2.2%",
+       "side": "b"
+      }
+     ],
+     "x": 1160,
+     "y": 170,
+     "at": 0.2,
+     "width": 880,
+     "scale": 0.58,
+     "life": 1
+    },
+    {
+     "type": "note",
+     "text": "share of the S&P 500, Nov 2026",
+     "x": 960,
+     "y": 830,
+     "at": 2.4,
+     "size": 50,
+     "life": 1
+    }
+   ]
+  },
+  {
+   "id": "s039",
+   "strip_x": 7,
+   "vo": "This month they made up thirty-three point seven percent of the whole index.",
+   "elements": [
+    {
+     "type": "clipping",
+     "source": "Source: The Motley Fool",
+     "date": "Nov. 2026",
+     "lines": [
+      "The Magnificent Seven:",
+      "33.7% of the S&P 500"
+     ],
+     "hl": [
+      1
+     ],
+     "x": 1180,
+     "y": 480,
+     "at": 0.1,
+     "size": 62,
+     "w": 760,
+     "rotate": -2,
+     "life": 1
+    }
+   ]
+  },
+  {
+   "id": "s040",
+   "strip_x": 7,
+   "vo": "Put ten thousand dollars in that fund and roughly thirty-four hundred of it rides on seven companies.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "coin",
+     "x": 980,
+     "y": 300,
+     "at": 0.1,
+     "scale": 1.4,
+     "life": 1
+    },
+    {
+     "type": "note",
+     "text": "$10,000",
+     "x": 1060,
+     "y": 320,
+     "at": 0.4,
+     "size": 68,
+     "life": 1
+    },
+    {
+     "type": "bars",
+     "rows": [
+      {
+       "label": "7 giants",
+       "value": 3370,
+       "display": "$3,370",
+       "side": "b"
+      },
+      {
+       "label": "the other 493",
+       "value": 6630,
+       "display": "$6,630",
+       "side": "a"
+      }
+     ],
+     "x": 1180,
+     "y": 450,
+     "at": 1.4,
+     "width": 420,
+     "scale": 1,
+     "life": 1
+    }
+   ]
+  },
+  {
+   "id": "s041",
+   "strip_x": 8,
+   "vo": "All seven are betting heavily on artificial intelligence.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0
+    },
+    {
+     "type": "prop",
+     "kind": "ground",
+     "x": 960,
+     "y": 900,
+     "w": 1640,
+     "at": 0.1
+    },
+    {
+     "type": "prop",
+     "kind": "server",
+     "x": 420,
+     "y": 900,
+     "at": 0.1,
+     "scale": 1
+    },
+    {
+     "type": "prop",
+     "kind": "server",
+     "x": 680,
+     "y": 900,
+     "at": 0.35,
+     "scale": 1
+    },
+    {
+     "type": "prop",
+     "kind": "server",
+     "x": 940,
+     "y": 900,
+     "at": 0.6,
+     "scale": 1
+    },
+    {
+     "type": "prop",
+     "kind": "server",
+     "x": 1200,
+     "y": 900,
+     "at": 0.85,
+     "scale": 1
+    },
+    {
+     "type": "prop",
+     "kind": "server",
+     "x": 1460,
+     "y": 900,
+     "at": 1.1,
+     "scale": 1
+    },
+    {
+     "type": "note",
+     "text": "AI",
+     "x": 1520,
+     "y": 300,
+     "at": 1.4,
+     "size": 110
+    }
+   ],
+   "transition_in": "travel"
+  },
+  {
+   "id": "s042",
+   "strip_x": 8,
+   "vo": "That means giant data centers, and a lot of that building runs on borrowed money.",
+   "elements": [
+    {
+     "type": "actor",
+     "who": "banker",
+     "x": 1560,
+     "y": 900,
+     "look": {
+      "skin": "#D4A27A",
+      "hair": "#6B6B6B",
+      "hairStyle": "short",
+      "shirt": "#5E8C61",
+      "pants": "#4A3B2F"
+     },
+     "pose": "explain",
+     "mood": "happy",
+     "at": 1.4,
+     "scale": 1.5,
+     "face": -1,
+     "holding": "coin"
+    },
+    {
+     "type": "note",
+     "text": "IOU",
+     "x": 1180,
+     "y": 380,
+     "at": 2.6,
+     "size": 96,
+     "side": "b"
+    }
+   ]
+  },
+  {
+   "id": "s043",
+   "strip_x": 9,
+   "vo": "This fall, borrowing got more expensive.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0,
+     "side": "b"
+    },
+    {
+     "type": "linechart",
+     "points": [
+      {
+       "v": 4.1,
+       "label": "Jan"
+      },
+      {
+       "v": 4.44,
+       "t": 2
+      },
+      {
+       "v": 4.6,
+       "t": 5
+      },
+      {
+       "v": 5.02,
+       "t": 8,
+       "label": "Sep",
+       "tag": "5.02%",
+       "tagDx": -60
+      },
+      {
+       "v": 5.24,
+       "t": 9,
+       "tag": "5.24%",
+       "tagDy": -30
+      },
+      {
+       "v": 4.86,
+       "t": 10,
+       "label": "Nov"
+      }
+     ],
+     "x": 420,
+     "y": 250,
+     "w": 1080,
+     "h": 440,
+     "at": 0.1,
+     "side": "b",
+     "draw": 50,
+     "title": "10-year Treasury yield, 2026",
+     "min": 3.9,
+     "max": 5.4,
+     "ref": 5.0,
+     "refLabel": "5%"
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s044",
+   "strip_x": 10,
+   "vo": "Investors started asking a plain question.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0
+    },
+    {
+     "type": "prop",
+     "kind": "ground",
+     "x": 960,
+     "y": 900,
+     "w": 1640,
+     "at": 0.1
+    },
+    {
+     "type": "actor",
+     "who": "i0",
+     "x": 300,
+     "y": 900,
+     "look": {
+      "skin": "#F0C8A0",
+      "hair": "#9C3D2E",
+      "hairStyle": "cap",
+      "shirt": "#E3B341",
+      "pants": "#34495E"
+     },
+     "pose": "arms_crossed",
+     "mood": "neutral",
+     "at": 0.1,
+     "scale": 1.35,
+     "face": 1
+    },
+    {
+     "type": "actor",
+     "who": "i1",
+     "x": 560,
+     "y": 900,
+     "look": {
+      "skin": "#8D5A3B",
+      "hair": "#1B1410",
+      "hairStyle": "short",
+      "shirt": "#A44A3F",
+      "pants": "#2B2B2B"
+     },
+     "pose": "arms_crossed",
+     "mood": "neutral",
+     "at": 0.30000000000000004,
+     "scale": 1.35,
+     "face": 1
+    },
+    {
+     "type": "actor",
+     "who": "i2",
+     "x": 820,
+     "y": 900,
+     "look": {
+      "skin": "#E8B98F",
+      "hair": "#C9A24B",
+      "hairStyle": "long",
+      "shirt": "#7A6FAE",
+      "pants": "#3B4A5A"
+     },
+     "pose": "arms_crossed",
+     "mood": "neutral",
+     "at": 0.5,
+     "scale": 1.35,
+     "face": 1
+    }
+   ],
+   "transition_in": "travel",
+   "cues": [
+    {
+     "who": "i1",
+     "at": 0.8,
+     "pose": "think"
+    },
+    {
+     "who": "i2",
+     "at": 1.2,
+     "pose": "lean_in"
+    }
+   ]
+  },
+  {
+   "id": "s045",
+   "strip_x": 10,
+   "vo": "What if the building slows down?",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "server",
+     "x": 1220,
+     "y": 900,
+     "at": 0.1,
+     "scale": 1
+    },
+    {
+     "type": "prop",
+     "kind": "server",
+     "x": 1460,
+     "y": 900,
+     "at": 0.3,
+     "scale": 1,
+     "side": "b"
+    },
+    {
+     "type": "note",
+     "text": "slower?",
+     "x": 1340,
+     "y": 260,
+     "at": 0.8,
+     "size": 88,
+     "side": "b"
+    }
+   ],
+   "cues": [
+    {
+     "who": "i0",
+     "at": 0.2,
+     "pose": "point",
+     "look": 1,
+     "mood": "worried"
+    }
+   ]
+  },
+  {
+   "id": "s046",
+   "strip_x": 10,
+   "vo": "Then came the midterms, and talk that some governments could pause new data centers.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "calendar",
+     "x": 1640,
+     "y": 330,
+     "at": 0.3,
+     "scale": 1.1,
+     "text": "3"
+    },
+    {
+     "type": "note",
+     "text": "Nov 3 vote",
+     "x": 1560,
+     "y": 520,
+     "at": 0.8,
+     "size": 56
+    },
+    {
+     "type": "note",
+     "text": "on hold?",
+     "x": 1250,
+     "y": 380,
+     "at": 2.6,
+     "size": 62,
+     "side": "b"
+    }
+   ],
+   "cues": [
+    {
+     "who": "i0",
+     "at": 0.5,
+     "pose": "shrug",
+     "mood": "worried"
+    },
+    {
+     "who": "i1",
+     "at": 1.5,
+     "pose": "head_hands",
+     "mood": "worried"
+    },
+    {
+     "who": "i2",
+     "at": 2.5,
+     "pose": "phone_shock",
+     "mood": "surprised"
+    }
+   ]
+  },
+  {
+   "id": "s047",
+   "strip_x": 11,
+   "vo": "On November fifth the worry turned into selling.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0,
+     "side": "b"
+    },
+    {
+     "type": "clipping",
+     "source": "ABC News",
+     "date": "Nov. 5, 2026",
+     "lines": [
+      "Dow plunges 1,800 points, wiping",
+      "out gains from midterm rally"
+     ],
+     "hl": [
+      0
+     ],
+     "x": 960,
+     "y": 500,
+     "at": 0.1,
+     "size": 60,
+     "w": 1060,
+     "rotate": -2,
+     "life": 1
+    }
+   ],
+   "transition_in": "travel"
+  },
+  {
+   "id": "s048",
+   "strip_x": 11,
+   "vo": "Nvidia fell nine point three percent in one day.",
+   "elements": [
+    {
+     "type": "bars",
+     "rows": [
+      {
+       "label": "Nvidia",
+       "value": 9.3,
+       "display": "−9.3%",
+       "side": "b"
+      }
+     ],
+     "x": 620,
+     "y": 420,
+     "at": 0.2,
+     "width": 760,
+     "scale": 1,
+     "life": 2
+    },
+    {
+     "type": "note",
+     "text": "worst since 2025",
+     "x": 760,
+     "y": 330,
+     "at": 1.2,
+     "size": 68,
+     "life": 1
+    }
+   ]
+  },
+  {
+   "id": "s049",
+   "strip_x": 11,
+   "vo": "The Nasdaq dropped five and a half.",
+   "elements": [
+    {
+     "type": "bars",
+     "rows": [
+      {
+       "label": "Nasdaq",
+       "value": 5.5,
+       "display": "−5.5%",
+       "side": "b"
+      },
+      {
+       "label": "S&P 500",
+       "value": 4.4,
+       "display": "−4.4%",
+       "side": "b"
+      }
+     ],
+     "x": 620,
+     "y": 552,
+     "at": 0.1,
+     "width": 449.4623655913978,
+     "scale": 1,
+     "life": 1
+    }
+   ]
+  },
+  {
+   "id": "s050",
+   "strip_x": 11,
+   "vo": "The Dow lost one thousand eight hundred thirty-three points.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 620,
+     "y": 900,
+     "at": 0.1,
+     "scale": 0.9
+    },
+    {
+     "type": "note",
+     "text": "−1,833",
+     "x": 900,
+     "y": 560,
+     "at": 0.6,
+     "size": 150,
+     "side": "b"
+    },
+    {
+     "type": "note",
+     "text": "Dow Jones",
+     "x": 940,
+     "y": 680,
+     "at": 1.2,
+     "size": 68
+    }
+   ]
+  },
+  {
+   "id": "s051",
+   "strip_x": 12,
+   "vo": "Now bring it home.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0,
+     "side": "a"
+    },
+    {
+     "type": "prop",
+     "kind": "ground",
+     "x": 960,
+     "y": 900,
+     "w": 1640,
+     "at": 0.1
+    },
+    {
+     "type": "prop",
+     "kind": "chair",
+     "x": 400,
+     "y": 900,
+     "at": 0.0,
+     "scale": 1.6
+    },
+    {
+     "type": "prop",
+     "kind": "desk",
+     "x": 640,
+     "y": 740,
+     "at": 0.2,
+     "scale": 1.5
+    },
+    {
+     "type": "actor",
+     "who": "dee",
+     "x": 260,
+     "y": 900,
+     "look": {
+      "skin": "#B9805A",
+      "hair": "#2B1D16",
+      "hairStyle": "bun",
+      "shirt": "#3E7C7B",
+      "pants": "#2F3B52"
+     },
+     "pose": "stand",
+     "mood": "neutral",
+     "at": 0.0,
+     "scale": 1.65,
+     "face": 1,
+     "holding": "phone"
+    }
+   ],
+   "transition_in": "fold",
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.4,
+     "walkTo": 420,
+     "walkDur": 1.2
+    },
+    {
+     "who": "dee",
+     "at": 1.7,
+     "pose": "sit"
+    }
+   ]
+  },
+  {
+   "id": "s052",
+   "strip_x": 12,
+   "vo": "Fidelity says the average 401k held about one hundred fifty-five thousand eight hundred dollars this summer.",
+   "elements": [
+    {
+     "type": "clipping",
+     "source": "Kiplinger  ·  Fidelity data",
+     "date": "Q2 2026",
+     "lines": [
+      "The Average 401(k) Balance",
+      "Hits Record High in the",
+      "Second Quarter"
+     ],
+     "hl": [
+      1,
+      2
+     ],
+     "x": 1240,
+     "y": 430,
+     "at": 0.1,
+     "size": 54,
+     "w": 820,
+     "rotate": -2,
+     "life": 1
+    },
+    {
+     "type": "note",
+     "text": "$155,800",
+     "x": 1180,
+     "y": 850,
+     "at": 3.2,
+     "size": 80,
+     "side": "a",
+     "life": 1
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.4,
+     "pose": "sit",
+     "look": 1
+    }
+   ]
+  },
+  {
+   "id": "s053",
+   "strip_x": 12,
+   "vo": "If all of that sat in an S and P 500 fund, a four point four percent drop is about sixty-eight hundred dollars.",
+   "elements": [
+    {
+     "type": "bars",
+     "rows": [
+      {
+       "label": "Nov 4",
+       "value": 155800,
+       "display": "$155,800",
+       "side": "a"
+      },
+      {
+       "label": "Nov 5",
+       "value": 148945,
+       "display": "$148,945",
+       "side": "b"
+      }
+     ],
+     "x": 1080,
+     "y": 300,
+     "at": 0.4,
+     "width": 560,
+     "scale": 1,
+     "life": 1
+    },
+    {
+     "type": "note",
+     "text": "−$6,855",
+     "x": 1140,
+     "y": 640,
+     "at": 3.0,
+     "size": 96,
+     "side": "b",
+     "life": 1
+    },
+    {
+     "type": "note",
+     "text": "in one day",
+     "x": 1420,
+     "y": 660,
+     "at": 5.0,
+     "size": 56,
+     "life": 1
+    }
+   ]
+  },
+  {
+   "id": "s054",
+   "strip_x": 12,
+   "vo": "Gone by dinner.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "sit_slump",
+     "mood": "sad"
+    }
+   ],
+   "camera": {
+    "zoom": 1.35,
+    "focus": [
+     560,
+     560
+    ]
+   }
+  },
+  {
+   "id": "s055",
+   "strip_x": 12,
+   "vo": "You never picked Nvidia.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "server",
+     "x": 1320,
+     "y": 900,
+     "at": 0.2,
+     "scale": 1,
+     "side": "b",
+     "life": 2
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "look": 1
+    }
+   ],
+   "camera": {
+    "zoom": 1.0,
+    "focus": [
+     960,
+     540
+    ]
+   }
+  },
+  {
+   "id": "s056",
+   "strip_x": 12,
+   "vo": "Your fund picked it for you.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "automatic",
+     "x": 1220,
+     "y": 320,
+     "at": 0.4,
+     "size": 68,
+     "life": 1
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "sit",
+     "mood": "worried"
+    }
+   ]
+  },
+  {
+   "id": "s057",
+   "strip_x": 12,
+   "vo": "Okay, but you said it came back.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "sit",
+     "mood": "neutral",
+     "look": 1
+    }
+   ],
+   "speaker": "dee"
+  },
+  {
+   "id": "s058",
+   "strip_x": 13,
+   "vo": "Most of it.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0,
+     "side": "a"
+    },
+    {
+     "type": "prop",
+     "kind": "ground",
+     "x": 960,
+     "y": 900,
+     "w": 1640,
+     "at": 0.1
+    },
+    {
+     "type": "actor",
+     "who": "dee",
+     "x": 280,
+     "y": 900,
+     "look": {
+      "skin": "#B9805A",
+      "hair": "#2B1D16",
+      "hairStyle": "bun",
+      "shirt": "#3E7C7B",
+      "pants": "#2F3B52"
+     },
+     "pose": "stand",
+     "mood": "neutral",
+     "at": 0.0,
+     "scale": 1.65,
+     "face": 1
+    },
+    {
+     "type": "linechart",
+     "points": [
+      {
+       "v": 7689,
+       "label": "Nov 4"
+      },
+      {
+       "v": 7354,
+       "label": "Nov 5",
+       "tag": "7,354",
+       "tagDy": 62
+      },
+      {
+       "v": 7460
+      },
+      {
+       "v": 7530
+      },
+      {
+       "v": 7616,
+       "label": "Nov 11",
+       "tag": "−2.6%"
+      }
+     ],
+     "x": 640,
+     "y": 250,
+     "w": 1080,
+     "h": 440,
+     "at": 0.1,
+     "side": "a",
+     "draw": 40,
+     "title": "S&P 500",
+     "min": 7250,
+     "max": 7900,
+     "ref": 7819,
+     "refLabel": "record"
+    }
+   ],
+   "transition_in": "travel",
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.6,
+     "pose": "point",
+     "look": 1
+    }
+   ]
+  },
+  {
+   "id": "s059",
+   "strip_x": 13,
+   "vo": "By the next Wednesday the index was within two point six percent of its record.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "almost there",
+     "x": 1400,
+     "y": 200,
+     "at": 2.4,
+     "size": 68,
+     "side": "a"
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "explain",
+     "mood": "happy"
+    }
+   ]
+  },
+  {
+   "id": "s060",
+   "strip_x": 13,
+   "vo": "It closed last week up two and a half percent, its best week since August.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "+2.5% in 5 days",
+     "x": 900,
+     "y": 820,
+     "at": 0.4,
+     "size": 62,
+     "side": "a"
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "hands_hips",
+     "mood": "happy"
+    }
+   ]
+  },
+  {
+   "id": "s061",
+   "strip_x": 13,
+   "vo": "For the year it's still up about ten percent.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "+10% in 2026",
+     "x": 1300,
+     "y": 820,
+     "at": 0.4,
+     "size": 62,
+     "side": "a"
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "relaxed"
+    }
+   ]
+  },
+  {
+   "id": "s062",
+   "strip_x": 13,
+   "vo": "Then why are we even talking about this?",
+   "elements": [],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "shrug",
+     "mood": "neutral"
+    }
+   ],
+   "speaker": "dee",
+   "camera": {
+    "zoom": 1.3,
+    "focus": [
+     520,
+     520
+    ]
+   }
+  },
+  {
+   "id": "s063",
+   "strip_x": 14,
+   "vo": "Because of the year 2000.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0,
+     "side": "b"
+    },
+    {
+     "type": "prop",
+     "kind": "calendar",
+     "x": 960,
+     "y": 470,
+     "at": 0.1,
+     "scale": 1.9,
+     "text": "2000",
+     "life": 1
+    }
+   ],
+   "transition_in": "ink_flood"
+  },
+  {
+   "id": "s064",
+   "strip_x": 14,
+   "vo": "Back then the giant shops were internet companies.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 360,
+     "y": 900,
+     "at": 0.1,
+     "scale": 0.8,
+     "side": "b",
+     "life": 1
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 600,
+     "y": 900,
+     "at": 0.30000000000000004,
+     "scale": 0.8,
+     "side": "b",
+     "life": 1
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 840,
+     "y": 900,
+     "at": 0.5,
+     "scale": 0.8,
+     "side": "b",
+     "life": 1
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 1080,
+     "y": 900,
+     "at": 0.7000000000000001,
+     "scale": 0.8,
+     "side": "b",
+     "life": 1
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 1320,
+     "y": 900,
+     "at": 0.9,
+     "scale": 0.8,
+     "side": "b",
+     "life": 1
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 1560,
+     "y": 900,
+     "at": 1.1,
+     "scale": 0.8,
+     "side": "b",
+     "life": 1
+    },
+    {
+     "type": "prop",
+     "kind": "ground",
+     "x": 960,
+     "y": 900,
+     "w": 1640,
+     "at": 0.1
+    },
+    {
+     "type": "note",
+     "text": "dot-coms",
+     "x": 900,
+     "y": 230,
+     "at": 1.4,
+     "size": 68,
+     "side": "b",
+     "life": 1
+    }
+   ]
+  },
+  {
+   "id": "s065",
+   "strip_x": 14,
+   "vo": "The Nasdaq peaked in March 2000 and fell seventy-eight percent by October 2002.",
+   "elements": [
+    {
+     "type": "linechart",
+     "points": [
+      {
+       "v": 5048,
+       "t": 0,
+       "label": "2000",
+       "tag": "5,048",
+       "tagDy": -30
+      },
+      {
+       "v": 1950,
+       "t": 1.8
+      },
+      {
+       "v": 1114,
+       "t": 2.6,
+       "tag": "−78%",
+       "tagDy": 64
+      }
+     ],
+     "x": 420,
+     "y": 250,
+     "w": 760,
+     "h": 440,
+     "at": 0.1,
+     "side": "b",
+     "draw": 55,
+     "title": "Nasdaq Composite",
+     "min": 900,
+     "max": 5400,
+     "life": 1
+    }
+   ]
+  },
+  {
+   "id": "s066",
+   "strip_x": 14,
+   "vo": "It didn't see that peak again until April 2015.",
+   "elements": [
+    {
+     "type": "linechart",
+     "points": [
+      {
+       "v": 5048,
+       "t": 0,
+       "label": "2000",
+       "tag": "5,048",
+       "tagDy": -30
+      },
+      {
+       "v": 1950,
+       "t": 1.8
+      },
+      {
+       "v": 1114,
+       "t": 2.6,
+       "tag": "−78%",
+       "tagDy": 64
+      },
+      {
+       "v": 2003,
+       "t": 3.8
+      },
+      {
+       "v": 2415,
+       "t": 6.8
+      },
+      {
+       "v": 2652,
+       "t": 7.8
+      },
+      {
+       "v": 1577,
+       "t": 8.8
+      },
+      {
+       "v": 2653,
+       "t": 10.8
+      },
+      {
+       "v": 3020,
+       "t": 12.8
+      },
+      {
+       "v": 4177,
+       "t": 13.8
+      },
+      {
+       "v": 4736,
+       "t": 14.8
+      },
+      {
+       "v": 5056,
+       "t": 15.1,
+       "label": "2015",
+       "tag": "15 yrs"
+      }
+     ],
+     "x": 420,
+     "y": 250,
+     "w": 1100,
+     "h": 440,
+     "at": 0.1,
+     "side": "b",
+     "draw": 70,
+     "title": "Nasdaq Composite",
+     "min": 900,
+     "max": 5400,
+     "life": 1,
+     "ref": 5048,
+     "refLabel": "2000 peak"
+    }
+   ]
+  },
+  {
+   "id": "s067",
+   "strip_x": 14,
+   "vo": "Fifteen years.",
+   "elements": [
+    {
+     "type": "tally",
+     "count": 15,
+     "x": 720,
+     "y": 440,
+     "at": 0.1,
+     "side": "b",
+     "scale": 1.8,
+     "life": 1
+    }
+   ],
+   "hold": true
+  },
+  {
+   "id": "s068",
+   "strip_x": 14,
+   "vo": "Plenty of people who sold near the bottom never got back in.",
+   "elements": [
+    {
+     "type": "actor",
+     "who": "s1",
+     "x": 700,
+     "y": 900,
+     "look": {
+      "skin": "#8D5A3B",
+      "hair": "#1B1410",
+      "hairStyle": "short",
+      "shirt": "#A44A3F",
+      "pants": "#2B2B2B"
+     },
+     "pose": "slump",
+     "mood": "sad",
+     "at": 0.1,
+     "scale": 1.4,
+     "face": -1
+    },
+    {
+     "type": "actor",
+     "who": "s2",
+     "x": 960,
+     "y": 900,
+     "look": {
+      "skin": "#E8B98F",
+      "hair": "#C9A24B",
+      "hairStyle": "long",
+      "shirt": "#7A6FAE",
+      "pants": "#3B4A5A"
+     },
+     "pose": "slump",
+     "mood": "sad",
+     "at": 0.3,
+     "scale": 1.4,
+     "face": -1
+    },
+    {
+     "type": "note",
+     "text": "sold at the low",
+     "x": 1200,
+     "y": 380,
+     "at": 1.6,
+     "size": 68,
+     "side": "b"
+    }
+   ],
+   "cues": [
+    {
+     "who": "s1",
+     "at": 1.2,
+     "walkTo": 200,
+     "walkDur": 3.0
+    },
+    {
+     "who": "s2",
+     "at": 1.5,
+     "walkTo": 420,
+     "walkDur": 3.0
+    }
+   ]
+  },
+  {
+   "id": "s069",
+   "strip_x": 14,
+   "vo": "So this is 2000 again.",
+   "elements": [
+    {
+     "type": "actor",
+     "who": "dee",
+     "x": 1500,
+     "y": 900,
+     "look": {
+      "skin": "#B9805A",
+      "hair": "#2B1D16",
+      "hairStyle": "bun",
+      "shirt": "#3E7C7B",
+      "pants": "#2F3B52"
+     },
+     "pose": "stand",
+     "mood": "neutral",
+     "at": 0.0,
+     "scale": 1.65,
+     "face": -1
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.2,
+     "pose": "head_hands",
+     "mood": "worried"
+    }
+   ],
+   "speaker": "dee"
+  },
+  {
+   "id": "s070",
+   "strip_x": 15,
+   "vo": "Nobody knows that.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0
+    },
+    {
+     "type": "prop",
+     "kind": "ground",
+     "x": 960,
+     "y": 900,
+     "w": 1640,
+     "at": 0.1
+    },
+    {
+     "type": "actor",
+     "who": "dee",
+     "x": 360,
+     "y": 900,
+     "look": {
+      "skin": "#B9805A",
+      "hair": "#2B1D16",
+      "hairStyle": "bun",
+      "shirt": "#3E7C7B",
+      "pants": "#2F3B52"
+     },
+     "pose": "open_hands",
+     "mood": "neutral",
+     "at": 0.0,
+     "scale": 1.65,
+     "face": 1
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s071",
+   "strip_x": 15,
+   "vo": "I don't, and neither does anyone on TV.",
+   "elements": [
+    {
+     "type": "actor",
+     "who": "t1",
+     "x": 960,
+     "y": 900,
+     "look": {
+      "skin": "#F0C8A0",
+      "hair": "#9C3D2E",
+      "hairStyle": "cap",
+      "shirt": "#E3B341",
+      "pants": "#34495E"
+     },
+     "pose": "point",
+     "mood": "angry",
+     "at": 0.1,
+     "scale": 1.4,
+     "face": 1
+    },
+    {
+     "type": "actor",
+     "who": "t2",
+     "x": 1400,
+     "y": 900,
+     "look": {
+      "skin": "#D4A27A",
+      "hair": "#6B6B6B",
+      "hairStyle": "short",
+      "shirt": "#5E8C61",
+      "pants": "#4A3B2F"
+     },
+     "pose": "point",
+     "mood": "angry",
+     "at": 0.3,
+     "scale": 1.4,
+     "face": -1
+    },
+    {
+     "type": "note",
+     "text": "pundits",
+     "x": 1180,
+     "y": 230,
+     "at": 0.9,
+     "size": 68,
+     "life": 1
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.2,
+     "pose": "shrug"
+    }
+   ]
+  },
+  {
+   "id": "s072",
+   "strip_x": 15,
+   "vo": "In 2000, many of those companies had no profits at all.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "calendar",
+     "x": 1200,
+     "y": 280,
+     "at": 0.1,
+     "scale": 1.0,
+     "text": "2000",
+     "life": 1
+    },
+    {
+     "type": "note",
+     "text": "$0 profit",
+     "x": 1360,
+     "y": 300,
+     "at": 0.8,
+     "size": 80,
+     "side": "b",
+     "life": 1
+    }
+   ],
+   "cues": [
+    {
+     "who": "t1",
+     "at": 0.2,
+     "pose": "arms_crossed"
+    },
+    {
+     "who": "t2",
+     "at": 0.2,
+     "pose": "explain"
+    }
+   ]
+  },
+  {
+   "id": "s073",
+   "strip_x": 15,
+   "vo": "Today's seven earn real money, and a lot of it.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "coin",
+     "x": 1100,
+     "y": 300,
+     "at": 0.3,
+     "scale": 1.0,
+     "life": 1
+    },
+    {
+     "type": "prop",
+     "kind": "coin",
+     "x": 1180,
+     "y": 270,
+     "at": 0.55,
+     "scale": 1.0,
+     "life": 1
+    },
+    {
+     "type": "prop",
+     "kind": "coin",
+     "x": 1260,
+     "y": 240,
+     "at": 0.8,
+     "scale": 1.0,
+     "life": 1
+    },
+    {
+     "type": "prop",
+     "kind": "coin",
+     "x": 1340,
+     "y": 210,
+     "at": 1.05,
+     "scale": 1.0,
+     "life": 1
+    }
+   ],
+   "cues": [
+    {
+     "who": "t2",
+     "at": 0.1,
+     "pose": "celebrate",
+     "mood": "happy"
+    },
+    {
+     "who": "t1",
+     "at": 0.4,
+     "pose": "hands_hips",
+     "mood": "neutral"
+    }
+   ]
+  },
+  {
+   "id": "s074",
+   "strip_x": 15,
+   "vo": "One bad Thursday followed by one good week proves nothing either way.",
+   "elements": [
+    {
+     "type": "stamp",
+     "text": "UNCLEAR",
+     "x": 1180,
+     "y": 300,
+     "at": 1.6,
+     "side": null,
+     "rotate": -6
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "think"
+    },
+    {
+     "who": "t1",
+     "at": 0.3,
+     "pose": "shrug"
+    },
+    {
+     "who": "t2",
+     "at": 0.5,
+     "pose": "shrug"
+    }
+   ]
+  },
+  {
+   "id": "s075",
+   "strip_x": 16,
+   "vo": "You can't know the future.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0,
+     "side": "a"
+    },
+    {
+     "type": "prop",
+     "kind": "ground",
+     "x": 960,
+     "y": 900,
+     "w": 1640,
+     "at": 0.1
+    },
+    {
+     "type": "actor",
+     "who": "dee",
+     "x": 360,
+     "y": 900,
+     "look": {
+      "skin": "#B9805A",
+      "hair": "#2B1D16",
+      "hairStyle": "bun",
+      "shirt": "#3E7C7B",
+      "pants": "#2F3B52"
+     },
+     "pose": "think",
+     "mood": "neutral",
+     "at": 0.0,
+     "scale": 1.65,
+     "face": 1
+    }
+   ],
+   "transition_in": "ink_flood"
+  },
+  {
+   "id": "s076",
+   "strip_x": 16,
+   "vo": "You can know two things about your own account.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "calendar",
+     "x": 1000,
+     "y": 380,
+     "at": 0.3,
+     "scale": 1,
+     "text": "1",
+     "side": "a"
+    },
+    {
+     "type": "prop",
+     "kind": "calendar",
+     "x": 1320,
+     "y": 380,
+     "at": 0.6,
+     "scale": 1,
+     "text": "2",
+     "side": "a"
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "explain",
+     "mood": "happy"
+    }
+   ]
+  },
+  {
+   "id": "s077",
+   "strip_x": 16,
+   "vo": "First, open your fund's page and find the top ten holdings.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "phone",
+     "x": 1600,
+     "y": 560,
+     "at": 0.3,
+     "scale": 1.2,
+     "text": "Top 10",
+     "life": 2
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "phone"
+    }
+   ]
+  },
+  {
+   "id": "s078",
+   "strip_x": 16,
+   "vo": "Add up the percentages.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "7.2 + 6.9 + 5.9 + 5.1 ...",
+     "x": 900,
+     "y": 640,
+     "at": 0.2,
+     "size": 60,
+     "life": 1
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "think"
+    }
+   ]
+  },
+  {
+   "id": "s079",
+   "strip_x": 16,
+   "vo": "That number is how much of your retirement rides on a handful of companies.",
+   "elements": [
+    {
+     "type": "checkgrid",
+     "total": 100,
+     "filled": 38,
+     "cols": 20,
+     "x": 860,
+     "y": 560,
+     "at": 0.2,
+     "side": "b",
+     "scale": 0.55,
+     "life": 1
+    },
+    {
+     "type": "note",
+     "text": "top 10 ≈ 38%",
+     "x": 900,
+     "y": 820,
+     "at": 2.6,
+     "size": 56,
+     "life": 1
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "point",
+     "look": 1
+    }
+   ]
+  },
+  {
+   "id": "s080",
+   "strip_x": 17,
+   "vo": "Second, count the years until you need the money.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0
+    },
+    {
+     "type": "prop",
+     "kind": "ground",
+     "x": 960,
+     "y": 900,
+     "w": 1640,
+     "at": 0.1
+    },
+    {
+     "type": "actor",
+     "who": "dee",
+     "x": 360,
+     "y": 900,
+     "look": {
+      "skin": "#B9805A",
+      "hair": "#2B1D16",
+      "hairStyle": "bun",
+      "shirt": "#3E7C7B",
+      "pants": "#2F3B52"
+     },
+     "pose": "stand",
+     "mood": "neutral",
+     "at": 0.0,
+     "scale": 1.65,
+     "face": 1
+    },
+    {
+     "type": "prop",
+     "kind": "calendar",
+     "x": 960,
+     "y": 380,
+     "at": 0.4,
+     "scale": 1.3,
+     "text": "?",
+     "life": 1
+    }
+   ],
+   "transition_in": "travel",
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.5,
+     "pose": "think"
+    }
+   ]
+  },
+  {
+   "id": "s081",
+   "strip_x": 17,
+   "vo": "A drop that heals in a week barely matters at thirty.",
+   "elements": [
+    {
+     "type": "actor",
+     "who": "young",
+     "x": 1000,
+     "y": 900,
+     "look": {
+      "skin": "#F0C8A0",
+      "hair": "#9C3D2E",
+      "hairStyle": "cap",
+      "shirt": "#E3B341",
+      "pants": "#34495E"
+     },
+     "pose": "celebrate",
+     "mood": "happy",
+     "at": 0.1,
+     "scale": 1.5,
+     "face": 1,
+     "label": "age 30"
+    },
+    {
+     "type": "note",
+     "text": "decades ahead",
+     "x": 1180,
+     "y": 300,
+     "at": 1.0,
+     "size": 68,
+     "side": "a",
+     "life": 1
+    }
+   ]
+  },
+  {
+   "id": "s082",
+   "strip_x": 17,
+   "vo": "A drop that takes fifteen years is a very different thing at sixty-two.",
+   "elements": [
+    {
+     "type": "actor",
+     "who": "older",
+     "x": 1450,
+     "y": 900,
+     "look": {
+      "skin": "#E1B48C",
+      "hair": "#BDBDBD",
+      "hairStyle": "short",
+      "shirt": "#8C6D5A",
+      "pants": "#3A3A3A"
+     },
+     "pose": "slump",
+     "mood": "worried",
+     "at": 0.1,
+     "scale": 1.5,
+     "face": 1,
+     "label": "age 62"
+    },
+    {
+     "type": "note",
+     "text": "62 + 15 = 77",
+     "x": 1300,
+     "y": 300,
+     "at": 1.4,
+     "size": 80,
+     "side": "b"
+    }
+   ],
+   "cues": [
+    {
+     "who": "young",
+     "at": 0.2,
+     "pose": "relaxed"
+    }
+   ]
+  },
+  {
+   "id": "s083",
+   "strip_x": 18,
+   "vo": "So, our three questions.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0
+    },
+    {
+     "type": "prop",
+     "kind": "ground",
+     "x": 960,
+     "y": 900,
+     "w": 1640,
+     "at": 0.1
+    },
+    {
+     "type": "actor",
+     "who": "dee",
+     "x": 360,
+     "y": 900,
+     "look": {
+      "skin": "#B9805A",
+      "hair": "#2B1D16",
+      "hairStyle": "bun",
+      "shirt": "#3E7C7B",
+      "pants": "#2F3B52"
+     },
+     "pose": "explain",
+     "mood": "neutral",
+     "at": 0.0,
+     "scale": 1.65,
+     "face": 1
+    },
+    {
+     "type": "prop",
+     "kind": "calendar",
+     "x": 860,
+     "y": 300,
+     "at": 0.2,
+     "scale": 1.1,
+     "text": "1"
+    },
+    {
+     "type": "prop",
+     "kind": "calendar",
+     "x": 1160,
+     "y": 300,
+     "at": 0.4,
+     "scale": 1.1,
+     "text": "2"
+    },
+    {
+     "type": "prop",
+     "kind": "calendar",
+     "x": 1460,
+     "y": 300,
+     "at": 0.6000000000000001,
+     "scale": 1.1,
+     "text": "3"
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s084",
+   "strip_x": 18,
+   "vo": "What happened?",
+   "elements": [
+    {
+     "type": "note",
+     "text": "Nov 5",
+     "x": 800,
+     "y": 470,
+     "at": 0.2,
+     "size": 68
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "point_up"
+    }
+   ]
+  },
+  {
+   "id": "s085",
+   "strip_x": 18,
+   "vo": "Investors got nervous about the borrowed money behind the A I boom, and they sold.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "server",
+     "x": 900,
+     "y": 900,
+     "at": 0.3,
+     "scale": 0.75,
+     "life": 1
+    },
+    {
+     "type": "prop",
+     "kind": "server",
+     "x": 1120,
+     "y": 900,
+     "at": 0.5,
+     "scale": 0.75,
+     "life": 1
+    },
+    {
+     "type": "prop",
+     "kind": "server",
+     "x": 1340,
+     "y": 900,
+     "at": 0.7,
+     "scale": 0.75,
+     "life": 1
+    },
+    {
+     "type": "note",
+     "text": "debt + doubt",
+     "x": 1500,
+     "y": 600,
+     "at": 2.0,
+     "size": 68,
+     "side": "b",
+     "life": 1
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "explain"
+    }
+   ]
+  },
+  {
+   "id": "s086",
+   "strip_x": 18,
+   "vo": "How much landed on you?",
+   "elements": [
+    {
+     "type": "note",
+     "text": "1/3",
+     "x": 1110,
+     "y": 470,
+     "at": 0.2,
+     "size": 68,
+     "side": "b"
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "point",
+     "look": 1
+    }
+   ]
+  },
+  {
+   "id": "s087",
+   "strip_x": 18,
+   "vo": "If you own an index fund, about a third of it sits in seven companies.",
+   "elements": [
+    {
+     "type": "checkgrid",
+     "total": 100,
+     "filled": 34,
+     "cols": 20,
+     "x": 860,
+     "y": 600,
+     "at": 0.2,
+     "side": "b",
+     "scale": 0.55,
+     "life": 1
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "open_hands"
+    }
+   ]
+  },
+  {
+   "id": "s088",
+   "strip_x": 18,
+   "vo": "Their bad day became yours.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "slump",
+     "mood": "sad"
+    }
+   ]
+  },
+  {
+   "id": "s089",
+   "strip_x": 18,
+   "vo": "Is it over?",
+   "elements": [
+    {
+     "type": "note",
+     "text": "not yet",
+     "x": 1400,
+     "y": 470,
+     "at": 0.2,
+     "size": 68,
+     "side": "b"
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "think",
+     "mood": "neutral"
+    }
+   ]
+  },
+  {
+   "id": "s090",
+   "strip_x": 18,
+   "vo": "The fall mostly reversed.",
+   "elements": [
+    {
+     "type": "linechart",
+     "points": [
+      {
+       "v": 7689,
+       "label": "Nov 4"
+      },
+      {
+       "v": 7354,
+       "label": "Nov 5",
+       "tag": "7,354",
+       "tagDy": 62
+      },
+      {
+       "v": 7460
+      },
+      {
+       "v": 7530
+      },
+      {
+       "v": 7616,
+       "label": "Nov 11",
+       "tag": "−2.6%"
+      }
+     ],
+     "x": 860,
+     "y": 560,
+     "w": 760,
+     "h": 260,
+     "at": 0.1,
+     "side": "a",
+     "draw": 35,
+     "min": 7250,
+     "max": 7900,
+     "life": 1,
+     "ref": 7819,
+     "refLabel": "record"
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "point",
+     "look": 1
+    }
+   ]
+  },
+  {
+   "id": "s091",
+   "strip_x": 18,
+   "vo": "The reason it could happen has not changed.",
+   "elements": [
+    {
+     "type": "stamp",
+     "text": "UNCHANGED",
+     "x": 1220,
+     "y": 680,
+     "at": 0.6,
+     "side": "b",
+     "rotate": -6
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "arms_crossed",
+     "mood": "neutral"
+    }
+   ]
+  },
+  {
+   "id": "s092",
+   "strip_x": 18,
+   "vo": "So nobody took my money.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "open_hands",
+     "mood": "happy"
+    }
+   ],
+   "speaker": "dee",
+   "camera": {
+    "zoom": 1.3,
+    "focus": [
+     560,
+     520
+    ]
+   }
+  },
+  {
+   "id": "s093",
+   "strip_x": 18,
+   "vo": "Nobody took it.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "relaxed",
+     "mood": "happy"
+    }
+   ],
+   "camera": {
+    "zoom": 1.0,
+    "focus": [
+     960,
+     540
+    ]
+   }
+  },
+  {
+   "id": "s094",
+   "strip_x": 18,
+   "vo": "Seven shops had a bad day, and you own more of them than you thought.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 860,
+     "y": 900,
+     "at": 0.2,
+     "scale": 0.5,
+     "side": "b"
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 990,
+     "y": 900,
+     "at": 0.35,
+     "scale": 0.5,
+     "side": "b"
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 1120,
+     "y": 900,
+     "at": 0.5,
+     "scale": 0.5,
+     "side": "b"
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 1250,
+     "y": 900,
+     "at": 0.6499999999999999,
+     "scale": 0.5,
+     "side": "b"
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 1380,
+     "y": 900,
+     "at": 0.8,
+     "scale": 0.5,
+     "side": "b"
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 1510,
+     "y": 900,
+     "at": 0.95,
+     "scale": 0.5,
+     "side": "b"
+    },
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 1640,
+     "y": 900,
+     "at": 1.0999999999999999,
+     "scale": 0.5,
+     "side": "b"
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.2,
+     "pose": "point",
+     "look": 1,
+     "mood": "neutral"
+    }
+   ]
+  },
+  {
+   "id": "s095",
+   "strip_x": 18,
+   "vo": "This video is education, not financial advice.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "education only",
+     "x": 1560,
+     "y": 200,
+     "at": 0.3,
+     "size": 56
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "relaxed"
+    }
+   ]
+  },
+  {
+   "id": "s096",
+   "strip_x": 19,
+   "vo": "One thing made this whole week worse.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "sheet",
+     "x": 960,
+     "y": 540,
+     "w": 1720,
+     "h": 880,
+     "rotate": -1,
+     "at": 0,
+     "side": "b"
+    },
+    {
+     "type": "prop",
+     "kind": "ground",
+     "x": 960,
+     "y": 900,
+     "w": 1640,
+     "at": 0.1
+    },
+    {
+     "type": "actor",
+     "who": "dee",
+     "x": 360,
+     "y": 900,
+     "look": {
+      "skin": "#B9805A",
+      "hair": "#2B1D16",
+      "hairStyle": "bun",
+      "shirt": "#3E7C7B",
+      "pants": "#2F3B52"
+     },
+     "pose": "think",
+     "mood": "neutral",
+     "at": 0.0,
+     "scale": 1.65,
+     "face": 1
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s097",
+   "strip_x": 19,
+   "vo": "The price of borrowing.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "coin",
+     "x": 980,
+     "y": 420,
+     "at": 0.1,
+     "scale": 1.8,
+     "life": 1
+    },
+    {
+     "type": "note",
+     "text": "interest",
+     "x": 1120,
+     "y": 440,
+     "at": 0.4,
+     "size": 90,
+     "side": "b",
+     "life": 1
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "explain"
+    }
+   ]
+  },
+  {
+   "id": "s098",
+   "strip_x": 19,
+   "vo": "The ten year Treasury climbed past five percent this fall.",
+   "elements": [
+    {
+     "type": "linechart",
+     "points": [
+      {
+       "v": 4.1,
+       "label": "Jan"
+      },
+      {
+       "v": 4.44,
+       "t": 2
+      },
+      {
+       "v": 4.6,
+       "t": 5
+      },
+      {
+       "v": 5.02,
+       "t": 8,
+       "label": "Sep",
+       "tag": "5.02%",
+       "tagDx": -60
+      },
+      {
+       "v": 5.24,
+       "t": 9,
+       "tag": "5.24%",
+       "tagDy": -30
+      },
+      {
+       "v": 4.86,
+       "t": 10,
+       "label": "Nov"
+      }
+     ],
+     "x": 760,
+     "y": 230,
+     "w": 900,
+     "h": 420,
+     "at": 0.1,
+     "side": "b",
+     "draw": 45,
+     "title": "10-year Treasury yield",
+     "min": 3.9,
+     "max": 5.4,
+     "life": 1,
+     "ref": 5.0,
+     "refLabel": "5%"
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "point",
+     "look": 1
+    }
+   ]
+  },
+  {
+   "id": "s099",
+   "strip_x": 19,
+   "vo": "What that does to your mortgage and your credit card is the next video.",
+   "elements": [
+    {
+     "type": "prop",
+     "kind": "building",
+     "x": 960,
+     "y": 900,
+     "at": 0.1,
+     "scale": 0.7
+    },
+    {
+     "type": "prop",
+     "kind": "phone",
+     "x": 1380,
+     "y": 560,
+     "at": 0.5,
+     "scale": 1.3,
+     "text": "APR"
+    },
+    {
+     "type": "note",
+     "text": "coming up →",
+     "x": 1300,
+     "y": 260,
+     "at": 1.4,
+     "size": 68,
+     "side": "a"
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.3,
+     "pose": "wave",
+     "mood": "happy"
+    }
+   ]
+  }
+ ]
+}

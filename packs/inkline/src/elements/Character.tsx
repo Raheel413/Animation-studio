@@ -25,8 +25,10 @@ export const Character: React.FC<{el: CharacterEl; f: number; pal: Film['palette
   const sway = Math.sin((f + seed * 31) / 22) * 2 + (mood === 'sad' ? 9 : mood === 'worried' ? -5 : 0);
   const blink = (f + seed * 40) % 95 < 4 ? 0.15 : 1;
 
-  const mouth =
-    mood === 'happy'
+  const talking = el.talk && Math.sin(f * 0.9) > 0.1;
+  const mouth = talking
+    ? 'M-13,12 q13,22 26,0 q-13,-5 -26,0 z'
+    : mood === 'happy'
       ? 'M-16,14 q16,16 32,0'
       : mood === 'sad'
         ? 'M-14,22 q14,-12 28,0'
