@@ -14,6 +14,7 @@ const chunk = Number(arg('--chunk', 45)) * fps;
 const first = Math.round(Number(arg('--from', 0)) * fps);
 const last = Math.min(total, Math.round(Number(arg('--to', total / fps)) * fps)) - 1;
 const entry = `packs/${film.format}/src/index.ts`;
+const cli = path.resolve('node_modules/@remotion/cli/remotion-cli.js');
 const browser = process.env.CHROME_PATH || (fs.existsSync('/usr/bin/google-chrome') ? '/usr/bin/google-chrome' : null);
 fs.mkdirSync(path.dirname(out), {recursive: true});
 const tmp = fs.mkdtempSync(path.join(path.dirname(out), '.chunks-'));
@@ -24,7 +25,8 @@ for (let a = first; a <= last; a += chunk) {
   const b = Math.min(last, a + chunk - 1);
   const part = path.join(tmp, `part-${String(parts.length).padStart(3, '0')}.mp4`);
   console.log(`rendering frames ${a}-${b} of ${total}`);
-  execFileSync('npx', ['remotion', 'render', entry, 'Inkline', part, `--props=${propsFile}`, `--frames=${a}-${b}`, `--scale=${arg('--scale', 1)}`, '--concurrency=2', '--log=error', ...(browser ? [`--browser-executable=${browser}`] : [])], {stdio: 'inherit'});
+  // call the Remotion CLI through node directly: works the same on Windows, macOS and Linux
+  execFileSync(process.execPath, [cli, 'render', entry, 'Inkline', part, `--props=${propsFile}`, `--frames=${a}-${b}`, `--scale=${arg('--scale', 1)}`, '--concurrency=2', '--log=error', ...(browser ? [`--browser-executable=${browser}`] : [])], {stdio: 'inherit'});
   parts.push(part);
 }
 if (parts.length === 1) fs.copyFileSync(parts[0], out);

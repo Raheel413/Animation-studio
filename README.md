@@ -20,7 +20,7 @@ Each planned pack has a design note in `packs/<name>/README.md` with its realist
 
 ```bash
 npm install
-npm run sfx                                                   # synthesize paper sound effects (needs ffmpeg)
+npm run sample                                                # render the 24 s sample to out/ten-years.mp4
 node core/scripts/timing.mjs  packs/inkline/examples/ten-years.scenes.json   # estimate timings
 node core/scripts/validate.mjs packs/inkline/examples/ten-years.scenes.json  # quality gate
 node core/scripts/render.mjs   packs/inkline/examples/ten-years.scenes.json  # -> out/ten-years.mp4
@@ -28,7 +28,7 @@ node core/scripts/contact_sheet.mjs out/ten-years.mp4                        # f
 npm run studio                                                # live preview
 ```
 
-Needs Node 20+, ffmpeg, and Chrome (Remotion downloads one if none is found; set `CHROME_PATH` to use your own).
+Needs Node 20+ and ffmpeg on your PATH (check with `ffmpeg -version` in a new terminal). Remotion downloads its own headless browser on the first render. Works on Windows (PowerShell), macOS and Linux. Paper sound effects ship in `public/sfx/`; `npm run sfx` rebuilds them.
 
 ## With Claude
 
