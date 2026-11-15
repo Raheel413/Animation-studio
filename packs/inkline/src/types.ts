@@ -70,9 +70,10 @@ export type ActorEl = ElementBase & {
 };
 export type SpriteEl = ElementBase & {type: 'sprite'; who: string; pose: string; h?: number; flip?: boolean; slump?: boolean};
 export type PhotoEl = ElementBase & {type: 'photo'; src: string; w?: number; h?: number; zoom?: number};
+export type LayeredEl = ElementBase & {type: 'layered'; bg: string; layers: {src: string; x: number; y: number; w: number; h: number; role: 'hero' | 'prop' | 'attached'}[]};
 export type DeskEl = ElementBase & {type: 'desk'; w: number; h: number};
 export type TagEl = ElementBase & {type: 'tag'; text: string; dark?: boolean};
-export type El = PhotoEl | SpriteEl | DeskEl | TagEl | ActorEl | CharacterEl | StampEl | TallyEl | NoteEl | BarsEl | CheckGridEl | PropEl | ClippingEl | LineChartEl;
+export type El = LayeredEl | PhotoEl | SpriteEl | DeskEl | TagEl | ActorEl | CharacterEl | StampEl | TallyEl | NoteEl | BarsEl | CheckGridEl | PropEl | ClippingEl | LineChartEl;
 
 export type Scene = {
   id: string;

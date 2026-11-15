@@ -3,7 +3,7 @@ import {AbsoluteFill, Audio, Easing, Sequence, interpolate, staticFile, useCurre
 import {useAudioData, visualizeAudio} from '@remotion/media-utils';
 import {Actor} from './elements/Actor';
 import {Sprite} from './elements/Sprite';
-import {Captions, Photo} from './elements/Photo';
+import {Captions, Layered, Photo} from './elements/Photo';
 import '@fontsource/anton/400.css';
 import {shotEnd, shotStart} from './shots';
 import '@fontsource/playfair-display/900.css';
@@ -332,6 +332,13 @@ const InklineFilm: React.FC<{film: Film; amp: number}> = ({film, amp: voiceAmp})
               const endF = last(el).t_end * fps;
               if (frame > endF + 1 && last(el) !== film.scenes[shotEnd(film.scenes, si)]) return null;
               const fade = el.life ? interpolate(frame, [endF - 8, endF], [1, 0], clamp) : 1;
+              if (el.type === 'layered') {
+                return (
+                  <div key={`${s.id}-${ei}`} style={{opacity: fade}}>
+                    <Layered el={el} f={frame - start - (el.at ?? 0) * fps} dur={(last(el).t_end - s.t_start) * fps} left={s.strip_x * PANEL + el.x} seed={si} amp={amp} />
+                  </div>
+                );
+              }
               if (el.type === 'photo') {
                 return (
                   <div key={`${s.id}-${ei}`} style={{opacity: fade}}>
