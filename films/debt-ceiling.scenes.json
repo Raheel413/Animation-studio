@@ -1,0 +1,1881 @@
+{
+ "format": "inkline",
+ "title": "Who Gets Paid First When America Hits the Debt Ceiling?",
+ "fps": 30,
+ "palette": {
+  "paper": "#F5F2EB",
+  "ink": "#1A1A1A",
+  "a": "#2E7D32",
+  "b": "#D93829"
+ },
+ "spine": "none",
+ "captions": true,
+ "voices": {
+  "narrator": "aura-2-zeus-en",
+  "dee": "aura-2-thalia-en"
+ },
+ "vo_file": null,
+ "music_file": null,
+ "sfx": true,
+ "sources": [
+  "U.S. Treasury FiscalData, Debt to the Penny; Daily Treasury Statement",
+  "CBO, Monthly Budget Review: Summary for FY2026 (Nov 9 2026)",
+  "Fortune, Nov 9 2026; Bipartisan Policy Center estimate via WTOP",
+  "Treasury TIC data via The Standard/Reuters (Sep 17 2026); Roll Call (Sep 9 2026)",
+  "Bloomberg, Jan 12 2017 (2011 FOMC transcripts)",
+  "CBS News, Jul 12 2011 (Obama interview); CBS New York, Aug 8 2011",
+  "CRS R48209, A Binding Debt Limit; Deccan Herald/AFP, May 7 2023 (Yellen)"
+ ],
+ "scenes": [
+  {
+   "id": "s001",
+   "strip_x": 0,
+   "vo": "Forty-one point one trillion dollars.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "debt/photo/capitol.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "zoom": 0.12
+    },
+    {
+     "type": "counter",
+     "from": 0,
+     "to": 41100000000000,
+     "prefix": "$",
+     "decimals": 0,
+     "dur": 2.2,
+     "perFrame": 0,
+     "x": 960,
+     "y": 470,
+     "at": 0.3,
+     "dark": true,
+     "size": 150,
+     "label": "the legal debt limit"
+    }
+   ]
+  },
+  {
+   "id": "s002",
+   "strip_x": 0,
+   "vo": "That number is written into American law.",
+   "elements": []
+  },
+  {
+   "id": "s003",
+   "strip_x": 0,
+   "vo": "It's the most the government is allowed to owe.",
+   "elements": []
+  },
+  {
+   "id": "s004",
+   "strip_x": 1,
+   "vo": "On November third, the debt stood at about forty point five five trillion.",
+   "elements": [
+    {
+     "type": "desk",
+     "x": 960,
+     "y": 540,
+     "w": 1960,
+     "h": 1120,
+     "at": 0
+    },
+    {
+     "type": "screen",
+     "src": "debt/clip/fiscaldata.jpg",
+     "iw": 1170,
+     "ih": 500,
+     "x": 960,
+     "y": 470,
+     "w": 1350,
+     "at": 0.0,
+     "hl": [],
+     "ring": [
+      24,
+      139,
+      308,
+      177
+     ],
+     "tag": "U.S. Treasury · FiscalData",
+     "push": 0.14,
+     "hlAt": 0.4,
+     "life": 1
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s005",
+   "strip_x": 2,
+   "vo": "Not all of it counts toward the cap, so the room left under it is about seven hundred fifty billion dollars.",
+   "elements": [
+    {
+     "type": "bars",
+     "rows": [
+      {
+       "label": "Legal limit",
+       "value": 41.1,
+       "display": "$41.1T",
+       "side": null
+      },
+      {
+       "label": "Debt counted against it",
+       "value": 40.35,
+       "display": "$40.35T",
+       "side": "b"
+      },
+      {
+       "label": "Room left",
+       "value": 0.75,
+       "display": "$0.75T",
+       "side": "a"
+      }
+     ],
+     "x": 760,
+     "y": 300,
+     "at": 0.3,
+     "width": 820,
+     "scale": 1.1
+    },
+    {
+     "type": "tag",
+     "text": "Source: U.S. Treasury, Daily Treasury Statement",
+     "x": 150,
+     "y": 985,
+     "at": 0.4
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s006",
+   "strip_x": 2,
+   "vo": "Lately that room has been shrinking by six to nine billion dollars a day.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "≈ 4 months of room",
+     "x": 1150,
+     "y": 820,
+     "at": 0.3,
+     "size": 72,
+     "side": "b"
+    }
+   ]
+  },
+  {
+   "id": "s007",
+   "strip_x": 2,
+   "vo": "Then the Treasury can shuffle accounts to buy a few more months.",
+   "elements": []
+  },
+  {
+   "id": "s008",
+   "strip_x": 2,
+   "vo": "Best guess, the wall arrives sometime in 2027.",
+   "elements": [
+    {
+     "type": "desk",
+     "x": 960,
+     "y": 540,
+     "w": 1960,
+     "h": 1120,
+     "at": 0
+    },
+    {
+     "type": "screen",
+     "src": "debt/clip/fortune.jpg",
+     "iw": 710,
+     "ih": 490,
+     "x": 960,
+     "y": 500,
+     "w": 1000,
+     "at": 0.0,
+     "hl": [
+      [
+       30,
+       295,
+       495,
+       335
+      ]
+     ],
+     "ring": [
+      381,
+      152,
+      559,
+      182
+     ],
+     "tag": "Fortune · Nov 9, 2026",
+     "push": 0.14,
+     "hlAt": 0.6
+    }
+   ]
+  },
+  {
+   "id": "s009",
+   "strip_x": 3,
+   "vo": "So what happens when it hits the number?",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "dee",
+     "pose": "skeptical",
+     "x": 500,
+     "y": 130,
+     "h": 1120,
+     "at": 0.0
+    },
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "welcome",
+     "x": 1420,
+     "y": 330,
+     "h": 900,
+     "at": 0.1
+    }
+   ],
+   "transition_in": "travel",
+   "speaker": "dee"
+  },
+  {
+   "id": "s010",
+   "strip_x": 3,
+   "vo": "Then America has bills it isn't allowed to borrow for.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "point"
+    }
+   ]
+  },
+  {
+   "id": "s011",
+   "strip_x": 3,
+   "vo": "And somebody doesn't get paid.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "shrug"
+    },
+    {
+     "who": "dee",
+     "at": 0.3,
+     "pose": "thinking"
+    }
+   ]
+  },
+  {
+   "id": "s012",
+   "strip_x": 3,
+   "vo": "The lenders, right? China. Wall Street.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "skeptical"
+    }
+   ],
+   "speaker": "dee"
+  },
+  {
+   "id": "s013",
+   "strip_x": 3,
+   "vo": "That's what most people guess.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "inspect"
+    }
+   ]
+  },
+  {
+   "id": "s014",
+   "strip_x": 3,
+   "vo": "The plan drawn up the last time this got close says the opposite.",
+   "elements": [
+    {
+     "type": "stamp",
+     "text": "NOT THE LENDERS",
+     "x": 960,
+     "y": 260,
+     "at": 1.6,
+     "side": "b",
+     "rotate": -6
+    }
+   ],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "point"
+    },
+    {
+     "who": "dee",
+     "at": 1.8,
+     "pose": "shock_device"
+    }
+   ]
+  },
+  {
+   "id": "s015",
+   "strip_x": 4,
+   "vo": "Two questions today.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "count_2",
+     "x": 400,
+     "y": 330,
+     "h": 900,
+     "at": 0.0,
+     "flip": true
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s016",
+   "strip_x": 4,
+   "vo": "If America can't pay everyone, who gets paid first?",
+   "elements": [
+    {
+     "type": "note",
+     "text": "Q1 · front of the line",
+     "x": 1160,
+     "y": 380,
+     "at": 0.3,
+     "size": 76
+    }
+   ]
+  },
+  {
+   "id": "s017",
+   "strip_x": 4,
+   "vo": "And who waits?",
+   "elements": [
+    {
+     "type": "note",
+     "text": "Q2 · back of the line",
+     "x": 1160,
+     "y": 560,
+     "at": 0.2,
+     "size": 76
+    }
+   ]
+  },
+  {
+   "id": "s018",
+   "strip_x": 4,
+   "vo": "By the end you'll know where you stand in that line.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "point"
+    }
+   ]
+  },
+  {
+   "id": "s019",
+   "strip_x": 5,
+   "vo": "Back to Maple Street, where town hall spends seventy-four coins for every fifty-four it collects.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "inspect",
+     "x": 1560,
+     "y": 400,
+     "h": 820,
+     "at": 0.0
+    },
+    {
+     "type": "checkgrid",
+     "total": 74,
+     "filled": 54,
+     "cols": 15,
+     "x": 160,
+     "y": 250,
+     "at": 0.6,
+     "side": "a",
+     "scale": 1.05
+    },
+    {
+     "type": "note",
+     "text": "74 spent · 54 collected",
+     "x": 160,
+     "y": 180,
+     "at": 0.3,
+     "size": 58
+    }
+   ],
+   "transition_in": "travel"
+  },
+  {
+   "id": "s020",
+   "strip_x": 5,
+   "vo": "The other twenty, it borrows.",
+   "elements": [
+    {
+     "type": "stamp",
+     "text": "BORROWED: 20",
+     "x": 640,
+     "y": 800,
+     "at": 0.3,
+     "side": "b",
+     "rotate": -6
+    }
+   ]
+  },
+  {
+   "id": "s021",
+   "strip_x": 5,
+   "vo": "But the town has a rule painted on the wall.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "point"
+    }
+   ]
+  },
+  {
+   "id": "s022",
+   "strip_x": 5,
+   "vo": "It's a borrowing cap, and one morning the mayor hits it.",
+   "elements": [
+    {
+     "type": "stamp",
+     "text": "LIMIT REACHED",
+     "x": 700,
+     "y": 520,
+     "at": 0.8,
+     "side": "b",
+     "rotate": -4
+    }
+   ],
+   "shake": 0.9
+  },
+  {
+   "id": "s023",
+   "strip_x": 6,
+   "vo": "So he just stops spending.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "dee",
+     "pose": "thinking",
+     "x": 480,
+     "y": 130,
+     "h": 1120,
+     "at": 0.0
+    },
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "welcome",
+     "x": 1440,
+     "y": 330,
+     "h": 900,
+     "at": 0.1
+    }
+   ],
+   "transition_in": "travel",
+   "speaker": "dee"
+  },
+  {
+   "id": "s024",
+   "strip_x": 6,
+   "vo": "He can't. Those bills are already owed.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "shrug"
+    }
+   ]
+  },
+  {
+   "id": "s025",
+   "strip_x": 6,
+   "vo": "The pensions, the guards, the road crew.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "owed: retirees",
+     "x": 960,
+     "y": 220,
+     "at": 0.1,
+     "size": 60
+    },
+    {
+     "type": "note",
+     "text": "owed: security",
+     "x": 960,
+     "y": 320,
+     "at": 0.6,
+     "size": 60
+    },
+    {
+     "type": "note",
+     "text": "owed: repairs",
+     "x": 960,
+     "y": 420,
+     "at": 1.1,
+     "size": 60
+    }
+   ]
+  },
+  {
+   "id": "s026",
+   "strip_x": 6,
+   "vo": "All he has is the fifty-four coins coming in, and that covers about three bills out of four.",
+   "elements": [
+    {
+     "type": "checkgrid",
+     "total": 4,
+     "filled": 3,
+     "cols": 4,
+     "x": 860,
+     "y": 560,
+     "at": 0.8,
+     "side": "a",
+     "scale": 2.2
+    }
+   ],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "count_2"
+    }
+   ]
+  },
+  {
+   "id": "s027",
+   "strip_x": 6,
+   "vo": "Then who gets skipped?",
+   "elements": [],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "skeptical"
+    }
+   ],
+   "speaker": "dee"
+  },
+  {
+   "id": "s028",
+   "strip_x": 6,
+   "vo": "Think like the mayor.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "inspect"
+    }
+   ]
+  },
+  {
+   "id": "s029",
+   "strip_x": 6,
+   "vo": "If he stiffs the lenders, nobody lends to Maple Street again at a price he can afford.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "point"
+    }
+   ]
+  },
+  {
+   "id": "s030",
+   "strip_x": 6,
+   "vo": "So the lenders get paid first.",
+   "elements": [
+    {
+     "type": "stamp",
+     "text": "BONDHOLDERS ✓",
+     "x": 960,
+     "y": 300,
+     "at": 0.4,
+     "side": "a",
+     "rotate": -5
+    }
+   ]
+  },
+  {
+   "id": "s031",
+   "strip_x": 6,
+   "vo": "Everyone else gets a note that says soon.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "IOU · soon",
+     "x": 960,
+     "y": 520,
+     "at": 0.3,
+     "size": 86,
+     "side": "b"
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.2,
+     "pose": "shock_device"
+    }
+   ]
+  },
+  {
+   "id": "s032",
+   "strip_x": 7,
+   "vo": "America's numbers match the town's.",
+   "elements": [
+    {
+     "type": "desk",
+     "x": 960,
+     "y": 540,
+     "w": 1960,
+     "h": 1120,
+     "at": 0
+    },
+    {
+     "type": "screen",
+     "src": "debt/clip/cbo.jpg",
+     "iw": 800,
+     "ih": 640,
+     "x": 960,
+     "y": 520,
+     "w": 900,
+     "at": 0.0,
+     "hl": [
+      [
+       205,
+       447,
+       520,
+       471
+      ]
+     ],
+     "ring": [
+      373,
+      451,
+      417,
+      469
+     ],
+     "tag": "Congressional Budget Office · Nov 9, 2026",
+     "push": 0.1,
+     "hlAt": 0.7,
+     "life": 2
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s033",
+   "strip_x": 7,
+   "vo": "Last fiscal year Washington spent seven point four trillion dollars and collected five point four.",
+   "elements": []
+  },
+  {
+   "id": "s034",
+   "strip_x": 8,
+   "vo": "Seven point four out. Five point four in.",
+   "elements": [
+    {
+     "type": "bars",
+     "rows": [
+      {
+       "label": "Spent, FY2026",
+       "value": 7.4,
+       "display": "$7.4T",
+       "side": "b"
+      },
+      {
+       "label": "Collected",
+       "value": 5.4,
+       "display": "$5.4T",
+       "side": "a"
+      },
+      {
+       "label": "Borrowed",
+       "value": 2.0,
+       "display": "$2.0T",
+       "side": null
+      }
+     ],
+     "x": 560,
+     "y": 330,
+     "at": 0.3,
+     "width": 950,
+     "scale": 1.15
+    },
+    {
+     "type": "tag",
+     "text": "Source: CBO Monthly Budget Review, Nov 9 2026",
+     "x": 150,
+     "y": 985,
+     "at": 0.4
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s035",
+   "strip_x": 8,
+   "vo": "Same ratio as Maple Street. Seventy-four out for every fifty-four in.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "74 : 54",
+     "x": 1500,
+     "y": 300,
+     "at": 0.3,
+     "size": 110,
+     "side": "b"
+    }
+   ]
+  },
+  {
+   "id": "s036",
+   "strip_x": 9,
+   "vo": "And the lenders?",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "debt/photo/dollars.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "zoom": 0.1
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s037",
+   "strip_x": 9,
+   "vo": "Foreign investors hold about a quarter of the debt.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "debt/photo/tokyo.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "zoom": 0.08,
+     "life": 1
+    },
+    {
+     "type": "counter",
+     "from": 0,
+     "to": 25,
+     "prefix": "",
+     "decimals": 0,
+     "dur": 1.6,
+     "perFrame": 0,
+     "x": 960,
+     "y": 520,
+     "at": 0.3,
+     "dark": true,
+     "size": 220,
+     "label": "share held abroad",
+     "life": 1
+    }
+   ]
+  },
+  {
+   "id": "s038",
+   "strip_x": 9,
+   "vo": "Japan is the biggest, at about one point two trillion.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "debt/photo/tokyo.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "zoom": 0.1
+    }
+   ]
+  },
+  {
+   "id": "s039",
+   "strip_x": 9,
+   "vo": "Britain is next, at close to a trillion.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "debt/photo/london.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "zoom": 0.1
+    }
+   ]
+  },
+  {
+   "id": "s040",
+   "strip_x": 9,
+   "vo": "China holds about six hundred twenty billion, its lowest since 2008.",
+   "elements": [
+    {
+     "type": "desk",
+     "x": 960,
+     "y": 540,
+     "w": 1960,
+     "h": 1120,
+     "at": 0
+    },
+    {
+     "type": "screen",
+     "src": "debt/clip/standard_para.jpg",
+     "iw": 1536,
+     "ih": 420,
+     "x": 960,
+     "y": 470,
+     "w": 1450,
+     "at": 0.0,
+     "hl": [
+      [
+       600,
+       290,
+       985,
+       318
+      ]
+     ],
+     "ring": [
+      958,
+      333,
+      1275,
+      357
+     ],
+     "tag": "The Standard · Sep 17, 2026",
+     "push": 0.14,
+     "hlAt": 0.8
+    }
+   ]
+  },
+  {
+   "id": "s041",
+   "strip_x": 10,
+   "vo": "The Federal Reserve holds more than four trillion.",
+   "elements": [
+    {
+     "type": "bars",
+     "rows": [
+      {
+       "label": "Federal Reserve",
+       "value": 4.6,
+       "display": "$4.6T",
+       "side": "a"
+      },
+      {
+       "label": "Japan",
+       "value": 1.15,
+       "display": "$1.2T",
+       "side": null
+      },
+      {
+       "label": "United Kingdom",
+       "value": 1.0,
+       "display": "$1.0T",
+       "side": null
+      },
+      {
+       "label": "China",
+       "value": 0.62,
+       "display": "$0.62T",
+       "side": "b"
+      }
+     ],
+     "x": 600,
+     "y": 300,
+     "at": 0.3,
+     "width": 950,
+     "scale": 1.1
+    },
+    {
+     "type": "tag",
+     "text": "Sources: Treasury TIC data, Jul 2026; Roll Call, Sep 2026",
+     "x": 150,
+     "y": 985,
+     "at": 0.4
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s042",
+   "strip_x": 10,
+   "vo": "Most of the rest sits with American savers, pension funds and banks.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "welcome",
+     "x": 1600,
+     "y": 430,
+     "h": 760,
+     "at": 0.2
+    }
+   ]
+  },
+  {
+   "id": "s043",
+   "strip_x": 11,
+   "vo": "In the summer of 2011, America came within days of running out of room.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "debt/photo/treasury.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "zoom": 0.1
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s044",
+   "strip_x": 11,
+   "vo": "Transcripts released years later show what the Federal Reserve and the Treasury had prepared.",
+   "elements": [
+    {
+     "type": "desk",
+     "x": 960,
+     "y": 540,
+     "w": 1960,
+     "h": 1120,
+     "at": 0
+    },
+    {
+     "type": "screen",
+     "src": "debt/clip/bloomberg.jpg",
+     "iw": 1296,
+     "ih": 389,
+     "x": 960,
+     "y": 480,
+     "w": 1400,
+     "at": 0.0,
+     "hl": [
+      [
+       389,
+       313,
+       1100,
+       338
+      ]
+     ],
+     "ring": [
+      665,
+      233,
+      1095,
+      284
+     ],
+     "tag": "Bloomberg · Jan 12, 2017",
+     "push": 0.14,
+     "hlAt": 1.2,
+     "life": 2
+    }
+   ]
+  },
+  {
+   "id": "s045",
+   "strip_x": 11,
+   "vo": "Interest and principal on the debt would be paid on time. Other payments would wait.",
+   "elements": []
+  },
+  {
+   "id": "s046",
+   "strip_x": 12,
+   "vo": "That fight comes around every couple of years.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "debt/photo/capitol.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "zoom": 0.1
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s047",
+   "strip_x": 12,
+   "vo": "And starting in January, one party holds Congress and the other holds the White House.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "Jan 2027: split government",
+     "x": 960,
+     "y": 840,
+     "at": 0.6,
+     "size": 70
+    }
+   ]
+  },
+  {
+   "id": "s048",
+   "strip_x": 13,
+   "vo": "Other payments. Like what?",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "dee",
+     "pose": "skeptical",
+     "x": 500,
+     "y": 130,
+     "h": 1120,
+     "at": 0.0
+    },
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "welcome",
+     "x": 1440,
+     "y": 330,
+     "h": 900,
+     "at": 0.1
+    }
+   ],
+   "transition_in": "travel",
+   "speaker": "dee"
+  },
+  {
+   "id": "s049",
+   "strip_x": 13,
+   "vo": "Like your mother's Social Security check.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "point"
+    }
+   ]
+  },
+  {
+   "id": "s050",
+   "strip_x": 13,
+   "vo": "A soldier's paycheck. The hospital waiting on Medicare. The company that repaved the highway.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "military payroll",
+     "x": 960,
+     "y": 200,
+     "at": 0.0,
+     "size": 58
+    },
+    {
+     "type": "note",
+     "text": "hospitals",
+     "x": 960,
+     "y": 300,
+     "at": 0.9,
+     "size": 58
+    },
+    {
+     "type": "note",
+     "text": "contractors",
+     "x": 960,
+     "y": 400,
+     "at": 1.9,
+     "size": 58
+    }
+   ]
+  },
+  {
+   "id": "s051",
+   "strip_x": 14,
+   "vo": "That same summer, President Obama said he could not guarantee Social Security checks would go out.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "debt/photo/ssa.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "zoom": 0.08,
+     "life": 1
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s052",
+   "strip_x": 14,
+   "vo": "Those were his words, on national television.",
+   "elements": [
+    {
+     "type": "desk",
+     "x": 960,
+     "y": 540,
+     "w": 1960,
+     "h": 1120,
+     "at": 0
+    },
+    {
+     "type": "screen",
+     "src": "debt/clip/cbs_obama.jpg",
+     "iw": 962,
+     "ih": 674,
+     "x": 960,
+     "y": 500,
+     "w": 1150,
+     "at": 0.0,
+     "hl": [
+      [
+       351,
+       237,
+       873,
+       280
+      ],
+      [
+       17,
+       295,
+       356,
+       338
+      ]
+     ],
+     "ring": [
+      670,
+      295,
+      860,
+      338
+     ],
+     "tag": "CBS News · Jul 12, 2011",
+     "push": 0.14,
+     "hlAt": 0.3
+    }
+   ]
+  },
+  {
+   "id": "s053",
+   "strip_x": 15,
+   "vo": "So the first one to lose is my mom. And the bank in Tokyo gets paid.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "dee",
+     "pose": "shock_device",
+     "x": 500,
+     "y": 130,
+     "h": 1120,
+     "at": 0.0
+    },
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "inspect",
+     "x": 1440,
+     "y": 330,
+     "h": 900,
+     "at": 0.1
+    }
+   ],
+   "transition_in": "travel",
+   "speaker": "dee"
+  },
+  {
+   "id": "s054",
+   "strip_x": 15,
+   "vo": "In that plan, yes.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "shrug"
+    }
+   ]
+  },
+  {
+   "id": "s055",
+   "strip_x": 15,
+   "vo": "If you're waiting on a check from Washington, you are first in line to lose.",
+   "elements": [
+    {
+     "type": "stamp",
+     "text": "CHECK HOLDERS: LAST",
+     "x": 1000,
+     "y": 110,
+     "at": 1.6,
+     "side": "b",
+     "rotate": -6
+    }
+   ],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "point"
+    },
+    {
+     "who": "dee",
+     "at": 1.0,
+     "pose": "thinking"
+    }
+   ]
+  },
+  {
+   "id": "s056",
+   "strip_x": 16,
+   "vo": "Second in line is everyone else.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "debt/photo/stocks.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "zoom": 0.08
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s057",
+   "strip_x": 16,
+   "vo": "In August 2011, Congress made a deal at the last minute. Nobody missed a payment.",
+   "elements": []
+  },
+  {
+   "id": "s058",
+   "strip_x": 16,
+   "vo": "Standard and Poor's cut America's credit grade anyway, the first time that had ever happened.",
+   "elements": [
+    {
+     "type": "desk",
+     "x": 960,
+     "y": 540,
+     "w": 1960,
+     "h": 1120,
+     "at": 0
+    },
+    {
+     "type": "screen",
+     "src": "debt/clip/cbs_downgrade.jpg",
+     "iw": 970,
+     "ih": 674,
+     "x": 960,
+     "y": 500,
+     "w": 1150,
+     "at": 0.0,
+     "hl": [
+      [
+       36,
+       237,
+       672,
+       271
+      ]
+     ],
+     "ring": [
+      36,
+      295,
+      285,
+      338
+     ],
+     "tag": "CBS News · Aug 8, 2011",
+     "push": 0.14,
+     "hlAt": 1.6,
+     "life": 2
+    }
+   ],
+   "shake": 0.4
+  },
+  {
+   "id": "s059",
+   "strip_x": 16,
+   "vo": "The next trading day, the S and P 500 fell six point seven percent.",
+   "elements": []
+  },
+  {
+   "id": "s060",
+   "strip_x": 17,
+   "vo": "One day. Six point seven percent.",
+   "elements": [
+    {
+     "type": "linechart",
+     "points": [
+      {
+       "v": 1345,
+       "label": "Jul 22"
+      },
+      {
+       "v": 1292,
+       "label": "Jul 29"
+      },
+      {
+       "v": 1254,
+       "label": "Aug 2"
+      },
+      {
+       "v": 1200,
+       "label": "Aug 4"
+      },
+      {
+       "v": 1199,
+       "label": "Aug 5",
+       "tag": "downgrade"
+      },
+      {
+       "v": 1119,
+       "label": "Aug 8",
+       "tag": "−6.7%"
+      }
+     ],
+     "x": 200,
+     "y": 260,
+     "w": 1250,
+     "h": 520,
+     "at": 0.1,
+     "side": "b",
+     "draw": 55,
+     "title": "S&P 500 close, summer 2011",
+     "min": 1080,
+     "max": 1380,
+     "ref": 1345,
+     "refLabel": "Jul 22"
+    },
+    {
+     "type": "tag",
+     "text": "Source: S&P Dow Jones Indices",
+     "x": 150,
+     "y": 985,
+     "at": 0.4
+    }
+   ],
+   "transition_in": "fold",
+   "shake": 1.6
+  },
+  {
+   "id": "s061",
+   "strip_x": 17,
+   "vo": "When lenders get nervous they ask for more interest.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "inspect",
+     "x": 1660,
+     "y": 470,
+     "h": 700,
+     "at": 0.1
+    }
+   ]
+  },
+  {
+   "id": "s062",
+   "strip_x": 17,
+   "vo": "That lands on your mortgage and your credit card.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "rates ↑",
+     "x": 760,
+     "y": 900,
+     "at": 0.3,
+     "size": 64,
+     "side": "b"
+    }
+   ],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "point"
+    }
+   ]
+  },
+  {
+   "id": "s063",
+   "strip_x": 17,
+   "vo": "Third in line is your retirement account.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "count_2"
+    }
+   ]
+  },
+  {
+   "id": "s064",
+   "strip_x": 17,
+   "vo": "In 2011 the whole market fell together, good companies and bad.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "shrug"
+    }
+   ]
+  },
+  {
+   "id": "s065",
+   "strip_x": 18,
+   "vo": "So that's the plan? It's settled?",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "dee",
+     "pose": "skeptical",
+     "x": 500,
+     "y": 130,
+     "h": 1120,
+     "at": 0.0
+    },
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "welcome",
+     "x": 1440,
+     "y": 330,
+     "h": 900,
+     "at": 0.1
+    }
+   ],
+   "transition_in": "travel",
+   "speaker": "dee"
+  },
+  {
+   "id": "s066",
+   "strip_x": 18,
+   "vo": "No. And this is the honest part. It has never been tried.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "shrug"
+    }
+   ]
+  },
+  {
+   "id": "s067",
+   "strip_x": 19,
+   "vo": "Congress's own researchers say they've seen no evidence that any White House approved it.",
+   "elements": [
+    {
+     "type": "desk",
+     "x": 960,
+     "y": 540,
+     "w": 1960,
+     "h": 1120,
+     "at": 0
+    },
+    {
+     "type": "screen",
+     "src": "debt/clip/crs.jpg",
+     "iw": 1512,
+     "ih": 268,
+     "x": 960,
+     "y": 480,
+     "w": 1560,
+     "at": 0.0,
+     "hl": [
+      [
+       22,
+       174,
+       1414,
+       200
+      ]
+     ],
+     "ring": null,
+     "tag": "Congressional Research Service · R48209",
+     "push": 0.18,
+     "hlAt": 1.4
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s068",
+   "strip_x": 19,
+   "vo": "Treasury Secretary Janet Yellen said the payment system was built to pay bills on time, and nothing in it picks winners.",
+   "elements": [
+    {
+     "type": "desk",
+     "x": 960,
+     "y": 540,
+     "w": 1960,
+     "h": 1120,
+     "at": 0
+    },
+    {
+     "type": "screen",
+     "src": "debt/clip/dh_yellen.jpg",
+     "iw": 983,
+     "ih": 674,
+     "x": 960,
+     "y": 500,
+     "w": 1150,
+     "at": 0.0,
+     "hl": [
+      [
+       789,
+       233,
+       949,
+       264
+      ],
+      [
+       23,
+       295,
+       257,
+       340
+      ]
+     ],
+     "ring": null,
+     "tag": "Deccan Herald / AFP · May 7, 2023",
+     "push": 0.14,
+     "hlAt": 1.6,
+     "life": 2
+    }
+   ]
+  },
+  {
+   "id": "s069",
+   "strip_x": 19,
+   "vo": "If it came to that, she warned, financial and economic chaos would follow.",
+   "elements": []
+  },
+  {
+   "id": "s070",
+   "strip_x": 20,
+   "vo": "Supporters say paying lenders first would protect America's credit while Congress argues.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "welcome",
+     "x": 960,
+     "y": 380,
+     "h": 860,
+     "at": 0.0
+    },
+    {
+     "type": "note",
+     "text": "protects credit",
+     "x": 300,
+     "y": 320,
+     "at": 0.5,
+     "size": 64,
+     "side": "a"
+    }
+   ],
+   "transition_in": "travel"
+  },
+  {
+   "id": "s071",
+   "strip_x": 20,
+   "vo": "Critics say it means paying foreign banks before American retirees.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "bondholders > benefits",
+     "x": 1380,
+     "y": 320,
+     "at": 0.4,
+     "size": 64,
+     "side": "b"
+    }
+   ],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "shrug"
+    }
+   ]
+  },
+  {
+   "id": "s072",
+   "strip_x": 20,
+   "vo": "Both descriptions are accurate.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "inspect"
+    }
+   ]
+  },
+  {
+   "id": "s073",
+   "strip_x": 20,
+   "vo": "And every time so far, Congress has raised the cap before the money ran out.",
+   "elements": [
+    {
+     "type": "stamp",
+     "text": "104 CHANGES SINCE WWII",
+     "x": 960,
+     "y": 160,
+     "at": 1.4,
+     "side": "a",
+     "rotate": -6
+    }
+   ],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "point"
+    }
+   ]
+  },
+  {
+   "id": "s074",
+   "strip_x": 21,
+   "vo": "So watch two things.",
+   "elements": [
+    {
+     "type": "desk",
+     "x": 960,
+     "y": 540,
+     "w": 1960,
+     "h": 1120,
+     "at": 0
+    },
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "count_2",
+     "x": 1620,
+     "y": 420,
+     "h": 760,
+     "at": 0.0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s075",
+   "strip_x": 21,
+   "vo": "First, the gap under the cap. The Treasury publishes it every business day.",
+   "elements": [
+    {
+     "type": "screen",
+     "src": "debt/clip/fiscaldata.jpg",
+     "iw": 1170,
+     "ih": 500,
+     "x": 760,
+     "y": 470,
+     "w": 1200,
+     "at": 0.0,
+     "hl": [],
+     "ring": [
+      24,
+      139,
+      308,
+      177
+     ],
+     "tag": "U.S. Treasury · FiscalData",
+     "push": 0.14,
+     "hlAt": 0.4,
+     "life": 1
+    }
+   ]
+  },
+  {
+   "id": "s076",
+   "strip_x": 21,
+   "vo": "Second, the words extraordinary measures.",
+   "elements": [
+    {
+     "type": "counter",
+     "from": null,
+     "to": null,
+     "prefix": "“EXTRAORDINARY MEASURES”",
+     "decimals": 0,
+     "dur": 0.1,
+     "perFrame": 0,
+     "x": 960,
+     "y": 500,
+     "at": 0.3,
+     "dark": true,
+     "size": 96,
+     "label": "watch for this phrase",
+     "life": 2
+    }
+   ]
+  },
+  {
+   "id": "s077",
+   "strip_x": 21,
+   "vo": "When the Treasury Secretary writes those to Congress, the cap has been hit and the clock is running.",
+   "elements": [],
+   "shake": 2.2
+  },
+  {
+   "id": "s078",
+   "strip_x": 22,
+   "vo": "Our two questions.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "count_2",
+     "x": 400,
+     "y": 330,
+     "h": 900,
+     "at": 0.0,
+     "flip": true
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s079",
+   "strip_x": 22,
+   "vo": "Who gets paid first? In the only plan anyone has seen, the lenders.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "1. Bondholders",
+     "x": 1160,
+     "y": 380,
+     "at": 0.8,
+     "size": 80,
+     "side": "a"
+    }
+   ]
+  },
+  {
+   "id": "s080",
+   "strip_x": 22,
+   "vo": "Who waits? People owed a check by the government. After them, anyone with a loan.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "2. Check-holders, then borrowers",
+     "x": 1160,
+     "y": 560,
+     "at": 0.6,
+     "size": 64,
+     "side": "b"
+    }
+   ]
+  },
+  {
+   "id": "s081",
+   "strip_x": 23,
+   "vo": "So can't pay doesn't mean broke.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "dee",
+     "pose": "thinking",
+     "x": 500,
+     "y": 130,
+     "h": 1120,
+     "at": 0.0
+    },
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "welcome",
+     "x": 1440,
+     "y": 330,
+     "h": 900,
+     "at": 0.1
+    }
+   ],
+   "transition_in": "travel",
+   "speaker": "dee"
+  },
+  {
+   "id": "s082",
+   "strip_x": 23,
+   "vo": "Right. America still has money coming in. What runs out is permission to borrow.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "point"
+    },
+    {
+     "who": "dee",
+     "at": 1.8,
+     "pose": "relieved"
+    }
+   ]
+  },
+  {
+   "id": "s083",
+   "strip_x": 23,
+   "vo": "This video is education, not financial advice.",
+   "elements": [
+    {
+     "type": "tag",
+     "text": "Education only. Not financial advice.",
+     "x": 150,
+     "y": 985,
+     "at": 0.4
+    }
+   ]
+  },
+  {
+   "id": "s084",
+   "strip_x": 24,
+   "vo": "There's a slower way America can pay you back less than it owes.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "debt/photo/dollars.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "zoom": 0.12
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s085",
+   "strip_x": 24,
+   "vo": "It never misses a check. It lets prices rise.",
+   "elements": []
+  },
+  {
+   "id": "s086",
+   "strip_x": 24,
+   "vo": "That's the next video.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "welcome",
+     "x": 1560,
+     "y": 420,
+     "h": 800,
+     "at": 0.1
+    }
+   ]
+  }
+ ]
+}

@@ -71,9 +71,11 @@ export type ActorEl = ElementBase & {
 export type SpriteEl = ElementBase & {type: 'sprite'; who: string; pose: string; h?: number; flip?: boolean; slump?: boolean};
 export type PhotoEl = ElementBase & {type: 'photo'; src: string; w?: number; h?: number; zoom?: number};
 export type LayeredEl = ElementBase & {type: 'layered'; bg: string; layers: {src: string; x: number; y: number; w: number; h: number; role: 'hero' | 'prop' | 'attached'}[]};
+export type ScreenEl = ElementBase & {type: 'screen'; src: string; iw: number; ih: number; w?: number; hl?: number[][]; ring?: number[] | null; tag?: string; push?: number; hlAt?: number};
+export type CounterEl = ElementBase & {type: 'counter'; from: number | null; to: number | null; prefix: string; suffix?: string; decimals?: number; dur?: number; perFrame?: number; label?: string; size?: number; color?: string; dark?: boolean};
 export type DeskEl = ElementBase & {type: 'desk'; w: number; h: number};
 export type TagEl = ElementBase & {type: 'tag'; text: string; dark?: boolean};
-export type El = LayeredEl | PhotoEl | SpriteEl | DeskEl | TagEl | ActorEl | CharacterEl | StampEl | TallyEl | NoteEl | BarsEl | CheckGridEl | PropEl | ClippingEl | LineChartEl;
+export type El = ScreenEl | CounterEl | LayeredEl | PhotoEl | SpriteEl | DeskEl | TagEl | ActorEl | CharacterEl | StampEl | TallyEl | NoteEl | BarsEl | CheckGridEl | PropEl | ClippingEl | LineChartEl;
 
 export type Scene = {
   id: string;

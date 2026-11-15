@@ -4,6 +4,7 @@ import {useAudioData, visualizeAudio} from '@remotion/media-utils';
 import {Actor} from './elements/Actor';
 import {Sprite} from './elements/Sprite';
 import {Captions, Layered, Photo} from './elements/Photo';
+import {Counter, Screen} from './elements/Screen';
 import '@fontsource/anton/400.css';
 import {shotEnd, shotStart} from './shots';
 import '@fontsource/playfair-display/900.css';
@@ -30,6 +31,10 @@ const sfxFor = (el: El): [string, number, number][] => {
       return [['slide.wav', 0, 0.22], ['marker.wav', 0.75, 0.3], ...(el.ring ? ([['penring.wav', 1.3, 0.3]] as [string, number, number][]) : [])];
     case 'bars':
       return [['ticker.wav', 0.35, 0.18]];
+    case 'screen':
+      return [['slide.wav', 0, 0.2], ['marker.wav', (el.hlAt ?? 0.9) + 0.1, 0.28], ...(el.ring ? ([['penring.wav', (el.hlAt ?? 0.9) + 0.75, 0.28]] as [string, number, number][]) : [])];
+    case 'counter':
+      return [['ticker.wav', 0.05, 0.2]];
     case 'prop':
       return el.kind === 'calendar' ? [['shutter.wav', 0.1, 0.3]] : [];
     default:
@@ -343,6 +348,20 @@ const InklineFilm: React.FC<{film: Film; amp: number}> = ({film, amp: voiceAmp})
                 return (
                   <div key={`${s.id}-${ei}`} style={{opacity: fade}}>
                     <Photo el={el} f={frame - start - (el.at ?? 0) * fps} dur={(last(el).t_end - s.t_start) * fps} left={s.strip_x * PANEL + el.x} seed={si} />
+                  </div>
+                );
+              }
+              if (el.type === 'screen') {
+                return (
+                  <div key={`${s.id}-${ei}`} style={{opacity: fade}}>
+                    <Screen el={el} f={frame - start - (el.at ?? 0) * fps} dur={(last(el).t_end - s.t_start) * fps} left={s.strip_x * PANEL + el.x} seed={si} />
+                  </div>
+                );
+              }
+              if (el.type === 'counter') {
+                return (
+                  <div key={`${s.id}-${ei}`} style={{opacity: fade}}>
+                    <Counter el={el} f={frame - start - (el.at ?? 0) * fps} fps={fps} left={s.strip_x * PANEL + el.x} />
                   </div>
                 );
               }
