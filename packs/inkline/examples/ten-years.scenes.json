@@ -1,0 +1,399 @@
+{
+  "format": "inkline",
+  "title": "Ten Years (sample hook)",
+  "fps": 30,
+  "palette": {
+    "paper": "#F3EEE3",
+    "ink": "#1E1B18",
+    "a": "#2E6B3F",
+    "b": "#9C3D2E"
+  },
+  "spine": "ledger",
+  "vo_file": null,
+  "music_file": null,
+  "sfx": true,
+  "scenes": [
+    {
+      "id": "s01",
+      "strip_x": 0,
+      "transition_in": "none",
+      "vo": "You're twenty-five. So is Maya.",
+      "elements": [
+        {
+          "type": "prop",
+          "kind": "sheet",
+          "x": 960,
+          "y": 520,
+          "w": 1500,
+          "h": 760,
+          "rotate": -1.5,
+          "at": 0
+        },
+        {
+          "type": "prop",
+          "kind": "ground",
+          "x": 960,
+          "y": 860,
+          "w": 1300,
+          "at": 0.1
+        },
+        {
+          "type": "character",
+          "who": "you",
+          "x": 560,
+          "y": 560,
+          "label": "You",
+          "scale": 1.7,
+          "at": 0.15
+        },
+        {
+          "type": "prop",
+          "kind": "calendar",
+          "x": 960,
+          "y": 330,
+          "text": "25",
+          "at": 0.5,
+          "scale": 1.5
+        },
+        {
+          "type": "character",
+          "who": "maya",
+          "side": "a",
+          "x": 1360,
+          "y": 560,
+          "label": "Maya",
+          "mood": "happy",
+          "enter": "right",
+          "at": 1.2,
+          "scale": 1.7
+        }
+      ],
+      "t_start": 0,
+      "t_end": 2.45
+    },
+    {
+      "id": "s02",
+      "strip_x": 1,
+      "transition_in": "travel",
+      "vo": "Same office. Same pay.",
+      "elements": [
+        {
+          "type": "prop",
+          "kind": "sheet",
+          "x": 900,
+          "y": 540,
+          "w": 1560,
+          "h": 800,
+          "rotate": 1.5,
+          "at": 0
+        },
+        {
+          "type": "prop",
+          "kind": "building",
+          "x": 520,
+          "y": 880,
+          "scale": 1.75,
+          "at": 0.2
+        },
+        {
+          "type": "prop",
+          "kind": "desk",
+          "x": 1080,
+          "y": 700,
+          "scale": 1.7,
+          "at": 0.7
+        },
+        {
+          "type": "prop",
+          "kind": "desk",
+          "side": "a",
+          "x": 1560,
+          "y": 700,
+          "scale": 1.7,
+          "at": 0.9
+        },
+        {
+          "type": "stamp",
+          "text": "EQUAL",
+          "x": 1320,
+          "y": 300,
+          "rotate": -5,
+          "at": 1.5,
+          "scale": 1.2
+        }
+      ],
+      "t_start": 2.45,
+      "t_end": 5.05
+    },
+    {
+      "id": "s03",
+      "strip_x": 2,
+      "transition_in": "travel",
+      "vo": "You plan to start investing at thirty-five, once things settle down.",
+      "camera": {
+        "zoom": 1.18,
+        "focus": [
+          900,
+          520
+        ]
+      },
+      "elements": [
+        {
+          "type": "prop",
+          "kind": "sheet",
+          "x": 900,
+          "y": 540,
+          "w": 1400,
+          "h": 820,
+          "rotate": -2,
+          "at": 0,
+          "side": "b"
+        },
+        {
+          "type": "prop",
+          "kind": "ground",
+          "x": 820,
+          "y": 880,
+          "w": 1100,
+          "at": 0.2
+        },
+        {
+          "type": "character",
+          "who": "you",
+          "x": 520,
+          "y": 560,
+          "mood": "worried",
+          "scale": 1.8,
+          "at": 0.3
+        },
+        {
+          "type": "prop",
+          "kind": "calendar",
+          "side": "b",
+          "x": 1080,
+          "y": 440,
+          "text": "35",
+          "scale": 1.9,
+          "at": 1.5
+        },
+        {
+          "type": "note",
+          "text": "someday...",
+          "side": "b",
+          "x": 900,
+          "y": 800,
+          "size": 110,
+          "at": 3
+        }
+      ],
+      "t_start": 5.05,
+      "t_end": 9.9
+    },
+    {
+      "id": "s04",
+      "strip_x": 3,
+      "transition_in": "ink_flood",
+      "vo": "Maya starts today, with half of what you'll put in.",
+      "spine": {
+        "text": "Maya / month",
+        "value": "$200"
+      },
+      "elements": [
+        {
+          "type": "prop",
+          "kind": "sheet",
+          "x": 820,
+          "y": 540,
+          "w": 1420,
+          "h": 820,
+          "rotate": 2,
+          "at": 0,
+          "side": "a"
+        },
+        {
+          "type": "prop",
+          "kind": "ground",
+          "x": 420,
+          "y": 890,
+          "w": 560,
+          "at": 0.2
+        },
+        {
+          "type": "character",
+          "who": "maya",
+          "side": "a",
+          "x": 400,
+          "y": 570,
+          "mood": "happy",
+          "holding": "coin",
+          "scale": 1.8,
+          "at": 0.3
+        },
+        {
+          "type": "bars",
+          "x": 880,
+          "y": 400,
+          "width": 480,
+          "at": 1.4,
+          "scale": 1.15,
+          "rows": [
+            {
+              "label": "You",
+              "value": 400,
+              "display": "$400",
+              "side": "b"
+            },
+            {
+              "label": "Maya",
+              "value": 200,
+              "display": "$200",
+              "side": "a"
+            }
+          ]
+        },
+        {
+          "type": "prop",
+          "kind": "coin",
+          "x": 1180,
+          "y": 760,
+          "scale": 1.4,
+          "at": 3.1
+        }
+      ],
+      "t_start": 9.9,
+      "t_end": 14.35
+    },
+    {
+      "id": "s05",
+      "strip_x": 4,
+      "transition_in": "travel",
+      "vo": "At sixty-five, she has more than you.",
+      "spine": {
+        "text": "You / month",
+        "value": "$400"
+      },
+      "elements": [
+        {
+          "type": "prop",
+          "kind": "sheet",
+          "x": 760,
+          "y": 520,
+          "w": 1380,
+          "h": 860,
+          "rotate": -1.5,
+          "at": 0
+        },
+        {
+          "type": "prop",
+          "kind": "calendar",
+          "x": 260,
+          "y": 300,
+          "text": "65",
+          "at": 0.2,
+          "scale": 1.5
+        },
+        {
+          "type": "bars",
+          "x": 560,
+          "y": 250,
+          "width": 440,
+          "at": 0.8,
+          "scale": 1.2,
+          "rows": [
+            {
+              "label": "Maya",
+              "value": 524963,
+              "display": "$525k",
+              "side": "a"
+            },
+            {
+              "label": "You",
+              "value": 487988,
+              "display": "$488k",
+              "side": "b"
+            }
+          ]
+        },
+        {
+          "type": "stamp",
+          "text": "LATE",
+          "side": "b",
+          "x": 900,
+          "y": 760,
+          "rotate": 6,
+          "at": 2.3,
+          "scale": 1.25
+        }
+      ],
+      "t_start": 14.35,
+      "t_end": 17.75
+    },
+    {
+      "id": "s06",
+      "strip_x": 5,
+      "transition_in": "fold",
+      "vo": "Ten years did that. Here is what they cost you, line by line.",
+      "spine": {
+        "text": "Head start",
+        "value": "10 yrs"
+      },
+      "camera": {
+        "zoom": 1.12,
+        "focus": [
+          760,
+          520
+        ]
+      },
+      "elements": [
+        {
+          "type": "prop",
+          "kind": "sheet",
+          "x": 800,
+          "y": 540,
+          "w": 1440,
+          "h": 820,
+          "rotate": 1.5,
+          "at": 0,
+          "side": "b"
+        },
+        {
+          "type": "prop",
+          "kind": "ground",
+          "x": 1200,
+          "y": 900,
+          "w": 560,
+          "at": 1.3
+        },
+        {
+          "type": "tally",
+          "count": 10,
+          "side": "b",
+          "x": 330,
+          "y": 400,
+          "scale": 2.6,
+          "at": 0.3
+        },
+        {
+          "type": "character",
+          "who": "you",
+          "x": 1200,
+          "y": 580,
+          "mood": "sad",
+          "scale": 1.8,
+          "at": 1.4
+        },
+        {
+          "type": "note",
+          "text": "$37k short",
+          "side": "b",
+          "x": 360,
+          "y": 760,
+          "size": 120,
+          "at": 3.3
+        }
+      ],
+      "t_start": 17.75,
+      "t_end": 23.4
+    }
+  ]
+}

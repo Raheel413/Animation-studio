@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Film (scenes.json)",
+  "type": "object",
+  "required": ["format", "palette", "scenes"],
+  "properties": {
+    "format": {"type": "string", "description": "Style pack folder name, e.g. inkline"},
+    "title": {"type": "string"},
+    "fps": {"type": "number", "default": 30},
+    "width": {"type": "number", "default": 1920},
+    "height": {"type": "number", "default": 1080},
+    "palette": {"type": "object", "required": ["paper", "ink", "a", "b"]},
+    "spine": {"enum": ["ledger", "route", "none"]},
+    "vo_file": {"type": ["string", "null"], "description": "Path inside public/"},
+    "music_file": {"type": ["string", "null"]},
+    "sfx": {"type": "boolean", "default": true},
+    "sources": {"type": "array", "description": "Citations for the description; never shown on screen", "items": {"type": "object"}},
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "vo", "strip_x", "elements"],
+        "properties": {
+          "id": {"type": "string"},
+          "vo": {"type": "string", "description": "Narration for this scene"},
+          "t_start": {"type": "number", "description": "Seconds. Written by timing.mjs or vo_elevenlabs.mjs"},
+          "t_end": {"type": "number"},
+          "strip_x": {"type": "integer"},
+          "transition_in": {"enum": ["travel", "fold", "ink_flood", "cut", "none"]},
+          "camera": {"type": "object", "properties": {"zoom": {"type": "number"}, "focus": {"type": "array"}}},
+          "spine": {"type": "object", "properties": {"text": {"type": "string"}, "value": {"type": "string"}}},
+          "hold": {"type": "boolean"},
+          "elements": {"type": "array", "items": {"type": "object", "required": ["type", "x", "y"]}}
+        }
+      }
+    }
+  }
+}
