@@ -1,0 +1,139 @@
+name: Render video
+
+# Two ways to start a render:
+#   1. Push a scenes file into films/  (e.g. films/my-video.scenes.json) -> it renders automatically.
+#      Push several at once and they render in parallel.
+#   2. Actions tab -> "Render video" -> "Run workflow" -> type the path of any scenes file.
+# The finished MP4 (and a contact sheet to review) appears under "Artifacts" on the run page.
+
+on:
+  workflow_dispatch:
+    inputs:
+      scenes:
+        description: Path to the scenes.json to render
+        required: true
+        default: packs/inkline/examples/ten-years.scenes.json
+      voiceover:
+        description: Generate the ElevenLabs voiceover first (needs the ELEVENLABS_API_KEY secret)
+        type: boolean
+        default: false
+      voice_id:
+        description: ElevenLabs voice ID (only used when voiceover is ticked)
+        required: false
+        default: ''
+      scale:
+        description: Resolution scale (0.5 = fast 960x540 draft, 1 = full 1080p)
+        type: choice
+        options: ['1', '0.5']
+        default: '1'
+  push:
+    branches: [main]
+    paths: ['films/**.json']
+
+permissions:
+  contents: read
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      files: ${{ steps.pick.outputs.files }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: pick
+        env:
+          EVENT: ${{ github.event_name }}
+          INPUT_SCENES: ${{ inputs.scenes }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            [ -f "$INPUT_SCENES" ] || { echo "::error::No file at $INPUT_SCENES"; exit 1; }
+            list="$INPUT_SCENES"
+          elif [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            list=$(git ls-files 'films/*.json')
+          else
+            list=$(git diff --name-only --diff-filter=AM "$BEFORE" "$AFTER" -- 'films/*.json')
+          fi
+          echo "Will render:"; echo "$list"
+          echo "files=$(printf '%s\n' $list | jq -R . | jq -sc 'map(select(length>0))')" >> "$GITHUB_OUTPUT"
+
+  render:
+    needs: plan
+    if: needs.plan.outputs.files != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        scenes: ${{ fromJson(needs.plan.outputs.files) }}
+    concurrency:
+      group: render-${{ matrix.scenes }}
+      cancel-in-progress: true
+    env:
+      SCENES: ${{ matrix.scenes }}
+      SCALE: ${{ inputs.scale || '1' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install ffmpeg
+        run: command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+
+      - name: Install packages
+        run: npm ci --no-audit --no-fund
+
+      - name: Voiceover (ElevenLabs)
+        if: inputs.voiceover
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          VOICE_ID: ${{ inputs.voice_id }}
+        run: |
+          [ -n "$ELEVENLABS_API_KEY" ] || { echo "::error::Add ELEVENLABS_API_KEY under Settings > Secrets and variables > Actions"; exit 1; }
+          node core/scripts/vo_elevenlabs.mjs "$SCENES" --voice "$VOICE_ID"
+
+      - name: Fill timings if missing
+        run: |
+          if [ "$(jq '.scenes[0].t_start // "none"' "$SCENES")" = '"none"' ]; then
+            node core/scripts/timing.mjs "$SCENES"
+          fi
+
+      - name: Quality gate
+        run: node core/scripts/validate.mjs "$SCENES"
+
+      - name: Render
+        run: |
+          export REMOTION_CONCURRENCY=$(nproc)
+          echo "Rendering on $(nproc) cores"
+          node core/scripts/render.mjs "$SCENES" --scale "$SCALE"
+
+      - name: Contact sheet
+        run: for f in out/*.mp4; do node core/scripts/contact_sheet.mjs "$f"; done
+
+      - name: Name the download
+        id: name
+        run: echo "name=$(basename "$SCENES" | sed -E 's/(\.scenes)?\.json$//')" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.name.outputs.name }}
+          path: |
+            out/*.mp4
+            out/*.sheet.jpg
+          retention-days: 14
+          if-no-files-found: error
+
+      - name: Summary
+        run: |
+          {
+            echo "### ✅ Rendered \`$SCENES\`"
+            for f in out/*.mp4; do echo "- $(basename "$f"): $(du -h "$f" | cut -f1)"; done
+            echo ""
+            echo "Download it from **Artifacts** at the bottom of this page."
+          } >> "$GITHUB_STEP_SUMMARY"
