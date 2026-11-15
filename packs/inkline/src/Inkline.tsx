@@ -372,7 +372,7 @@ const InklineFilm: React.FC<{film: Film; amp: number}> = ({film, amp: voiceAmp})
 
         {film.spine === 'ledger' && <Ledger film={film} frame={frame} fps={fps} />}
         {film.spine === 'route' && <Route film={film} frame={frame} fps={fps} index={cam.index} local={cam.local} />}
-        <StripEdges film={film} tx={tx} z={cam.z} />
+        {film.edges === true && <StripEdges film={film} tx={tx} z={cam.z} />}
         <Transition film={film} frame={frame} fps={fps} />
         {film.captions && <Captions text={cam.scene.vo} local={cam.local} dur={(cam.scene.t_end - cam.scene.t_start) * fps} />}
         {/* soft paper vignette, no glow */}

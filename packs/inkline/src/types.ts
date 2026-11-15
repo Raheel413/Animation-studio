@@ -102,6 +102,7 @@ export type Film = {
   palette: {paper: string; ink: string; a: string; b: string};
   spine: 'ledger' | 'route' | 'none';
   vo_file?: string | null; // file in public/
+  edges?: boolean; // torn paper edges top and bottom (off unless set true)
   captions?: boolean; // bold word-group captions over the frame
   music_file?: string | null;
   sfx?: boolean;
