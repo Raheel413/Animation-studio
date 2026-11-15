@@ -26,7 +26,7 @@ for (let a = first; a <= last; a += chunk) {
   const part = path.join(tmp, `part-${String(parts.length).padStart(3, '0')}.mp4`);
   console.log(`rendering frames ${a}-${b} of ${total}`);
   // call the Remotion CLI through node directly: works the same on Windows, macOS and Linux
-  execFileSync(process.execPath, [cli, 'render', entry, 'Inkline', part, `--props=${propsFile}`, `--frames=${a}-${b}`, `--scale=${arg('--scale', 1)}`, '--concurrency=2', '--log=error', ...(browser ? [`--browser-executable=${browser}`] : [])], {stdio: 'inherit'});
+  execFileSync(process.execPath, [cli, 'render', entry, 'Inkline', part, `--props=${propsFile}`, `--frames=${a}-${b}`, `--scale=${arg('--scale', 1)}`, `--concurrency=${process.env.REMOTION_CONCURRENCY || 2}`, '--log=error', ...(browser ? [`--browser-executable=${browser}`] : [])], {stdio: 'inherit'});
   parts.push(part);
 }
 if (parts.length === 1) fs.copyFileSync(parts[0], out);

@@ -30,6 +30,10 @@ npm run studio                                                # live preview
 
 Needs Node 20+ and ffmpeg on your PATH (check with `ffmpeg -version` in a new terminal). Remotion downloads its own headless browser on the first render. Works on Windows (PowerShell), macOS and Linux. Paper sound effects ship in `public/sfx/`; `npm run sfx` rebuilds them.
 
+## Render in the cloud (GitHub Actions)
+
+You don't need to render on your own machine. Push a scenes file into `films/` and GitHub renders it, or go to **Actions → Render video → Run workflow** and give it any scenes file. The MP4 and a contact sheet show up under **Artifacts** on the run page. See `films/README.md`.
+
 ## With Claude
 
 Open the repo in Claude Code and say: *"Read SKILL.md and make a 3-minute Inkline video about ..."*. `SKILL.md` is the director's manual: intake questions, script rules, voiceover, beat sheet, quality gates, render. Each pack has its own `SKILL.md` with the look and the element vocabulary.
