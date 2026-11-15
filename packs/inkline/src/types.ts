@@ -69,9 +69,10 @@ export type ActorEl = ElementBase & {
   silhouette?: boolean; // muted slate background archetype
 };
 export type SpriteEl = ElementBase & {type: 'sprite'; who: string; pose: string; h?: number; flip?: boolean; slump?: boolean};
+export type PhotoEl = ElementBase & {type: 'photo'; src: string; w?: number; h?: number; zoom?: number};
 export type DeskEl = ElementBase & {type: 'desk'; w: number; h: number};
 export type TagEl = ElementBase & {type: 'tag'; text: string; dark?: boolean};
-export type El = SpriteEl | DeskEl | TagEl | ActorEl | CharacterEl | StampEl | TallyEl | NoteEl | BarsEl | CheckGridEl | PropEl | ClippingEl | LineChartEl;
+export type El = PhotoEl | SpriteEl | DeskEl | TagEl | ActorEl | CharacterEl | StampEl | TallyEl | NoteEl | BarsEl | CheckGridEl | PropEl | ClippingEl | LineChartEl;
 
 export type Scene = {
   id: string;
@@ -100,6 +101,7 @@ export type Film = {
   palette: {paper: string; ink: string; a: string; b: string};
   spine: 'ledger' | 'route' | 'none';
   vo_file?: string | null; // file in public/
+  captions?: boolean; // bold word-group captions over the frame
   music_file?: string | null;
   sfx?: boolean;
   scenes: Scene[];

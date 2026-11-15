@@ -1,0 +1,577 @@
+{
+ "format": "inkline",
+ "title": "Why Everything Changes After You Save $50,000",
+ "fps": 30,
+ "palette": {
+  "paper": "#F5F2EB",
+  "ink": "#1A1A1A",
+  "a": "#2E7D32",
+  "b": "#D93829"
+ },
+ "spine": "none",
+ "captions": true,
+ "voices": {
+  "narrator": "aura-2-zeus-en"
+ },
+ "vo_file": null,
+ "music_file": null,
+ "sfx": true,
+ "sources": [
+  {
+   "outlet": "Federal Reserve, Survey of Consumer Finances 2022",
+   "finding": "Median transaction-account balance $8,000"
+  }
+ ],
+ "scenes": [
+  {
+   "id": "s001",
+   "strip_x": 0,
+   "vo": "Most people never get here.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_01.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "none"
+  },
+  {
+   "id": "s002",
+   "strip_x": 1,
+   "vo": "In the Fed's 2022 survey, the typical American family had about eight thousand dollars in checking and savings.",
+   "elements": [
+    {
+     "type": "desk",
+     "x": 960,
+     "y": 530,
+     "w": 1860,
+     "h": 980,
+     "at": 0
+    },
+    {
+     "type": "clipping",
+     "source": "Federal Reserve",
+     "date": "SCF 2022",
+     "lines": [
+      "Median family balance in",
+      "checking + savings: $8,000"
+     ],
+     "hl": [
+      1
+     ],
+     "ring": {
+      "line": 1,
+      "text": "$8,000"
+     },
+     "x": 960,
+     "y": 470,
+     "size": 66,
+     "w": 1100,
+     "rotate": -2,
+     "at": 0.1
+    },
+    {
+     "type": "tag",
+     "text": "Source: Federal Reserve, Survey of Consumer Finances 2022",
+     "x": 70,
+     "y": 985,
+     "at": 0.4,
+     "dark": true
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s003",
+   "strip_x": 2,
+   "vo": "So if you've saved fifty thousand dollars, you're already ahead of most of the country.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_02.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s004",
+   "strip_x": 3,
+   "vo": "And that number changes your life in ways nobody warns you about.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_03.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s005",
+   "strip_x": 4,
+   "vo": "First, emergencies stop being emergencies.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_04.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s006",
+   "strip_x": 5,
+   "vo": "A blown transmission costs about two thousand dollars.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_05.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s007",
+   "strip_x": 6,
+   "vo": "With fifty grand behind you, that's four percent of your cushion.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_06.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s008",
+   "strip_x": 7,
+   "vo": "You pay it and get on with your day.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_07.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s009",
+   "strip_x": 8,
+   "vo": "Second, your money starts earning its own paycheck.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_08.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s010",
+   "strip_x": 9,
+   "vo": "Fifty thousand at four percent pays you about two thousand dollars a year for doing nothing.",
+   "elements": [
+    {
+     "type": "bars",
+     "rows": [
+      {
+       "label": "your savings",
+       "value": 50000,
+       "display": "$50,000",
+       "side": null
+      },
+      {
+       "label": "paid to you, yearly",
+       "value": 2000,
+       "display": "+$2,000",
+       "side": "a"
+      }
+     ],
+     "x": 620,
+     "y": 380,
+     "at": 0.3,
+     "width": 900
+    },
+    {
+     "type": "note",
+     "text": "every year, on autopilot",
+     "x": 640,
+     "y": 300,
+     "at": 1.4,
+     "size": 64
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s011",
+   "strip_x": 10,
+   "vo": "Put it in a broad index fund instead, and the math gets louder.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_09.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s012",
+   "strip_x": 11,
+   "vo": "At seven percent a year, fifty thousand grows to about one hundred ninety-three thousand in twenty years.",
+   "elements": [
+    {
+     "type": "linechart",
+     "points": [
+      {
+       "v": 50000.0,
+       "t": 0,
+       "label": "Today",
+       "tag": "$50,000",
+       "tagDy": -34
+      },
+      {
+       "v": 53500.0,
+       "t": 1
+      },
+      {
+       "v": 57245.0,
+       "t": 2
+      },
+      {
+       "v": 61252.15000000001,
+       "t": 3
+      },
+      {
+       "v": 65539.80050000001,
+       "t": 4
+      },
+      {
+       "v": 70127.58653500002,
+       "t": 5
+      },
+      {
+       "v": 75036.51759245002,
+       "t": 6
+      },
+      {
+       "v": 80289.07382392153,
+       "t": 7
+      },
+      {
+       "v": 85909.30899159604,
+       "t": 8
+      },
+      {
+       "v": 91922.96062100778,
+       "t": 9
+      },
+      {
+       "v": 98357.56786447832,
+       "t": 10,
+       "label": "Year 10",
+       "tag": "$98,358",
+       "tagDx": -40
+      },
+      {
+       "v": 105242.59761499181,
+       "t": 11
+      },
+      {
+       "v": 112609.57944804124,
+       "t": 12
+      },
+      {
+       "v": 120492.25000940413,
+       "t": 13
+      },
+      {
+       "v": 128926.70751006244,
+       "t": 14
+      },
+      {
+       "v": 137951.57703576682,
+       "t": 15
+      },
+      {
+       "v": 147608.1874282705,
+       "t": 16
+      },
+      {
+       "v": 157940.76054824944,
+       "t": 17
+      },
+      {
+       "v": 168996.61378662693,
+       "t": 18
+      },
+      {
+       "v": 180826.3767516908,
+       "t": 19
+      },
+      {
+       "v": 193484.22312430918,
+       "t": 20,
+       "label": "Year 20",
+       "tag": "$193,484"
+      }
+     ],
+     "x": 300,
+     "y": 240,
+     "w": 1320,
+     "h": 520,
+     "side": "a",
+     "title": "$50,000 left alone at 7% a year",
+     "min": 30000,
+     "max": 210000,
+     "draw": 70,
+     "at": 0.1
+    },
+    {
+     "type": "tag",
+     "text": "Illustration: 7% annual return, compounded yearly. Not a forecast.",
+     "x": 70,
+     "y": 985,
+     "at": 0.6
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s013",
+   "strip_x": 12,
+   "vo": "Without adding another dollar.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_10.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s014",
+   "strip_x": 13,
+   "vo": "Third, you stop saying yes to bad deals.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_11.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s015",
+   "strip_x": 14,
+   "vo": "You can walk away from a car loan with a nineteen percent rate.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_12.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s016",
+   "strip_x": 15,
+   "vo": "You can turn down a job that treats you badly.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_13.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s017",
+   "strip_x": 16,
+   "vo": "That freedom is worth more than the interest.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_14.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s018",
+   "strip_x": 17,
+   "vo": "Fourth, the next fifty comes faster.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_15.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s019",
+   "strip_x": 18,
+   "vo": "Your first fifty took years of boring habits.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_16.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s020",
+   "strip_x": 19,
+   "vo": "The second fifty has your money pulling in the same direction.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_17.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s021",
+   "strip_x": 20,
+   "vo": "But here's the trap.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_18.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s022",
+   "strip_x": 21,
+   "vo": "Fifty thousand feels like a lot, and that's exactly when people buy the truck.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_19.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s023",
+   "strip_x": 22,
+   "vo": "Keep the habits that got you here.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_20.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s024",
+   "strip_x": 23,
+   "vo": "The next level shows up on its own.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_21.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s025",
+   "strip_x": 24,
+   "vo": "If you're sitting on fifty grand, you're already playing a different game.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_22.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s026",
+   "strip_x": 25,
+   "vo": "Make sure you keep playing it.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "flow50k/img_23.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0
+    }
+   ],
+   "transition_in": "cut"
+  }
+ ]
+}
