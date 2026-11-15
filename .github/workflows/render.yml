@@ -14,11 +14,12 @@ on:
         required: true
         default: packs/inkline/examples/ten-years.scenes.json
       voiceover:
-        description: Generate the ElevenLabs voiceover first (needs the ELEVENLABS_API_KEY secret)
-        type: boolean
-        default: false
+        description: Voiceover engine (deepgram needs the DEEPGRAM_API_KEY secret, elevenlabs needs ELEVENLABS_API_KEY)
+        type: choice
+        options: [deepgram, elevenlabs, none]
+        default: deepgram
       voice_id:
-        description: ElevenLabs voice ID (only used when voiceover is ticked)
+        description: Voice (blank = default; Deepgram default is aura-2-zeus-en, American male)
         required: false
         default: ''
       scale:
@@ -89,8 +90,20 @@ jobs:
       - name: Install packages
         run: npm ci --no-audit --no-fund
 
+      - name: Voiceover (Deepgram)
+        if: (inputs.voiceover || 'deepgram') == 'deepgram'
+        env:
+          DEEPGRAM_API_KEY: ${{ secrets.DEEPGRAM_API_KEY }}
+          VOICE_ID: ${{ inputs.voice_id }}
+        run: |
+          if [ -z "$DEEPGRAM_API_KEY" ]; then
+            echo "::warning::No DEEPGRAM_API_KEY secret, rendering without a voice"
+            exit 0
+          fi
+          node core/scripts/vo_deepgram.mjs "$SCENES" ${VOICE_ID:+--voice "$VOICE_ID"}
+
       - name: Voiceover (ElevenLabs)
-        if: inputs.voiceover
+        if: inputs.voiceover == 'elevenlabs'
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           VOICE_ID: ${{ inputs.voice_id }}
@@ -126,6 +139,7 @@ jobs:
           path: |
             out/*.mp4
             out/*.sheet.jpg
+            public/vo/*.mp3
           retention-days: 14
           if-no-files-found: error
 
