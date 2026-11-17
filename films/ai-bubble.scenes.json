@@ -1,0 +1,2249 @@
+{
+ "format": "inkline",
+ "title": "If the AI Bubble Pops, Who Loses First?",
+ "fps": 30,
+ "palette": {
+  "paper": "#F5F2EB",
+  "ink": "#1A1A1A",
+  "a": "#2E7D32",
+  "b": "#D93829"
+ },
+ "spine": "none",
+ "captions": true,
+ "voices": {
+  "narrator": "aura-2-zeus-en",
+  "dee": "aura-2-thalia-en"
+ },
+ "vo_file": null,
+ "music_file": null,
+ "sfx": true,
+ "sources": [
+  "Nasdaq daily closes (NVDA); Reuters via The Star, Nov 11 2026",
+  "Nvidia Q2 FY2027 results via Thurrott, Aug 26 2026",
+  "The Motley Fool, Magnificent Seven share of S&P 500, Nov 2026",
+  "S&P 500 total returns 2000-02; AP via KTVU, Apr 23 2015 (Nasdaq record)",
+  "Vanguard, How America Saves 2026",
+  "The Motley Fool, Jan 26 2023 (2022 60/40); Treasury 10-year yield Nov 6 2026"
+ ],
+ "scenes": [
+  {
+   "id": "s001",
+   "strip_x": 0,
+   "vo": "Three neighbors on Maple Street own the exact same fund.",
+   "elements": [
+    {
+     "type": "map",
+     "src": "ai/src/map.jpg",
+     "iw": 1376,
+     "ih": 768,
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "cut": true,
+     "cam": [
+      [
+       0,
+       688,
+       300,
+       1.35
+      ],
+      [
+       2.2,
+       688,
+       384,
+       1.08
+      ]
+     ],
+     "pins": [
+      {
+       "x": 360,
+       "y": 80,
+       "label": "MARCUS",
+       "at": 0.5,
+       "color": "#C0392B",
+       "sub": "29"
+      },
+      {
+       "x": 690,
+       "y": 95,
+       "label": "DEE",
+       "at": 0.9,
+       "color": "#1F4E79",
+       "sub": "54"
+      },
+      {
+       "x": 1050,
+       "y": 110,
+       "label": "WALT",
+       "at": 1.3,
+       "color": "#7A5230",
+       "sub": "66"
+      }
+     ],
+     "life": 1
+    }
+   ]
+  },
+  {
+   "id": "s002",
+   "strip_x": 1,
+   "vo": "If the A I bubble pops,",
+   "elements": [
+    {
+     "type": "desk",
+     "x": 960,
+     "y": 540,
+     "w": 1960,
+     "h": 1120,
+     "at": 0
+    },
+    {
+     "type": "screen",
+     "src": "ai/clip/star.jpg",
+     "iw": 1060,
+     "ih": 470,
+     "x": 960,
+     "y": 520,
+     "w": 1350,
+     "at": 0.0,
+     "hl": [
+      [
+       17,
+       329,
+       950,
+       366
+      ]
+     ],
+     "ring": [
+      700,
+      329,
+      955,
+      366
+     ],
+     "tag": "Reuters via The Star · Nov 11, 2026",
+     "push": 0.2,
+     "hlAt": 0.2
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s003",
+   "strip_x": 2,
+   "vo": "one of them has a few bad years.",
+   "elements": [
+    {
+     "type": "map",
+     "src": "ai/src/map.jpg",
+     "iw": 1376,
+     "ih": 768,
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "cut": true,
+     "cam": [
+      [
+       0,
+       688,
+       384,
+       1.08
+      ],
+      [
+       1.0,
+       380,
+       205,
+       2.3
+      ]
+     ],
+     "pins": [
+      {
+       "x": 360,
+       "y": 80,
+       "label": "A FEW BAD YEARS",
+       "at": 0.9,
+       "color": "#C0392B"
+      }
+     ],
+     "life": 1
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s004",
+   "strip_x": 2,
+   "vo": "One loses a decade.",
+   "elements": [
+    {
+     "type": "map",
+     "src": "ai/src/map.jpg",
+     "iw": 1376,
+     "ih": 768,
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "cut": true,
+     "cam": [
+      [
+       0,
+       380,
+       205,
+       2.3
+      ],
+      [
+       0.8,
+       715,
+       205,
+       2.3
+      ]
+     ],
+     "pins": [
+      {
+       "x": 690,
+       "y": 95,
+       "label": "A DECADE",
+       "at": 0.7,
+       "color": "#1F4E79"
+      }
+     ],
+     "life": 1
+    }
+   ]
+  },
+  {
+   "id": "s005",
+   "strip_x": 2,
+   "vo": "And one may never get the money back.",
+   "elements": [
+    {
+     "type": "map",
+     "src": "ai/src/map.jpg",
+     "iw": 1376,
+     "ih": 768,
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "cut": true,
+     "cam": [
+      [
+       0,
+       715,
+       205,
+       2.3
+      ],
+      [
+       0.9,
+       1055,
+       205,
+       2.3
+      ]
+     ],
+     "pins": [
+      {
+       "x": 1050,
+       "y": 110,
+       "label": "MAYBE NEVER",
+       "at": 0.9,
+       "color": "#7A5230"
+      }
+     ],
+     "life": 1
+    }
+   ],
+   "shake": 1.6
+  },
+  {
+   "id": "s006",
+   "strip_x": 3,
+   "vo": "Same fund? Then we all lose the same.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "dee",
+     "pose": "skeptical",
+     "x": 480,
+     "y": 130,
+     "h": 1120,
+     "at": 0.0
+    },
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "welcome",
+     "x": 1440,
+     "y": 330,
+     "h": 900,
+     "at": 0.1
+    }
+   ],
+   "transition_in": "travel",
+   "speaker": "dee"
+  },
+  {
+   "id": "s007",
+   "strip_x": 3,
+   "vo": "Same fund, same crash, very different damage.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "3 neighbors · 3 outcomes",
+     "x": 960,
+     "y": 160,
+     "at": 0.2,
+     "size": 60
+    }
+   ],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "count_2"
+    }
+   ]
+  },
+  {
+   "id": "s008",
+   "strip_x": 3,
+   "vo": "And the one who gets hurt worst did nothing wrong.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "point"
+    },
+    {
+     "who": "dee",
+     "at": 0.6,
+     "pose": "thinking"
+    }
+   ]
+  },
+  {
+   "id": "s009",
+   "strip_x": 4,
+   "vo": "So, two questions. Who loses first? And where are you standing when it happens?",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "count_2",
+     "x": 400,
+     "y": 330,
+     "h": 900,
+     "at": 0.0,
+     "flip": true
+    },
+    {
+     "type": "note",
+     "text": "Q1 · front of the line",
+     "x": 1180,
+     "y": 380,
+     "at": 0.9,
+     "size": 72,
+     "side": "b"
+    },
+    {
+     "type": "note",
+     "text": "Q2 · your spot on the map",
+     "x": 1180,
+     "y": 560,
+     "at": 2.6,
+     "size": 64
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s010",
+   "strip_x": 4,
+   "vo": "Stay with me and you'll be able to place yourself on that street.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "point"
+    }
+   ]
+  },
+  {
+   "id": "s011",
+   "strip_x": 5,
+   "vo": "Marcus is twenty-nine.",
+   "elements": [
+    {
+     "type": "map",
+     "src": "ai/src/map.jpg",
+     "iw": 1376,
+     "ih": 768,
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "cut": true,
+     "cam": [
+      [
+       0,
+       688,
+       384,
+       1.08
+      ],
+      [
+       1.0,
+       380,
+       205,
+       2.3
+      ]
+     ],
+     "pins": [
+      {
+       "x": 360,
+       "y": 80,
+       "label": "MARCUS",
+       "at": 0.5,
+       "color": "#C0392B",
+       "sub": "29"
+      }
+     ],
+     "life": 1
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s012",
+   "strip_x": 6,
+   "vo": "He stocks shelves at the hardware store and puts a hundred dollars into the street fund every payday.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "marcus",
+     "pose": "neutral",
+     "x": 560,
+     "y": 110,
+     "h": 1000,
+     "at": 0.0
+    },
+    {
+     "type": "note",
+     "text": "≈ $2,600 a year",
+     "x": 1300,
+     "y": 420,
+     "at": 2.6,
+     "size": 72,
+     "side": "a"
+    }
+   ],
+   "transition_in": "travel",
+   "cues": [
+    {
+     "who": "marcus",
+     "at": 1.6,
+     "pose": "thumbs"
+    }
+   ]
+  },
+  {
+   "id": "s013",
+   "strip_x": 7,
+   "vo": "Dee, you know.",
+   "elements": [
+    {
+     "type": "map",
+     "src": "ai/src/map.jpg",
+     "iw": 1376,
+     "ih": 768,
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "cut": true,
+     "cam": [
+      [
+       0,
+       380,
+       205,
+       2.3
+      ],
+      [
+       0.9,
+       715,
+       205,
+       2.3
+      ]
+     ],
+     "pins": [
+      {
+       "x": 690,
+       "y": 95,
+       "label": "DEE",
+       "at": 0.4,
+       "color": "#1F4E79",
+       "sub": "54"
+      }
+     ],
+     "life": 1
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s014",
+   "strip_x": 8,
+   "vo": "She's fifty-four, eleven years from parking the school bus for good.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "dee",
+     "pose": "neutral",
+     "x": 560,
+     "y": 130,
+     "h": 1120,
+     "at": 0.0
+    },
+    {
+     "type": "counter",
+     "from": 0,
+     "to": 11,
+     "prefix": "",
+     "suffix": "",
+     "decimals": 0,
+     "dur": 1.4,
+     "perFrame": 0,
+     "x": 960,
+     "y": 520,
+     "at": 1.2,
+     "dark": false,
+     "size": 200,
+     "label": "years to go",
+     "color": "#1F4E79"
+    }
+   ],
+   "transition_in": "travel"
+  },
+  {
+   "id": "s015",
+   "strip_x": 9,
+   "vo": "And Walt is sixty-six.",
+   "elements": [
+    {
+     "type": "map",
+     "src": "ai/src/map.jpg",
+     "iw": 1376,
+     "ih": 768,
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "cut": true,
+     "cam": [
+      [
+       0,
+       715,
+       205,
+       2.3
+      ],
+      [
+       0.9,
+       1055,
+       205,
+       2.3
+      ]
+     ],
+     "pins": [
+      {
+       "x": 1050,
+       "y": 110,
+       "label": "WALT",
+       "at": 0.4,
+       "color": "#7A5230",
+       "sub": "66"
+      }
+     ],
+     "life": 1
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s016",
+   "strip_x": 10,
+   "vo": "He retired in the spring, and every month he sells a few slices of the fund to cover groceries and the gas bill.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "walt",
+     "pose": "neutral",
+     "x": 560,
+     "y": 90,
+     "h": 1040,
+     "at": 0.0
+    },
+    {
+     "type": "note",
+     "text": "sells a little every month",
+     "x": 1320,
+     "y": 420,
+     "at": 3.0,
+     "size": 62,
+     "side": "b"
+    }
+   ],
+   "transition_in": "travel",
+   "cues": [
+    {
+     "who": "walt",
+     "at": 2.4,
+     "pose": "phone_worried"
+    }
+   ]
+  },
+  {
+   "id": "s017",
+   "strip_x": 11,
+   "vo": "Walt's fine. He made it. He's done.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "dee",
+     "pose": "relieved",
+     "x": 480,
+     "y": 130,
+     "h": 1120,
+     "at": 0.0
+    },
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "inspect",
+     "x": 1440,
+     "y": 330,
+     "h": 900,
+     "at": 0.1
+    }
+   ],
+   "transition_in": "travel",
+   "speaker": "dee"
+  },
+  {
+   "id": "s018",
+   "strip_x": 11,
+   "vo": "That's what everyone on the street thinks.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "shrug"
+    }
+   ]
+  },
+  {
+   "id": "s019",
+   "strip_x": 12,
+   "vo": "The fund owns a slice of all five hundred shops on Maple Street.",
+   "elements": [
+    {
+     "type": "map",
+     "src": "ai/src/map.jpg",
+     "iw": 1376,
+     "ih": 768,
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "cut": true,
+     "cam": [
+      [
+       0,
+       688,
+       384,
+       1.08
+      ],
+      [
+       1.2,
+       690,
+       540,
+       1.45
+      ]
+     ],
+     "pins": [],
+     "life": 1
+    },
+    {
+     "type": "counter",
+     "from": 0,
+     "to": 500,
+     "prefix": "",
+     "suffix": "",
+     "decimals": 0,
+     "dur": 1.4,
+     "perFrame": 0,
+     "x": 960,
+     "y": 230,
+     "at": 0.6,
+     "dark": true,
+     "size": 110,
+     "label": "shops in the fund"
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s020",
+   "strip_x": 12,
+   "vo": "About a third of it sits in the seven biggest.",
+   "elements": [
+    {
+     "type": "desk",
+     "x": 960,
+     "y": 540,
+     "w": 1960,
+     "h": 1120,
+     "at": 0
+    },
+    {
+     "type": "screen",
+     "src": "ai/clip/mag7.jpg",
+     "iw": 800,
+     "ih": 225,
+     "x": 960,
+     "y": 520,
+     "w": 1150,
+     "at": 0.0,
+     "hl": [
+      [
+       669,
+       -38,
+       855,
+       -15
+      ]
+     ],
+     "ring": [
+      757,
+      -81,
+      813,
+      -60
+     ],
+     "tag": "The Motley Fool · Nov 2026",
+     "push": 0.05,
+     "hlAt": 0.5
+    }
+   ]
+  },
+  {
+   "id": "s021",
+   "strip_x": 13,
+   "vo": "Now it's a Tuesday in the bad year.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "ai/photo/stocks.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "zoom": 0.1,
+     "life": 1
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s022",
+   "strip_x": 13,
+   "vo": "The seven big shops have fallen hard, and a slice of the fund sells for half of what it did.",
+   "elements": [
+    {
+     "type": "desk",
+     "x": 960,
+     "y": 540,
+     "w": 1960,
+     "h": 1120,
+     "at": 0
+    },
+    {
+     "type": "counter",
+     "from": 100,
+     "to": 50,
+     "prefix": "$",
+     "suffix": "",
+     "decimals": 0,
+     "dur": 1.6,
+     "perFrame": 0,
+     "x": 960,
+     "y": 520,
+     "at": 1.4,
+     "dark": true,
+     "size": 230,
+     "label": "price of one slice",
+     "color": "#FF5A4A"
+    }
+   ],
+   "shake": 1.2
+  },
+  {
+   "id": "s023",
+   "strip_x": 14,
+   "vo": "Marcus gets paid. His hundred dollars buys twice as many slices as last month, and he doesn't even notice.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "marcus",
+     "pose": "phone",
+     "x": 560,
+     "y": 110,
+     "h": 1000,
+     "at": 0.0
+    },
+    {
+     "type": "counter",
+     "from": 2,
+     "to": 4,
+     "prefix": "",
+     "suffix": "",
+     "decimals": 0,
+     "dur": 1.0,
+     "perFrame": 0,
+     "x": 960,
+     "y": 500,
+     "at": 1.8,
+     "dark": false,
+     "size": 190,
+     "label": "slices per $100",
+     "color": "#2E7D32"
+    }
+   ],
+   "transition_in": "travel",
+   "cues": [
+    {
+     "who": "marcus",
+     "at": 3.4,
+     "pose": "shrug"
+    }
+   ]
+  },
+  {
+   "id": "s024",
+   "strip_x": 15,
+   "vo": "Dee opens the app at a red light. Her stomach drops. She closes it.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "dee",
+     "pose": "shock_device",
+     "x": 560,
+     "y": 130,
+     "h": 1120,
+     "at": 0.0
+    },
+    {
+     "type": "stamp",
+     "text": "−50%",
+     "x": 1300,
+     "y": 360,
+     "at": 0.9,
+     "side": "b",
+     "rotate": -6
+    }
+   ],
+   "transition_in": "travel",
+   "shake": 0.9
+  },
+  {
+   "id": "s025",
+   "strip_x": 15,
+   "vo": "She isn't buying much and she isn't selling. She has eleven years.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "hold · 11 years",
+     "x": 1300,
+     "y": 620,
+     "at": 1.4,
+     "size": 64
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.6,
+     "pose": "thinking"
+    }
+   ]
+  },
+  {
+   "id": "s026",
+   "strip_x": 16,
+   "vo": "Walt is standing in the grocery line with a carton of eggs in one hand and his phone in the other.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "ai/src/grocery.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "zoom": 0.05
+    },
+    {
+     "type": "sprite",
+     "who": "walt",
+     "pose": "eggs",
+     "x": 520,
+     "y": 120,
+     "h": 1000,
+     "at": 0.3
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s027",
+   "strip_x": 16,
+   "vo": "The bill is the same as last month.",
+   "elements": [
+    {
+     "type": "counter",
+     "from": 180,
+     "to": 180,
+     "prefix": "$",
+     "suffix": "",
+     "decimals": 0,
+     "dur": 0.1,
+     "perFrame": 0,
+     "x": 960,
+     "y": 300,
+     "at": 0.2,
+     "dark": true,
+     "size": 120,
+     "label": "groceries + gas"
+    }
+   ]
+  },
+  {
+   "id": "s028",
+   "strip_x": 16,
+   "vo": "But to cover it, he has to sell twice as many slices.",
+   "elements": [
+    {
+     "type": "counter",
+     "from": 2,
+     "to": 4,
+     "prefix": "",
+     "suffix": "",
+     "decimals": 0,
+     "dur": 1.0,
+     "perFrame": 0,
+     "x": 960,
+     "y": 640,
+     "at": 0.6,
+     "dark": true,
+     "size": 160,
+     "label": "slices sold",
+     "color": "#FF5A4A"
+    }
+   ],
+   "cues": [
+    {
+     "who": "walt",
+     "at": 0.4,
+     "pose": "phone_worried"
+    }
+   ],
+   "shake": 1.0
+  },
+  {
+   "id": "s029",
+   "strip_x": 17,
+   "vo": "Why doesn't he just wait it out, like me?",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "dee",
+     "pose": "skeptical",
+     "x": 480,
+     "y": 130,
+     "h": 1120,
+     "at": 0.0
+    },
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "welcome",
+     "x": 1440,
+     "y": 330,
+     "h": 900,
+     "at": 0.1
+    }
+   ],
+   "transition_in": "travel",
+   "speaker": "dee"
+  },
+  {
+   "id": "s030",
+   "strip_x": 17,
+   "vo": "Because the gas bill doesn't wait. And then comes the part that stings.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "shrug"
+    }
+   ]
+  },
+  {
+   "id": "s031",
+   "strip_x": 17,
+   "vo": "What part?",
+   "elements": [],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "thinking"
+    }
+   ],
+   "speaker": "dee"
+  },
+  {
+   "id": "s032",
+   "strip_x": 18,
+   "vo": "Somebody buys those slices. Marcus does. At half price.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "walt",
+     "pose": "slump",
+     "x": 420,
+     "y": 150,
+     "h": 980,
+     "at": 0.0
+    },
+    {
+     "type": "sprite",
+     "who": "marcus",
+     "pose": "thumbs",
+     "x": 1500,
+     "y": 150,
+     "h": 980,
+     "at": 1.2
+    },
+    {
+     "type": "note",
+     "text": "50% off",
+     "x": 960,
+     "y": 300,
+     "at": 2.4,
+     "size": 110,
+     "side": "b"
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s033",
+   "strip_x": 19,
+   "vo": "So when prices come back, Marcus owns Walt's slices.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "marcus",
+     "pose": "point",
+     "x": 1500,
+     "y": 150,
+     "h": 980,
+     "at": 0.0
+    },
+    {
+     "type": "sprite",
+     "who": "walt",
+     "pose": "slump",
+     "x": 420,
+     "y": 150,
+     "h": 980,
+     "at": 0.0
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s034",
+   "strip_x": 19,
+   "vo": "Walt's recovery happens in somebody else's account.",
+   "elements": [
+    {
+     "type": "stamp",
+     "text": "RECOVERY: MARCUS",
+     "x": 960,
+     "y": 240,
+     "at": 1.4,
+     "side": "b",
+     "rotate": -6
+    }
+   ]
+  },
+  {
+   "id": "s035",
+   "strip_x": 20,
+   "vo": "So Walt gets hurt because he has to sell.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "dee",
+     "pose": "thinking",
+     "x": 480,
+     "y": 130,
+     "h": 1120,
+     "at": 0.0
+    },
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "inspect",
+     "x": 1440,
+     "y": 330,
+     "h": 900,
+     "at": 0.1
+    }
+   ],
+   "transition_in": "travel",
+   "speaker": "dee"
+  },
+  {
+   "id": "s036",
+   "strip_x": 20,
+   "vo": "Yes. A fall you can wait out becomes a bad memory. A fall you have to sell into is permanent.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "hold → temporary",
+     "x": 960,
+     "y": 180,
+     "at": 1.2,
+     "size": 58,
+     "side": "a"
+    },
+    {
+     "type": "note",
+     "text": "sell → locked in",
+     "x": 960,
+     "y": 290,
+     "at": 3.6,
+     "size": 58,
+     "side": "b"
+    }
+   ],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "point"
+    }
+   ]
+  },
+  {
+   "id": "s037",
+   "strip_x": 21,
+   "vo": "Okay, but that's Maple Street. How bad does it really get?",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "dee",
+     "pose": "skeptical",
+     "x": 480,
+     "y": 130,
+     "h": 1120,
+     "at": 0.0
+    },
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "welcome",
+     "x": 1440,
+     "y": 330,
+     "h": 900,
+     "at": 0.1
+    }
+   ],
+   "transition_in": "travel",
+   "speaker": "dee"
+  },
+  {
+   "id": "s038",
+   "strip_x": 22,
+   "vo": "It has a real version. In 2000, 2001 and 2002, the S and P 500 fell three years in a row. About nine percent, then twelve, then twenty-two.",
+   "elements": [
+    {
+     "type": "bars",
+     "rows": [
+      {
+       "label": "2000",
+       "value": 9.1,
+       "display": "−9%",
+       "side": "b"
+      },
+      {
+       "label": "2001",
+       "value": 11.9,
+       "display": "−12%",
+       "side": "b"
+      },
+      {
+       "label": "2002",
+       "value": 22.1,
+       "display": "−22%",
+       "side": "b"
+      }
+     ],
+     "x": 560,
+     "y": 320,
+     "at": 0.3,
+     "width": 900,
+     "scale": 1.2
+    },
+    {
+     "type": "tag",
+     "text": "Source: S&P 500 total return, S&P Dow Jones Indices",
+     "x": 150,
+     "y": 985,
+     "at": 0.4
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s039",
+   "strip_x": 23,
+   "vo": "Take a retiree with half a million dollars in that fund, pulling out twenty thousand a year to live.",
+   "elements": [
+    {
+     "type": "linechart",
+     "points": [
+      {
+       "v": 500,
+       "label": "2000"
+      },
+      {
+       "v": 436,
+       "label": "2001"
+      },
+      {
+       "v": 367,
+       "label": "2002"
+      },
+      {
+       "v": 270,
+       "label": "2003",
+       "tag": "$270K"
+      }
+     ],
+     "x": 200,
+     "y": 250,
+     "w": 1250,
+     "h": 520,
+     "at": 0.1,
+     "side": "b",
+     "draw": 90,
+     "title": "$500K, minus $20K a year, through 2000–02",
+     "min": 200,
+     "max": 520,
+     "ref": 500,
+     "refLabel": "start"
+    },
+    {
+     "type": "tag",
+     "text": "Math: S&P 500 total returns, withdrawals at start of year",
+     "x": 150,
+     "y": 985,
+     "at": 0.4
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s040",
+   "strip_x": 23,
+   "vo": "After three years the account holds about two hundred seventy thousand. Nearly half is gone, and he's only sixty-nine.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "walt",
+     "pose": "slump",
+     "x": 1700,
+     "y": 300,
+     "h": 820,
+     "at": 0.4
+    }
+   ],
+   "shake": 1.0
+  },
+  {
+   "id": "s041",
+   "strip_x": 24,
+   "vo": "The tech-heavy Nasdaq did worse. It fell seventy-eight percent and needed fifteen years to get back.",
+   "elements": [
+    {
+     "type": "desk",
+     "x": 960,
+     "y": 540,
+     "w": 1960,
+     "h": 1120,
+     "at": 0
+    },
+    {
+     "type": "screen",
+     "src": "ai/clip/ktvu.jpg",
+     "iw": 1140,
+     "ih": 520,
+     "x": 960,
+     "y": 500,
+     "w": 1250,
+     "at": 0.0,
+     "hl": [
+      [
+       15,
+       208,
+       1102,
+       289
+      ]
+     ],
+     "ring": [
+      1030,
+      123,
+      1116,
+      182
+     ],
+     "tag": "AP via KTVU · Apr 23, 2015",
+     "push": 0.14,
+     "hlAt": 1.8
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s042",
+   "strip_x": 25,
+   "vo": "For Marcus, fifteen years is age forty-four. For Walt, it's eighty-one.",
+   "elements": [
+    {
+     "type": "linechart",
+     "points": [
+      {
+       "v": 5048,
+       "label": "2000"
+      },
+      {
+       "v": 1114,
+       "label": "2002",
+       "tag": "−78%"
+      },
+      {
+       "v": 2859,
+       "label": "2007"
+      },
+      {
+       "v": 1268,
+       "label": "2009"
+      },
+      {
+       "v": 2652,
+       "label": "2011"
+      },
+      {
+       "v": 4177,
+       "label": "2013"
+      },
+      {
+       "v": 5056,
+       "label": "2015",
+       "tag": "back"
+      }
+     ],
+     "x": 200,
+     "y": 250,
+     "w": 1250,
+     "h": 520,
+     "at": 0.1,
+     "side": "b",
+     "draw": 70,
+     "title": "Nasdaq Composite, 2000–2015",
+     "min": 800,
+     "max": 5400,
+     "ref": 5048,
+     "refLabel": "2000 peak"
+    },
+    {
+     "type": "note",
+     "text": "29 + 15",
+     "x": 1600,
+     "y": 380,
+     "at": 1.4,
+     "size": 58,
+     "side": "a"
+    },
+    {
+     "type": "note",
+     "text": "66 + 15",
+     "x": 1600,
+     "y": 520,
+     "at": 2.6,
+     "size": 58,
+     "side": "b"
+    },
+    {
+     "type": "tag",
+     "text": "Source: Nasdaq; AP, Apr 23 2015",
+     "x": 150,
+     "y": 985,
+     "at": 0.4
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s043",
+   "strip_x": 26,
+   "vo": "Eighty-one. He'd spend his whole retirement waiting.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "dee",
+     "pose": "shock_device",
+     "x": 500,
+     "y": 130,
+     "h": 1120,
+     "at": 0.0
+    },
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "inspect",
+     "x": 1440,
+     "y": 330,
+     "h": 900,
+     "at": 0.1
+    }
+   ],
+   "transition_in": "travel",
+   "speaker": "dee"
+  },
+  {
+   "id": "s044",
+   "strip_x": 27,
+   "vo": "The reason I'm telling you about Walt is simple. The order of your good and bad years matters as much as the average, and you don't get to pick the order.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "point",
+     "x": 400,
+     "y": 330,
+     "h": 900,
+     "at": 0.0,
+     "flip": true
+    },
+    {
+     "type": "note",
+     "text": "same average",
+     "x": 1180,
+     "y": 360,
+     "at": 2.2,
+     "size": 64
+    },
+    {
+     "type": "note",
+     "text": "different order → different ending",
+     "x": 1180,
+     "y": 520,
+     "at": 4.0,
+     "size": 56,
+     "side": "b"
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s045",
+   "strip_x": 28,
+   "vo": "So find yourself on the street.",
+   "elements": [
+    {
+     "type": "map",
+     "src": "ai/src/map.jpg",
+     "iw": 1376,
+     "ih": 768,
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "cut": true,
+     "cam": [
+      [
+       0,
+       380,
+       205,
+       2.3
+      ],
+      [
+       1.2,
+       688,
+       384,
+       1.08
+      ]
+     ],
+     "pins": [],
+     "life": 1
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s046",
+   "strip_x": 28,
+   "vo": "If you're decades out, you're Marcus.",
+   "elements": [
+    {
+     "type": "map",
+     "src": "ai/src/map.jpg",
+     "iw": 1376,
+     "ih": 768,
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "cut": true,
+     "cam": [
+      [
+       0,
+       688,
+       384,
+       1.08
+      ],
+      [
+       0.7,
+       380,
+       205,
+       2.3
+      ]
+     ],
+     "pins": [
+      {
+       "x": 360,
+       "y": 80,
+       "label": "DECADES OUT",
+       "at": 0.4,
+       "color": "#C0392B"
+      }
+     ],
+     "life": 1
+    }
+   ]
+  },
+  {
+   "id": "s047",
+   "strip_x": 28,
+   "vo": "If you're within ten years, you're Dee.",
+   "elements": [
+    {
+     "type": "map",
+     "src": "ai/src/map.jpg",
+     "iw": 1376,
+     "ih": 768,
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "cut": true,
+     "cam": [
+      [
+       0,
+       380,
+       205,
+       2.3
+      ],
+      [
+       0.7,
+       715,
+       205,
+       2.3
+      ]
+     ],
+     "pins": [
+      {
+       "x": 690,
+       "y": 95,
+       "label": "WITHIN 10 YEARS",
+       "at": 0.4,
+       "color": "#1F4E79"
+      }
+     ],
+     "life": 1
+    }
+   ]
+  },
+  {
+   "id": "s048",
+   "strip_x": 28,
+   "vo": "If you've just stopped working, you're Walt. And you're first in line.",
+   "elements": [
+    {
+     "type": "map",
+     "src": "ai/src/map.jpg",
+     "iw": 1376,
+     "ih": 768,
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "cut": true,
+     "cam": [
+      [
+       0,
+       715,
+       205,
+       2.3
+      ],
+      [
+       0.7,
+       1055,
+       205,
+       2.3
+      ]
+     ],
+     "pins": [
+      {
+       "x": 1050,
+       "y": 110,
+       "label": "JUST RETIRED",
+       "at": 0.4,
+       "color": "#7A5230"
+      }
+     ],
+     "life": 1
+    },
+    {
+     "type": "stamp",
+     "text": "MOST EXPOSED",
+     "x": 960,
+     "y": 170,
+     "at": 2.0,
+     "side": "b",
+     "rotate": -6
+    }
+   ],
+   "shake": 1.2
+  },
+  {
+   "id": "s049",
+   "strip_x": 29,
+   "vo": "Then I should get out now. Before it pops.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "dee",
+     "pose": "thinking",
+     "x": 480,
+     "y": 130,
+     "h": 1120,
+     "at": 0.0
+    },
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "welcome",
+     "x": 1440,
+     "y": 330,
+     "h": 900,
+     "at": 0.1
+    }
+   ],
+   "transition_in": "travel",
+   "speaker": "dee"
+  },
+  {
+   "id": "s050",
+   "strip_x": 29,
+   "vo": "That's the second way to lose. Nobody rings a bell at the top.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "shrug"
+    }
+   ]
+  },
+  {
+   "id": "s051",
+   "strip_x": 30,
+   "vo": "Nvidia sits nearly a third below its October record.",
+   "elements": [
+    {
+     "type": "linechart",
+     "points": [
+      {
+       "v": 239.24,
+       "label": "Oct 6"
+      },
+      {
+       "v": 230,
+       "label": "Oct 20"
+      },
+      {
+       "v": 207,
+       "label": "Nov 3"
+      },
+      {
+       "v": 168.89,
+       "label": "Nov 10",
+       "tag": "−29%"
+      }
+     ],
+     "x": 200,
+     "y": 260,
+     "w": 1250,
+     "h": 500,
+     "at": 0.1,
+     "side": "b",
+     "draw": 45,
+     "title": "Nvidia closing price, $",
+     "min": 150,
+     "max": 250,
+     "ref": 239.24,
+     "refLabel": "Oct 6 record"
+    },
+    {
+     "type": "tag",
+     "text": "Source: Nasdaq daily closes",
+     "x": 150,
+     "y": 985,
+     "at": 0.4
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s052",
+   "strip_x": 31,
+   "vo": "Yet in its last reported quarter, sales were more than double the year before.",
+   "elements": [
+    {
+     "type": "desk",
+     "x": 960,
+     "y": 540,
+     "w": 1960,
+     "h": 1120,
+     "at": 0
+    },
+    {
+     "type": "screen",
+     "src": "ai/clip/thurrott.jpg",
+     "iw": 1000,
+     "ih": 390,
+     "x": 960,
+     "y": 500,
+     "w": 1450,
+     "at": 0.0,
+     "hl": [
+      [
+       326,
+       343,
+       624,
+       379
+      ]
+     ],
+     "ring": [
+      685,
+      340,
+      773,
+      374
+     ],
+     "tag": "Thurrott · Aug 26, 2026",
+     "push": 0.14,
+     "hlAt": 1.2
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s053",
+   "strip_x": 31,
+   "vo": "In 2000, most of the internet companies that had just gone public had never made a profit. These do.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "ai/photo/datacenter.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "zoom": 0.1
+    }
+   ]
+  },
+  {
+   "id": "s054",
+   "strip_x": 32,
+   "vo": "It might be a bubble. It might be a pause. I can't tell you which, and I don't trust anyone who says they can.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "shrug",
+     "x": 960,
+     "y": 380,
+     "h": 860,
+     "at": 0.0
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s055",
+   "strip_x": 33,
+   "vo": "You may already have some protection. Nearly every plan offers a target date fund, and Vanguard says eighty-four percent of savers who are offered one use it.",
+   "elements": [
+    {
+     "type": "desk",
+     "x": 960,
+     "y": 540,
+     "w": 1960,
+     "h": 1120,
+     "at": 0
+    },
+    {
+     "type": "counter",
+     "from": 0,
+     "to": 84,
+     "prefix": "",
+     "suffix": "%",
+     "decimals": 0,
+     "dur": 1.6,
+     "perFrame": 0,
+     "x": 960,
+     "y": 470,
+     "at": 2.6,
+     "dark": true,
+     "size": 260,
+     "label": "use a target-date fund when offered",
+     "color": "#7BE0A0"
+    },
+    {
+     "type": "tag",
+     "text": "Source: Vanguard, How America Saves 2026",
+     "x": 150,
+     "y": 985,
+     "at": 0.4,
+     "dark": true
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s056",
+   "strip_x": 34,
+   "vo": "It starts around ninety percent stocks at age twenty-five. By sixty-five it's down to fifty. By seventy-two, thirty.",
+   "elements": [
+    {
+     "type": "bars",
+     "rows": [
+      {
+       "label": "Age 25",
+       "value": 90,
+       "display": "90%",
+       "side": "a"
+      },
+      {
+       "label": "Age 65",
+       "value": 50,
+       "display": "50%",
+       "side": null
+      },
+      {
+       "label": "Age 72",
+       "value": 30,
+       "display": "30%",
+       "side": "b"
+      }
+     ],
+     "x": 560,
+     "y": 320,
+     "at": 0.3,
+     "width": 900,
+     "scale": 1.2
+    },
+    {
+     "type": "tag",
+     "text": "Source: Vanguard Target Retirement glide path",
+     "x": 150,
+     "y": 985,
+     "at": 0.4
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s057",
+   "strip_x": 35,
+   "vo": "So the fund sells stocks for me as I get older?",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "dee",
+     "pose": "thinking",
+     "x": 480,
+     "y": 130,
+     "h": 1120,
+     "at": 0.0
+    },
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "welcome",
+     "x": 1440,
+     "y": 330,
+     "h": 900,
+     "at": 0.1
+    }
+   ],
+   "transition_in": "travel",
+   "speaker": "dee"
+  },
+  {
+   "id": "s058",
+   "strip_x": 35,
+   "vo": "Slowly, yes. It does on a schedule what Walt wishes he had done.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "narrator",
+     "at": 0.0,
+     "pose": "point"
+    },
+    {
+     "who": "dee",
+     "at": 1.2,
+     "pose": "relieved"
+    }
+   ]
+  },
+  {
+   "id": "s059",
+   "strip_x": 36,
+   "vo": "It's a cushion, and it has limits. In 2022, stocks and bonds fell together.",
+   "elements": [
+    {
+     "type": "desk",
+     "x": 960,
+     "y": 540,
+     "w": 1960,
+     "h": 1120,
+     "at": 0
+    },
+    {
+     "type": "screen",
+     "src": "ai/clip/fool2022.jpg",
+     "iw": 1240,
+     "ih": 590,
+     "x": 960,
+     "y": 500,
+     "w": 1300,
+     "at": 0.0,
+     "hl": [
+      [
+       447,
+       231,
+       1067,
+       279
+      ]
+     ],
+     "ring": [
+      937,
+      474,
+      1089,
+      495
+     ],
+     "tag": "The Motley Fool · Jan 26, 2023",
+     "push": 0.14,
+     "hlAt": 2.4
+    }
+   ],
+   "transition_in": "cut",
+   "shake": 0.8
+  },
+  {
+   "id": "s060",
+   "strip_x": 37,
+   "vo": "Two numbers tell you where you stand. What share of your account is in stocks. And how many years until you have to start selling.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "count_2",
+     "x": 400,
+     "y": 330,
+     "h": 900,
+     "at": 0.0,
+     "flip": true
+    },
+    {
+     "type": "note",
+     "text": "① stock share",
+     "x": 1180,
+     "y": 380,
+     "at": 1.8,
+     "size": 80,
+     "side": "b"
+    },
+    {
+     "type": "note",
+     "text": "② years to first sale",
+     "x": 1180,
+     "y": 560,
+     "at": 3.8,
+     "size": 70
+    }
+   ],
+   "transition_in": "fold"
+  },
+  {
+   "id": "s061",
+   "strip_x": 38,
+   "vo": "So who loses first? The neighbor who has just retired, holds mostly stocks, and has to sell to eat.",
+   "elements": [
+    {
+     "type": "map",
+     "src": "ai/src/map.jpg",
+     "iw": 1376,
+     "ih": 768,
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "cut": true,
+     "cam": [
+      [
+       0,
+       688,
+       384,
+       1.08
+      ],
+      [
+       1.2,
+       1055,
+       205,
+       2.3
+      ]
+     ],
+     "pins": [
+      {
+       "x": 1050,
+       "y": 110,
+       "label": "LOSES FIRST",
+       "at": 1.0,
+       "color": "#7A5230"
+      }
+     ],
+     "life": 1
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s062",
+   "strip_x": 38,
+   "vo": "After him, the one a few years out who sells in a panic.",
+   "elements": [
+    {
+     "type": "map",
+     "src": "ai/src/map.jpg",
+     "iw": 1376,
+     "ih": 768,
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "cut": true,
+     "cam": [
+      [
+       0,
+       1055,
+       205,
+       2.3
+      ],
+      [
+       0.8,
+       715,
+       205,
+       2.3
+      ]
+     ],
+     "pins": [
+      {
+       "x": 690,
+       "y": 95,
+       "label": "IF SHE PANICS",
+       "at": 0.6,
+       "color": "#1F4E79"
+      }
+     ],
+     "life": 1
+    }
+   ]
+  },
+  {
+   "id": "s063",
+   "strip_x": 38,
+   "vo": "Marcus loses least. He may even come out ahead.",
+   "elements": [
+    {
+     "type": "map",
+     "src": "ai/src/map.jpg",
+     "iw": 1376,
+     "ih": 768,
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "cut": true,
+     "cam": [
+      [
+       0,
+       715,
+       205,
+       2.3
+      ],
+      [
+       0.8,
+       380,
+       205,
+       2.3
+      ]
+     ],
+     "pins": [
+      {
+       "x": 360,
+       "y": 80,
+       "label": "MAY COME OUT AHEAD",
+       "at": 0.6,
+       "color": "#C0392B"
+      }
+     ],
+     "life": 1
+    }
+   ]
+  },
+  {
+   "id": "s064",
+   "strip_x": 39,
+   "vo": "That night, Dee doesn't check her balance. She opens the fund's page and writes two numbers on a sticky note.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "dee",
+     "pose": "thinking",
+     "x": 560,
+     "y": 130,
+     "h": 1120,
+     "at": 0.0
+    }
+   ],
+   "transition_in": "travel"
+  },
+  {
+   "id": "s065",
+   "strip_x": 39,
+   "vo": "Sixty-two percent. Eleven years. She puts it on the fridge.",
+   "elements": [
+    {
+     "type": "note",
+     "text": "62% · 11 yrs",
+     "x": 1320,
+     "y": 420,
+     "at": 0.3,
+     "size": 96,
+     "side": "a"
+    }
+   ],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 1.6,
+     "pose": "relieved"
+    }
+   ]
+  },
+  {
+   "id": "s066",
+   "strip_x": 39,
+   "vo": "I'm not Walt yet.",
+   "elements": [],
+   "cues": [
+    {
+     "who": "dee",
+     "at": 0.0,
+     "pose": "neutral"
+    }
+   ],
+   "speaker": "dee"
+  },
+  {
+   "id": "s067",
+   "strip_x": 39,
+   "vo": "No. You've got eleven years to decide what kind of Walt you'll be.",
+   "elements": [
+    {
+     "type": "sprite",
+     "who": "narrator",
+     "pose": "point",
+     "x": 1500,
+     "y": 330,
+     "h": 900,
+     "at": 0.0
+    }
+   ]
+  },
+  {
+   "id": "s068",
+   "strip_x": 39,
+   "vo": "This video is education, not financial advice.",
+   "elements": [
+    {
+     "type": "tag",
+     "text": "Education only. Not financial advice.",
+     "x": 150,
+     "y": 985,
+     "at": 0.4
+    }
+   ]
+  },
+  {
+   "id": "s069",
+   "strip_x": 40,
+   "vo": "Which raises a question for anyone near the finish line.",
+   "elements": [
+    {
+     "type": "photo",
+     "src": "ai/photo/dollars.jpg",
+     "x": 960,
+     "y": 540,
+     "at": 0.0,
+     "zoom": 0.12
+    }
+   ],
+   "transition_in": "cut"
+  },
+  {
+   "id": "s070",
+   "strip_x": 40,
+   "vo": "Bonds pay nearly five percent now. Stocks or bonds, who wins over ten years? That's next.",
+   "elements": [
+    {
+     "type": "counter",
+     "from": 0,
+     "to": 4.86,
+     "prefix": "",
+     "suffix": "%",
+     "decimals": 2,
+     "dur": 1.4,
+     "perFrame": 0,
+     "x": 960,
+     "y": 500,
+     "at": 0.6,
+     "dark": true,
+     "size": 200,
+     "label": "10-year Treasury yield, Nov 2026"
+    }
+   ]
+  }
+ ]
+}

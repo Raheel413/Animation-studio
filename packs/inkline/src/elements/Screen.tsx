@@ -1,7 +1,7 @@
 import React from 'react';
 import {Easing, Img, interpolate, staticFile} from 'remotion';
 import {clamp} from '../ink';
-import type {CounterEl, ScreenEl} from '../types';
+import type {CounterEl, MapEl, ScreenEl} from '../types';
 
 const MARKER = 'rgba(255,205,0,.55)';
 const CRIMSON = '#D93829';
@@ -103,6 +103,48 @@ export const Counter: React.FC<{el: CounterEl; f: number; fps: number; left: num
       {el.label && <div style={{fontFamily: 'JetBrains Mono', fontSize: 30, letterSpacing: 4, color: el.dark ? '#FFFFFF' : '#3A3A3A', marginBottom: 10, textShadow: el.dark ? '0 2px 12px rgba(0,0,0,.9)' : 'none'}}>{el.label.toUpperCase()}</div>}
       <div style={{fontFamily: 'Anton', fontSize: el.size ?? 150, color: el.color ?? (el.dark ? '#FFFFFF' : '#1A1A1A'), fontVariantNumeric: 'tabular-nums', letterSpacing: 2, textShadow: el.dark ? '0 8px 30px rgba(0,0,0,.5)' : 'none'}}>
         {txt}
+      </div>
+    </div>
+  );
+};
+
+/**
+ * Illustrated map with a keyframed camera (cx, cy, scale in image px) and name pins that pop in.
+ * Image is drawn at its natural size times `fit` so the whole map fills the frame at scale 1.
+ */
+export const MapView: React.FC<{el: MapEl; f: number; fps: number; left: number}> = ({el, f, fps, left}) => {
+  if (f < 0) return null;
+  const t = f / fps;
+  const ks = el.cam;
+  let k = 0;
+  while (k < ks.length - 2 && t > ks[k + 1][0]) k++;
+  const a = ks[k];
+  const b = ks[Math.min(k + 1, ks.length - 1)];
+  const p = b[0] === a[0] ? 1 : Easing.inOut(Easing.cubic)(Math.max(0, Math.min(1, (t - a[0]) / (b[0] - a[0]))));
+  const cx = a[1] + (b[1] - a[1]) * p;
+  const cy = a[2] + (b[2] - a[2]) * p;
+  const sc = a[3] + (b[3] - a[3]) * p;
+  const fit = 1920 / el.iw;
+  const s = fit * sc;
+  const fade = el.cut ? 1 : interpolate(f, [0, 8], [0, 1], clamp);
+  return (
+    <div style={{position: 'absolute', left: left - 960, top: 0, width: 1920, height: 1080, overflow: 'hidden', opacity: fade, background: '#DCE8C8'}}>
+      <div style={{position: 'absolute', left: 960 - cx * s, top: 540 - cy * s, width: el.iw * s, height: el.ih * s}}>
+        <Img src={staticFile(el.src)} style={{width: '100%', height: '100%'}} />
+        {(el.pins ?? []).map((pin, i) => {
+          const pf = f - pin.at * fps;
+          if (pf < 0 || (pin.until != null && t > pin.until)) return null;
+          const pop = interpolate(pf, [0, 7, 11], [0, 1.15, 1], clamp);
+          return (
+            <div key={i} style={{position: 'absolute', left: pin.x * s, top: pin.y * s, transform: `translate(-50%, -100%) scale(${pop / Math.max(1, sc * 0.55)})`, transformOrigin: '50% 100%'}}>
+              <div style={{background: pin.color ?? '#111', color: '#fff', fontFamily: 'Anton', fontSize: 44, padding: '6px 20px', borderRadius: 8, whiteSpace: 'nowrap', boxShadow: '0 6px 16px rgba(0,0,0,.35)', letterSpacing: 1}}>
+                {pin.label}
+                {pin.sub && <span style={{fontFamily: 'JetBrains Mono', fontSize: 26, marginLeft: 12, opacity: 0.85}}>{pin.sub}</span>}
+              </div>
+              <div style={{width: 0, height: 0, margin: '0 auto', borderLeft: '14px solid transparent', borderRight: '14px solid transparent', borderTop: `18px solid ${pin.color ?? '#111'}`}} />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
