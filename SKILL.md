@@ -27,6 +27,7 @@ If the user is not around to answer, pick the most reasonable reading, state it 
 | `blender-3d` (Python-driven Blender) | planned | 7/10 stylized | Objects, machines, maps, vehicles |
 | `anime` (code-only limited animation) | planned | 4/10 | Action beats, impact frames. Code-only by owner's decision, so no AI keyframes |
 | `rotoscope` (trace user-supplied footage) | planned | 7/10 | Stylizing footage the user owns |
+| `lonely-astronaut` (Astro cutouts in Blender 3D sets, holograms, synthesized score) | **built** | 8/10 cinematic short | Lonely Astronaut episodes only: read `packs/lonely-astronaut/SKILL.md` |
 
 Never promise "studio level" for a planned pack. Say what the ceiling is.
 
